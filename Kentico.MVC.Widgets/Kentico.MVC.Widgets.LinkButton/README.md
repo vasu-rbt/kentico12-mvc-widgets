@@ -12,4 +12,4 @@ This is a widget which allows you to add a button to your screen with certain at
 
 # Author
 
-This widget was created by Vasu Yerramsetti @ Ray Business Technologies
+This widget was created by Vasu Yerramsetti @ Ray Business Technologies Pvt Ltd.
