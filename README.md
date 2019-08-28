@@ -1,1 +1,9 @@
-# kentico12-mvc-widgets
+# Kentico 12 MVC Widgets
+
+This repository contains Widgets, which can be used and modified in your projects.
+
+# Widgets available in this repository
+
+- Link button
+
+ 
