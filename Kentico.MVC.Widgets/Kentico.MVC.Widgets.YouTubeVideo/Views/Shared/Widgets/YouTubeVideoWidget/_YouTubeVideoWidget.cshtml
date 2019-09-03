@@ -1,0 +1,13 @@
+﻿@model Kentico.MVC.Widgets.YouTubeVideo.YouTubeVideoWidgetViewModel
+@{
+    var VideoURL = string.Format("{0}{1}{2}", @Model.VideoURL, @Model.VideoURL.Contains("?") ? "&" : "?", Model.VideoParameters.TrimStart(new char[]
+    {
+'&'
+    }));
+}
+
+@if (VideoURL != null)
+{
+    <iframe type="text/html" width="@Model.Width" height="@Model.Height"
+            src="@VideoURL" frameborder="0" allowfullscreen></iframe>
+}
