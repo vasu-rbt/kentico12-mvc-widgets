@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Kentico.MVC.Widget.LinkButton</id>
-    <version>12.0.0</version>
+    <id>Raybiztech.Kentico.MVC.Widget.LinkButton</id>
+    <version>1.0.0</version>
     <title>Link Button Widget</title>
     <authors>vasu.yerramsetti@raybiztech.com</authors>
     <owners>Ray Business Technologies Pvt Ltd.</owners>
@@ -11,7 +11,7 @@
     <description>Displays a hyperlink to a specified target URL. The link can be rendered either in text format or as an image.</description>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>Kentico MVC Widget LinkButton</tags>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget LinkButton</tags>
     <dependencies>
       <dependency id="Kentico.Libraries" version="12.0.0" />
     </dependencies>
