@@ -4,7 +4,7 @@ Displays a hyperlink to a specified target URL. The link can be rendered in text
 
 # Installation
 
-Install the Kentico.MVC.Widget.LinkButton.12.0.0 NuGet Package to your Kentico 12 MVC Site.
+Install the Kentico.MVC.Widget.LinkButton.12.0.0 NuGet Package to your Kentico 12 MVC Site. 
 
 # Widget
 
@@ -17,6 +17,7 @@ This is a widget which allows you to add a button to your screen with certain at
 # Author
 
 This widget was created by Vasu Yerramsetti @ Ray Business Technologies Pvt Ltd.
+Last updated 22-10-2019
 # License
 
 This widget is provided under MIT license.
@@ -27,4 +28,5 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 # Compatibility
 
-This widget has been tested on Kentico 12 MVC base version (12.0.0) and can be used on any Kentico 12 MVC instance.
+This widget has been tested on Kentico 12 MVC base version (12.0.0) and can be used on any Kentico 12 MVC instance. 
+
