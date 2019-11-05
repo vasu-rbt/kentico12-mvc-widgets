@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.LinkButton", "Kentico.MVC.Widgets.LinkButton\Kentico.MVC.Widgets.LinkButton.csproj", "{33B60031-36CC-4142-B9B7-162ADC83EB67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.YouTubeVideo", "Kentico.MVC.Widgets.YouTubeVideo\Kentico.MVC.Widgets.YouTubeVideo.csproj", "{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico12.MVC.Widgets.EditableImage", "..\..\..\Kentico12.MVC.Widgets\Kentico12.MVC.Widgets.EditableImage\Kentico12.MVC.Widgets.EditableImage.csproj", "{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
