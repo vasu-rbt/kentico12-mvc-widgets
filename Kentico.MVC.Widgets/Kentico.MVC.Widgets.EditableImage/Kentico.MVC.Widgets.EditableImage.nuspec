@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Kentico.MVC.Widgets.EditableImage</id>
+    <version>1.0.0</version>
+    <title>Editable Image Widget</title>
+    <authors>Ray Business Technologies Pvt Ltd.</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>It allows editors to add class, alt text, dimensions and redirection link to image</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget LinkButton</tags>
+    <dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Kentico.MVC.Widgets.EditableImage.dll" target="lib\net461\Kentico.MVC.Widgets.EditableImage.dll" />
+    <file src="Views\Shared\Widgets\EditableImageWidget\_EditableImageWidget.cshtml" target="content\Views\Shared\Widgets\EditableImageWidget\_EditableImageWidget.cshtml" />
+  </files>
+</package>
