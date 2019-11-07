@@ -18,7 +18,7 @@ This is a widget which allows you to select image from media library and set the
 # Author
 
 This widget was created by Vasu Yerramsetti @ Ray Business Technologies Pvt Ltd.
-Last updated 06-11-2019
+Last updated 07-11-2019
 # License
 
 This widget is provided under MIT license.
@@ -29,4 +29,4 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 # Compatibility
 
-This widget has been tested on Kentico 12 MVC base version (12.0.0) and can be used on any Kentico 12 MVC instance. 
+This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12.0.29 MVC instance and higher. 
