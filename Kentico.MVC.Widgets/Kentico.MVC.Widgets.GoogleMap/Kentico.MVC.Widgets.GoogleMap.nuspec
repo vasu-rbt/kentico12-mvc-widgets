@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico.MVC.Widget.GoogleMap</id>
+    <version>1.0.0</version>
+    <title>Google Map Widget</title>
+    <authors>Ray Business Technologies Pvt Ltd.</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays maps obtained from the Google maps service.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget GoogleMap</tags>
+	<dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Kentico.MVC.Widgets.GoogleMap.dll" target="lib\net461\Kentico.MVC.Widgets.GoogleMap.dll" />
+    <file src="Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" target="content\Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" />
+  </files>
+</package>

@@ -1,0 +1,33 @@
+# GoogleMap
+
+Displays map obtained from the Google maps service.
+
+# Installation
+
+Install the Kentico.MVC.Widget.GoogleMap.12.0.29 NuGet Package to your Kentico 12 MVC Site. 
+
+# Widget
+
+This is a widget which allows you to add a GoogleMap to your screen with certain attributes that can be configured while adding. The properties that can be configured are:
+
+- Latitude*
+- Longitude*
+
+*Required fields
+
+# Author
+
+This widget was created by Ray Business Technologies Pvt Ltd.
+Last updated 07-11-2019
+
+# License
+
+This widget is provided under MIT license.
+
+# Reporting issues
+
+Please report any issues seen, in the issue list. We will address at the earliest possibility.
+
+# Compatibility
+
+This widget has been tested on Kentico 12 MVC version (12.0.29). 
