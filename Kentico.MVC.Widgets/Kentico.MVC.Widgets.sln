@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.LinkBut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.YouTubeVideo", "Kentico.MVC.Widgets.YouTubeVideo\Kentico.MVC.Widgets.YouTubeVideo.csproj", "{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico12.MVC.Widgets.EditableImage", "..\..\..\Kentico12.MVC.Widgets\Kentico12.MVC.Widgets.EditableImage\Kentico12.MVC.Widgets.EditableImage.csproj", "{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.EditableImage", "..\..\..\Kentico12.MVC.Widgets\Kentico12.MVC.Widgets.EditableImage\Kentico.MVC.Widgets.EditableImage.csproj", "{2D488BE4-2347-4CA9-82C0-E7F8CEB6F944}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
