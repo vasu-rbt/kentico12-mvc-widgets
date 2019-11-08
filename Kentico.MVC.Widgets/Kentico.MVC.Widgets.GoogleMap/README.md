@@ -1,6 +1,6 @@
 # GoogleMap
 
-Displays map obtained from the Google maps service.
+It displays map obtained from the Google maps service using Latitude and Longitude.
 
 # Installation
 
@@ -17,8 +17,7 @@ This is a widget which allows you to add a GoogleMap to your screen with certain
 
 # Author
 
-This widget was created by Ray Business Technologies Pvt Ltd.
-Last updated 07-11-2019
+This widget was created by Raju Swamy @ Ray Business Technologies Pvt Ltd.
 
 # License
 
