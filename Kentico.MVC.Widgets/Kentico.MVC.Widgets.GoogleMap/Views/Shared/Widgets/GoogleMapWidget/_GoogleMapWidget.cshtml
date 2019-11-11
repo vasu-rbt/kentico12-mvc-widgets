@@ -1,5 +1,14 @@
 ﻿@model Kentico.MVC.Widgets.GoogleMap.GoogleMapWidgetViewModel
-<script src="//maps.google.com/maps/api/js?v=3&callback=initialize" async defer type="text/javascript"></script>
+@if (Model.ApiKey == null)
+{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH4n8sljtRlyYthCYP8PwDAimzFk1ZW6w&callback=initialize"
+            async defer></script>
+}
+else
+{
+    <script src="https://maps.googleapis.com/maps/api/js?key=@Model.ApiKey&callback=initialize"
+            async defer></script>
+}
 <div class="map-widget" id="map" style="width: 100%; height: 400px;">
 </div>
 <script type="text/javascript">

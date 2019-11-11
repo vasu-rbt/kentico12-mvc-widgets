@@ -12,7 +12,8 @@ namespace Kentico.MVC.Widgets.GoogleMap
             var viewModel = new GoogleMapWidgetViewModel
             {
                 Latitude=properties.Latitude,
-                Longitude=properties.Longitude                
+                Longitude=properties.Longitude,
+                ApiKey=properties.ApiKey
             };
             return PartialView("Widgets/GoogleMapWidget/_GoogleMapWidget", viewModel);
         }
