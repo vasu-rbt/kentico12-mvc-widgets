@@ -1,6 +1,6 @@
 # Editable Image
 
-It will render the image which can be seleted from media library.
+It will render the image which can be seleted from media library and allows editors to add class, alt text, dimensions and redirection link to image
 
 # Installation
 
@@ -18,7 +18,7 @@ This is a widget which allows you to select image from media library and set the
 # Author
 
 This widget was created by Naresh Ede @ Ray Business Technologies Pvt Ltd.
-Last updated 07-11-2019
+
 # License
 
 This widget is provided under MIT license.
