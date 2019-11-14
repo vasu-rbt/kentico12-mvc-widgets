@@ -10,6 +10,8 @@ namespace Kentico.MVC.Widgets.GoogleMap
         public string Latitude { get; set; }
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Longitude")]
         [Required(ErrorMessage = "Please enter a value.")]
-        public string Longitude { get; set; }       
+        public string Longitude { get; set; }
+        [EditingComponent(TextInputComponent.IDENTIFIER,Order = 3,Label = "API key")]
+        public string ApiKey { get; set; }
     }
 }

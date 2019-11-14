@@ -3,6 +3,7 @@
    public class GoogleMapWidgetViewModel
     {
         public string Latitude;
-        public string Longitude;       
+        public string Longitude;
+        public string ApiKey { get; set; }
     }
 }
