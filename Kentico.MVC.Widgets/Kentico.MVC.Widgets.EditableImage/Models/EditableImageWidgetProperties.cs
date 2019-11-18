@@ -3,7 +3,7 @@ using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using System.Collections.Generic;
 
-namespace Kentico.MVC.Widgets
+namespace Kentico.MVC.Widgets.EditableImage
 {
     public class EditableImageWidgetProperties: IWidgetProperties
     {
@@ -32,12 +32,12 @@ namespace Kentico.MVC.Widgets
 
 
         [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 5)]
-        [EditingComponentProperty("Label", "Render as Link")]
+        [EditingComponentProperty("Label", "Render with Link")]
         public bool ShowImageAsLink { get; set; }
 
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 6)]
-        [EditingComponentProperty("Label", "Redirection URL")]
+        [EditingComponentProperty("Label", "Redirection Link URL")]
         public string RedirectionURL { get; set; }
 
 

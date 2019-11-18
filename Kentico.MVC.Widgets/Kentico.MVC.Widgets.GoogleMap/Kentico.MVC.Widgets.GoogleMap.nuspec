@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Raybiztech.Kentico.MVC.Widget.GoogleMap</id>
+    <id>Raybiztech.Kentico.MVC.Widgets.GoogleMap</id>
     <version>1.0.0</version>
     <title>Google Map Widget</title>
-    <authors>Ray Business Technologies Pvt Ltd.</authors>
+     <authors>vasu.yerramsetti@raybiztech.com</authors>
     <owners>Ray Business Technologies Pvt Ltd.</owners>
     <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Displays maps obtained from the Google maps service.</description>
+    <description>It displays map obtained from the Google maps service using Latitude and Longitude.</description>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Raybiztech Kentico12 Kentico MVC Widget GoogleMap</tags>

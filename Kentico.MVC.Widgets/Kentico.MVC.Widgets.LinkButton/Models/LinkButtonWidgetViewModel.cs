@@ -1,5 +1,5 @@
 ﻿
-namespace Kentico.MVC.Widgets
+namespace Kentico.MVC.Widgets.LinkButton
 {
     public class LinkButtonWidgetViewModel
     {

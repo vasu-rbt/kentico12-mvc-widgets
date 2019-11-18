@@ -1,10 +1,10 @@
 ﻿using Kentico.PageBuilder.Web.Mvc;
-using Kentico.MVC.Widgets;
+using Kentico.MVC.Widgets.LinkButton;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("Kentico.MVC.Widgets", typeof(LinkButtonWidgetController), "Link Button widget", Description = "Set the text of link button", IconClass = "icon-w-link")]
+[assembly: RegisterWidget("Kentico.MVC.Widgets.LinkButton", typeof(LinkButtonWidgetController), "Link Button widget", Description = "Set the text of link button", IconClass = "icon-w-link")]
 
-namespace Kentico.MVC.Widgets
+namespace Kentico.MVC.Widgets.LinkButton
 {
     public class LinkButtonWidgetController : WidgetController<LinkButtonWidgetProperties>
     {

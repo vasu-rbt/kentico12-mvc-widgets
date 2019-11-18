@@ -1,13 +1,13 @@
 ﻿using CMS.MediaLibrary;
 using CMS.SiteProvider;
-using Kentico.MVC.Widgets;
+using Kentico.MVC.Widgets.EditableImage;
 using Kentico.PageBuilder.Web.Mvc;
 using System;
 using System.Linq;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("EditableImage", typeof(EditableImageWidgetController), "EditableImage", Description = "It allows editors to add class, alt text, dimensions and redirection link to image", IconClass = "icon-picture")]
-namespace Kentico.MVC.Widgets
+[assembly: RegisterWidget("Kentico.MVC.Widgets.EditableImage", typeof(EditableImageWidgetController), "Editable Image", Description = "It will render the image which can be seleted from media library and allows editors to add class, alt text, dimensions and redirection link to image", IconClass = "icon-picture")]
+namespace Kentico.MVC.Widgets.EditableImage
 {
     public class EditableImageWidgetController : WidgetController<EditableImageWidgetProperties>
     {

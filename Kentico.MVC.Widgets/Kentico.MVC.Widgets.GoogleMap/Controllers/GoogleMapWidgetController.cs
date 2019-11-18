@@ -1,7 +1,8 @@
 ﻿using Kentico.MVC.Widgets.GoogleMap;
 using Kentico.PageBuilder.Web.Mvc;
 using System.Web.Mvc;
-[assembly: RegisterWidget("Kentico.MVC.Widgets.GoogleMap", typeof(GoogleMapWidgetController), "Google Map widget", Description = "Displays maps obtained from the Google maps service.", IconClass = "icon-map")]
+
+[assembly: RegisterWidget("Kentico.MVC.Widgets.GoogleMap", typeof(GoogleMapWidgetController), "Google Map", Description = "It displays map obtained from the Google maps service using Latitude and Longitude", IconClass = "icon-map")]
 namespace Kentico.MVC.Widgets.GoogleMap
 {
     public class GoogleMapWidgetController: WidgetController<GoogleMapWidgetProperties>
