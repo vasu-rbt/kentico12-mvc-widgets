@@ -1,10 +1,10 @@
 ﻿using Kentico.PageBuilder.Web.Mvc;
-using Kentico.MVC.Widgets.YouTubeVideo;
+using Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo;
 using System.Web.Mvc;
 using System.Text;
 
-[assembly: RegisterWidget("Kentico.MVC.Widgets.YouTubeVideo", typeof(YouTubeVideoWidgetController), "YouTube Video widget", Description = "Enables to insert the video from specified YouTube URL location.", IconClass = "icon-w-youtube-video")]
-namespace Kentico.MVC.Widgets.YouTubeVideo
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo", typeof(YouTubeVideoWidgetController), "YouTube Video widget", Description = "Enables to insert the video from specified YouTube URL location.", IconClass = "icon-w-youtube-video")]
+namespace Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo
 {
     public class YouTubeVideoWidgetController : WidgetController<YouTubeVideoWidgetProperties>
     {

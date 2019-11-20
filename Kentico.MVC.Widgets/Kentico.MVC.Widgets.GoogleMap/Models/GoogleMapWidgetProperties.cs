@@ -2,7 +2,7 @@
 using Kentico.PageBuilder.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace Kentico.MVC.Widgets.GoogleMap
+namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
 {
    public class GoogleMapWidgetProperties: IWidgetProperties
     {

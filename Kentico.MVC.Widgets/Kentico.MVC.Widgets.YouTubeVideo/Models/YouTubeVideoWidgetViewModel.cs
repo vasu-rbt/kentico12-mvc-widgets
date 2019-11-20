@@ -1,4 +1,4 @@
-﻿namespace Kentico.MVC.Widgets.YouTubeVideo
+﻿namespace Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo
 {
     public class YouTubeVideoWidgetViewModel 
     {

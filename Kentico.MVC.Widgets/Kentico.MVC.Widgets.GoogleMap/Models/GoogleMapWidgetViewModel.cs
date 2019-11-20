@@ -1,4 +1,4 @@
-﻿namespace Kentico.MVC.Widgets.GoogleMap
+﻿namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
 {
    public class GoogleMapWidgetViewModel
     {

@@ -1,4 +1,4 @@
-﻿namespace Kentico.MVC.Widgets.EditableImage
+﻿namespace Raybiztech.Kentico12.MVC.Widgets.EditableImage
 {
     public class EditableImageWidgetViewModel
     {

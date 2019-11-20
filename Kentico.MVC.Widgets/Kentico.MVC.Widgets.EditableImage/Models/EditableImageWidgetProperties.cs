@@ -3,7 +3,7 @@ using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using System.Collections.Generic;
 
-namespace Kentico.MVC.Widgets.EditableImage
+namespace Raybiztech.Kentico12.MVC.Widgets.EditableImage
 {
     public class EditableImageWidgetProperties: IWidgetProperties
     {

@@ -3,7 +3,7 @@ using Kentico.PageBuilder.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Kentico.MVC.Widgets.YouTubeVideo
+namespace Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo
 {
     public class YouTubeVideoWidgetProperties : IWidgetProperties
     {
