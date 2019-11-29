@@ -16,7 +16,7 @@ This is a widget which allows you to add a GoogleMap to your screen with certain
 
 Make sure to insert your Google Maps API token into application settings(Web.config):
 
-#<add key="GoogleMapsApiKey" value="{key}" />
+<code><add key="GoogleMapsApiKey" value="{key}" /></code>
 
 
 
