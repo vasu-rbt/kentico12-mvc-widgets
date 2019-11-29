@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Raybiztech.Kentico.MVC.Widget.GoogleMap</id>
+    <id>Raybiztech.Kentico12.MVC.Widget.GoogleMap</id>
     <version>1.0.0</version>
     <title>Google Map Widget</title>
     <authors>Ray Business Technologies Pvt Ltd.</authors>
@@ -17,7 +17,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Debug\Kentico.MVC.Widgets.GoogleMap.dll" target="lib\net461\Kentico.MVC.Widgets.GoogleMap.dll" />
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll" />
     <file src="Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" target="content\Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" />
   </files>
 </package>

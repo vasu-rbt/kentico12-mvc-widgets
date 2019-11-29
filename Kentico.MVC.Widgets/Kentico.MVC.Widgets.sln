@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.YouTube
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.EditableImage", "Kentico.MVC.Widgets.EditableImage\Kentico.MVC.Widgets.EditableImage.csproj", "{93FCB728-6F61-45A3-A68F-C4CA157C6D64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.MVC.Widgets.GoogleMap", "Kentico.MVC.Widgets.GoogleMap\Kentico.MVC.Widgets.GoogleMap.csproj", "{27276F26-E79D-41D2-9F85-7D15E5D1C493}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.GoogleMap", "Raybiztech.Kentico12.MVC.Widgets.GoogleMap\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.csproj", "{27276F26-E79D-41D2-9F85-7D15E5D1C493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

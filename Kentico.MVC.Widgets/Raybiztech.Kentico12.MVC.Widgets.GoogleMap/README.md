@@ -5,7 +5,6 @@ It displays map obtained from the Google maps service using Latitude and Longitu
 # Installation
 
 Install the Kentico.MVC.Widget.GoogleMap.12.0.29 NuGet Package to your Kentico 12 MVC Site. 
-
 # Widget
 
 This is a widget which allows you to add a GoogleMap to your screen with certain attributes that can be configured while adding. The properties that can be configured are:
@@ -14,6 +13,11 @@ This is a widget which allows you to add a GoogleMap to your screen with certain
 - Longitude*
 
 *Required fields
+
+Make sure to insert your Google Maps API token into application settings(Web.config):
+
+<add key="GoogleMapsApiKey" value="{key}" />
+
 
 # Author
 

@@ -1,8 +1,8 @@
-﻿@model Kentico.MVC.Widgets.GoogleMap.GoogleMapWidgetViewModel
+﻿@model Raybiztech.Kentico12.MVC.Widgets.GoogleMap.GoogleMapWidgetViewModel
 @if (Model.ApiKey == null)
 {
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH4n8sljtRlyYthCYP8PwDAimzFk1ZW6w&callback=initialize"
-            async defer></script>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&callback=initialize">
+    </script>
 }
 else
 {

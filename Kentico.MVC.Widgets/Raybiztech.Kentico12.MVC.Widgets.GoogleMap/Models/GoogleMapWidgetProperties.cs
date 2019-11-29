@@ -1,7 +1,7 @@
 ﻿using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
-namespace Kentico.MVC.Widgets.GoogleMap
+namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
 {
    public class GoogleMapWidgetProperties: IWidgetProperties
     {
@@ -11,7 +11,5 @@ namespace Kentico.MVC.Widgets.GoogleMap
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Longitude")]
         [Required(ErrorMessage = "Please enter a value.")]
         public string Longitude { get; set; }
-        [EditingComponent(TextInputComponent.IDENTIFIER,Order = 3,Label = "API key")]
-        public string ApiKey { get; set; }
     }
 }
