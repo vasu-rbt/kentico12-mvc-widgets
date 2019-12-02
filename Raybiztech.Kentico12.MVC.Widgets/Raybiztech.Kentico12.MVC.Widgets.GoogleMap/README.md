@@ -1,28 +1,23 @@
-# GoogleMap
+# LinkButton
 
-It displays map obtained from the Google maps service using Latitude,Longitude and Google API Key.
+Displays a hyperlink to a specified target URL. The link can be rendered in text format.
 
 # Installation
 
-Install the Kentico.MVC.Widget.GoogleMap.12.0.29 NuGet Package to your Kentico 12 MVC Site. 
+Install the Kentico.MVC.Widget.LinkButton.12.0.0 NuGet Package to your Kentico 12 MVC Site. 
 
 # Widget
 
-This is a widget which allows you to add a GoogleMap to your screen with certain attributes that can be configured while adding. The properties that can be configured are:
-
-- Latitude*
-- Longitude*
-
-*Required fields
-
-Make sure to insert your Google Maps API token into application settings(Web.config):
-
-<code>&lt;add key="GoogleMapsApiKey" value="{key}" /&gt;</code>
+This is a widget which allows you to add a button to your screen with certain attributes that can be configured while adding. The properties that can be configured are:
+- Link text
+- Link CSS class
+- Link URL
+- Link target (eg: _blank/_self).
 
 # Author
 
-This widget was created by Raju Swamy @ Ray Business Technologies Pvt Ltd.
-
+This widget was created by Vasu Yerramsetti @ Ray Business Technologies Pvt Ltd.
+Last updated 22-10-2019
 # License
 
 This widget is provided under MIT license.
@@ -33,4 +28,5 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 # Compatibility
 
-This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12.0.29 MVC instance and higher.
+This widget has been tested on Kentico 12 MVC base version (12.0.0) and can be used on any Kentico 12 MVC instance. 
+
