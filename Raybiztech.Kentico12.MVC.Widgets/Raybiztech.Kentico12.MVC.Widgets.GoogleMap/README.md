@@ -1,6 +1,6 @@
 # GoogleMap
 
-It displays map obtained from the Google maps service using Latitude and Longitude.
+It displays map obtained from the Google maps service using Latitude,Longitude and Google API Key.
 
 # Installation
 
@@ -14,6 +14,9 @@ This is a widget which allows you to add a GoogleMap to your screen with certain
 - Longitude*
 
 *Required fields
+
+Make sure to insert your Google Maps API token into application settings(Web.config):
+<code>&lt;add key="GoogleMapsApiKey" value="{key}" /&gt;</code>
 
 # Author
 
