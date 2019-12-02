@@ -1,8 +1,7 @@
 ﻿@model Raybiztech.Kentico12.MVC.Widgets.GoogleMap.GoogleMapWidgetViewModel
 @if (Model.ApiKey == null)
 {
-     <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&callback=initialize">
-    </script>
+    <p style="color:red">Please add API Key in web.config file to display Google Map</p>
 }
 else
 {
