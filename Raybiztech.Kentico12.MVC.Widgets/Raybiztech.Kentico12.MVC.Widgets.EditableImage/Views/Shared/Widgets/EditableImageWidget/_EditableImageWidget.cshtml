@@ -1,0 +1,18 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.EditableImage.EditableImageWidgetViewModel
+
+
+@if (!string.IsNullOrEmpty(Model.ImageURL))
+{
+    string ImageURL = Url.Kentico().ImageUrl(Model.ImageURL, SizeConstraint.Size(Model.Width, Model.Height));
+    if (Model.RenderAsLink)
+    {
+        <a href="@Model.RedirectionURL" class="@Model.LinkCSSClass">
+            <img src="@ImageURL" alt="@Model.AlternateText" class="@Model.ImageCSSClass" />
+        </a>
+
+    }
+    else
+    {
+        <img src="@ImageURL" alt="@Model.AlternateText" class="@Model.ImageCSSClass" />
+    }
+}
