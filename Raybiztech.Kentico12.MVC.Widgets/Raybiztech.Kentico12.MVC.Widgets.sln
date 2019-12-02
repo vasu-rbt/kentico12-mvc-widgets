@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.LinkButton", "Kentico.MVC.Widgets.LinkButton\Raybiztech.Kentico12.MVC.Widgets.LinkButton.csproj", "{33B60031-36CC-4142-B9B7-162ADC83EB67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo", "Kentico.MVC.Widgets.YouTubeVideo\Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo.csproj", "{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.EditableImage", "Kentico.MVC.Widgets.EditableImage\Raybiztech.Kentico12.MVC.Widgets.EditableImage.csproj", "{93FCB728-6F61-45A3-A68F-C4CA157C6D64}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.GoogleMap", "Raybiztech.Kentico12.MVC.Widgets.GoogleMap\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.csproj", "{27276F26-E79D-41D2-9F85-7D15E5D1C493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.EditableImage", "Raybiztech.Kentico12.MVC.Widgets.EditableImage\Raybiztech.Kentico12.MVC.Widgets.EditableImage.csproj", "{93FCB728-6F61-45A3-A68F-C4CA157C6D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo", "Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo\Raybiztech.Kentico12.MVC.Widgets.YouTubeVideo.csproj", "{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{33B60031-36CC-4142-B9B7-162ADC83EB67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33B60031-36CC-4142-B9B7-162ADC83EB67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33B60031-36CC-4142-B9B7-162ADC83EB67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27276F26-E79D-41D2-9F85-7D15E5D1C493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27276F26-E79D-41D2-9F85-7D15E5D1C493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27276F26-E79D-41D2-9F85-7D15E5D1C493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27276F26-E79D-41D2-9F85-7D15E5D1C493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FCB728-6F61-45A3-A68F-C4CA157C6D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D368CB-6FAB-4DA3-8F47-42BAD8C7677B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
