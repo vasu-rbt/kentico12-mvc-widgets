@@ -21,7 +21,6 @@ Intialize the Attribute routing  in route.config file in App start folder.
   routes.MapMvcAttributeRoutes();
  In this widget Search Result Url  propertie controller name as mandetery to put 'search' as controller name.
 
-
 # Author
 
 This widget was created by Vinod Kumar Chindam @ Ray Business Technologies Pvt Ltd.

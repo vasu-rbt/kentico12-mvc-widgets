@@ -28,10 +28,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             try
             {
                 var properties = GetProperties();
-                model.resultsUrl = properties.Text;
+                model.ResultsUrl = properties.Text;
                 model.PlaceHolder = properties.PlaceHolder;
-                model.indexName = properties.Index;
-                model.buttonName = properties.ButtonName;
+                model.IndexName = properties.Index;
+                model.ButtonName = properties.ButtonName;
+                model.LableName = properties.LableName;
+                model.LableMode = Convert.ToBoolean(properties.ShowSearchLabel);
                 TempData["Index"] = properties.Index;
                 TempData["Page"] = properties.Page;
                 TempData["PageSize"] = properties.PageSize;

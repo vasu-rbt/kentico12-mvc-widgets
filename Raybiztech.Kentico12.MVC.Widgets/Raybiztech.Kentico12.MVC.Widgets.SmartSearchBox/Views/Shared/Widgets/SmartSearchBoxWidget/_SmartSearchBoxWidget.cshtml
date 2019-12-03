@@ -8,14 +8,14 @@
     string dynamicId = DateTime.Now.Ticks.ToString();
 }
 
-@Html.HiddenFor(x => x.resultsUrl)
-@Html.HiddenFor(x => x.indexName)
+@Html.HiddenFor(x => x.ResultsUrl)
+@Html.HiddenFor(x => x.IndexName)
 <div class="search-block" id="divSearch">
 
     <div class="input-group search-box-cus">
-        <input type="text" class="form-control searchtextinputwidget_@dynamicId" placeholder="@Model.PlaceHolder" aria-describedby="basic-addon2">
-        @*<a href="#" class="input-group-addon search-iconwidget" id="basic-addon2"><i class="fa fa-search"></i></a>*@
-        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.resultsUrl" value="@(Model.buttonName!=null?Model.buttonName:"Search")">
+        @if(Model.LableMode == true) {<label>@Model.LableName</label>}
+        <input type="text" class="form-control searchtextinputwidget" placeholder="@Model.PlaceHolder" aria-describedby="basic-addon2">
+        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" value="@(Model.ButtonName!=null?Model.ButtonName:"Search")">
     </div>
 </div>
 @if (Context.Kentico().PageBuilder().EditMode)
@@ -28,13 +28,11 @@
 
 }
 
-
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-
 <script>
     $('.btnsearchreuslts_@dynamicId').click(function () {
-
-        var text = $('.searchtextinputwidget_@dynamicId').val();
+        var text = $(this).prev().val();
+        //var text = $('.searchtextinputwidget_@dynamicId').val();
         var resultUrl = $(this).attr('data-url');
         if (text != "" && resultUrl != "") {
             window.location.href = "/" + resultUrl + "?searchtext=" + text;
