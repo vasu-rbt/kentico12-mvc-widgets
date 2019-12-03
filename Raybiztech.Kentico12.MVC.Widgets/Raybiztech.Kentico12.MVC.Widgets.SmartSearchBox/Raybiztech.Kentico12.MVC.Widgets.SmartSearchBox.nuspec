@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+ <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widget.SmartSearchBox</id>
+    <version>1.0.1</version>
+    <title>Smart SearchBox</title>
+    <authors>Ray Business Technologies Pvt Ltd.</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays the search results.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget SmartSearchBox</tags>
+	<dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.dll" />
+    <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchBoxWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchBoxWidget.cshtml" />
+	 <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" />
+	 <file src="Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" target="content\Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" />
+	  <file src="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js" target="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js"/>
+
+  </files>
+</package>

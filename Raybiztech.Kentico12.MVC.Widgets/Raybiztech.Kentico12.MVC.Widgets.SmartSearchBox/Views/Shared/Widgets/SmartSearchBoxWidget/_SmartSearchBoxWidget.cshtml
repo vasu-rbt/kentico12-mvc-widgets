@@ -1,0 +1,43 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.SmartSearchWidgetViewModel
+<style>
+    #divSearch {
+        position: relative;
+    }
+</style>
+@{
+    string dynamicId = DateTime.Now.Ticks.ToString();
+}
+
+@Html.HiddenFor(x => x.resultsUrl)
+@Html.HiddenFor(x => x.indexName)
+<div class="search-block" id="divSearch">
+
+    <div class="input-group search-box-cus">
+        <input type="text" class="form-control searchtextinputwidget_@dynamicId" placeholder="@Model.PlaceHolder" aria-describedby="basic-addon2">
+        @*<a href="#" class="input-group-addon search-iconwidget" id="basic-addon2"><i class="fa fa-search"></i></a>*@
+        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.resultsUrl" value="@(Model.buttonName!=null?Model.buttonName:"Search")">
+    </div>
+</div>
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("~/Views/Shared/Widgets/InlineEditors/_IndexInlineEditor.cshtml", new Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.IndexWidgetPropertes
+    {
+        PropertyName = nameof(Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.SmartSearchBoxWidgetProperties.Index),
+        Types = Model.Indexes
+    });
+
+}
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    $('.btnsearchreuslts_@dynamicId').click(function () {
+
+        var text = $('.searchtextinputwidget_@dynamicId').val();
+        var resultUrl = $(this).attr('data-url');
+        if (text != "" && resultUrl != "") {
+            window.location.href = "/" + resultUrl + "?searchtext=" + text;
+        }
+    });
+</script>
