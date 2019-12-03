@@ -32,7 +32,6 @@
 <script>
     $('.btnsearchreuslts_@dynamicId').click(function () {
         var text = $(this).prev().val();
-        //var text = $('.searchtextinputwidget_@dynamicId').val();
         var resultUrl = $(this).attr('data-url');
         if (text != "" && resultUrl != "") {
             window.location.href = "/" + resultUrl + "?searchtext=" + text;
