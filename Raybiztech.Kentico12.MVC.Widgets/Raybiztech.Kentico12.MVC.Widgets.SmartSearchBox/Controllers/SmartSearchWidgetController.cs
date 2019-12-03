@@ -33,7 +33,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 model.IndexName = properties.Index;
                 model.ButtonName = properties.ButtonName;
                 model.LableName = properties.LableName;
-                model.LableMode = Convert.ToBoolean(properties.ShowSearchLabel);
+                model.LableMode = properties.ShowSearchLabel;
                 TempData["Index"] = properties.Index;
                 TempData["Page"] = properties.Page;
                 TempData["PageSize"] = properties.PageSize;
