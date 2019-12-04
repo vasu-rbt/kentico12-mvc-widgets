@@ -34,14 +34,13 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 model.ButtonName = properties.ButtonName;
                 model.LableName = properties.LableName;
                 model.LableMode = properties.ShowSearchLabel;
-                TempData["Index"] = properties.Index;
-                TempData["Page"] = properties.Page;
-                TempData["PageSize"] = properties.PageSize;
+                model.PageNo = properties.Page;
+                model.PageSize = properties.PageSize;
                 var indexes = SearchIndexInfoProvider.GetSearchIndexes();
                 List<SelectListItem> addList = new List<SelectListItem>();
                 foreach (SearchIndexInfo index in indexes)
                 {
-                    addList.Add(new SelectListItem() { Text = index.IndexCodeName, Value = index.IndexCodeName });
+                    addList.Add(new SelectListItem() { Text = index.IndexCodeName, Value = index.IndexCodeName, Selected = (index.IndexCodeName == model.IndexName) });
                 }
                 model.Indexes = addList;
             }
@@ -61,12 +60,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             try
             {
                 SearchParameters searchParameters;
-                TempData.Keep("Index");
-                TempData.Keep("PageSize");
-                TempData.Keep("Page");
-                int page = TempData["Page"] != null ? Convert.ToInt32(TempData["Page"].ToString()) : 12;
+                int page = TempData["Page"] != null ? Convert.ToInt32(TempData["Page"].ToString()) : 1;
                 int pageSize = TempData["PageSize"] != null ? Convert.ToInt32(TempData["PageSize"].ToString()) : 12;
                 string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
+                TempData.Keep();
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, page, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
             }
@@ -76,6 +73,27 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             }
             dataList.Items = searchResults.Items;
             return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
+        }
+        [Route("Search/AssignValues")]
+        public ActionResult AssignValues(string page,string pageSize,string index)
+        {
+            bool status = false;
+            try
+            {
+                TempData["Index"] = index;
+                TempData["Page"] = page;
+                TempData["PageSize"] = pageSize;
+                TempData.Keep();
+                status = true;
+            }
+            catch(Exception ex)
+            {
+
+                EventLogProvider.LogException("SmartSearchWidgetController", "AssignValues", ex);
+            }
+       
+            return Json(status, JsonRequestBehavior.AllowGet);
+
         }
 
     }

@@ -1,4 +1,5 @@
-﻿@model Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.SmartSearchWidgetViewModel
+﻿@using Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
+@model SmartSearchWidgetViewModel
 <style>
     #divSearch {
         position: relative;
@@ -11,19 +12,21 @@
 @Html.HiddenFor(x => x.ResultsUrl)
 @Html.HiddenFor(x => x.IndexName)
 <div class="search-block" id="divSearch">
-
     <div class="input-group search-box-cus">
-        @if(Model.LableMode == true) {<label>@Model.LableName</label>}
+        @if (Model.LableMode == true)
+        {<label>@Model.LableName</label>}
         <input type="text" class="form-control searchtextinputwidget" placeholder="@Model.PlaceHolder" aria-describedby="basic-addon2">
-        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" value="@(Model.ButtonName!=null?Model.ButtonName:"Search")">
+        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" value="@(Model.ButtonName!=null?Model.ButtonName:"Search")">
     </div>
 </div>
 @if (Context.Kentico().PageBuilder().EditMode)
 {
-    Html.RenderPartial("~/Views/Shared/Widgets/InlineEditors/_IndexInlineEditor.cshtml", new Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.IndexWidgetPropertes
+    Html.RenderPartial("~/Views/Shared/Widgets/InlineEditors/_IndexInlineEditor.cshtml", new IndexWidgetPropertes
     {
-        PropertyName = nameof(Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.SmartSearchBoxWidgetProperties.Index),
-        Types = Model.Indexes
+        PropertyName = nameof(SmartSearchBoxWidgetProperties.Index),
+        Types = Model.Indexes,
+        Value = Model.IndexName
+
     });
 
 }
@@ -33,8 +36,21 @@
     $('.btnsearchreuslts_@dynamicId').click(function () {
         var text = $(this).prev().val();
         var resultUrl = $(this).attr('data-url');
-        if (text != "" && resultUrl != "") {
-            window.location.href = "/" + resultUrl + "?searchtext=" + text;
-        }
+      var  Page = $(this).attr('data-page');
+       var  PageSize = $(this).attr('data-pageno');
+        var Index = $(this).attr('data-index');
+        $.ajax({
+            url: "/Search/AssignValues?page=" + Page + "&PageSize=" + PageSize + "&index=" + Index,
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data) {
+                    if (text != "" && resultUrl != "") {
+                        window.location.href = "/" + resultUrl + "?searchtext=" + text;
+                    }
+                }
+            }
+        });
     });
 </script>
