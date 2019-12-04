@@ -7,10 +7,10 @@
 
 @{
     //Generate dynamic id
-    string dynamicId = DateTime.Now.Ticks.ToString();
-    string FormTargetId = "RegistrationForm_" + dynamicId;
-    string FormSucces = "RegiterSuccess_" + dynamicId;
-    string FormFailure = "RegisterFailure_" + dynamicId;
+    string registerId = DateTime.Now.Ticks.ToString();
+    string FormTargetId = "RegistrationForm_" + registerId;
+    string FormSucces = "RegiterSuccess_" + registerId;
+    string FormFailure = "RegisterFailure_" + registerId;
 }
 @using (Ajax.BeginForm("Register", "RegistrationForm", new AjaxOptions { HttpMethod = "POST", OnSuccess = FormSucces, OnFailure = FormFailure, UpdateTargetId = FormTargetId }))
 {
@@ -20,8 +20,8 @@
         </div>
     </div>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <span id="RegisterStatus_@dynamicId" style="color:blue;"></span>
-    <span id="RegistrationFaild_@dynamicId"></span>
+    <span id="RegisterStatus_@registerId" style="color:blue;"></span>
+    <span id="RegistrationFaild_@registerId"></span>
     <div class="form-group">
         <label for="FirstName">First Name</label>
         @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control required clearText", @placeholder = "First Name", @id = "FirstName" } })
@@ -47,7 +47,7 @@
         @Html.PasswordFor(model => model.PasswordConfirmation, htmlAttributes: new { @class = "form-control clearText", @placeholder = "Confirm Password", @id = "ConfirmPassword" })
         @Html.ValidationMessageFor(model => model.PasswordConfirmation, "", new { @class = "text-danger" })
     </div>
-    <button type="submit" class="btn btn-primary" id="btnRegisterForm_@dynamicId">Register</button>
+    <button type="submit" class="btn btn-primary" id="btnRegisterForm_@registerId">Register</button>
 }
 <style type="text/css">
     .text-danger {
@@ -55,17 +55,17 @@
     }
 </style>
 <script type="text/javascript">
-    function RegiterSuccess_@(dynamicId)(data) {
+    function RegiterSuccess_@(registerId)(data) {
         if (data.ErrorMessage != "") {
-            $("#RegisterStatus_@dynamicId").text(data.ErrorMessage);
+            $("#RegisterStatus_@registerId").text(data.ErrorMessage);
             if (data.ErrorMessage == "Registration Success..") {
                 $(".clearText").val("");
             }
         }
     }
-    function RegisterFailure_@(dynamicId)(data) {
+    function RegisterFailure_@(registerId)(data) {
         if (data.ErrorMessage != "") {
-            $("#RegistrationFaild_@dynamicId").text(data.ErrorMessage);
+            $("#RegistrationFaild_@registerId").text(data.ErrorMessage);
         }
     }
 </script>
