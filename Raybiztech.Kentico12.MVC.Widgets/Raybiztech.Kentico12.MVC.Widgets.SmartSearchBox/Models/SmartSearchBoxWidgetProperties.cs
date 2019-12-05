@@ -16,17 +16,17 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Search button text", Tooltip= "Sets the text caption of the search button.")]
         [Required(ErrorMessage = ("Please enter button name"))]
         public string ButtonName { get; set; }
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Search label text", Tooltip = "Sets the text displayed before the search textbox.")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 3, Label = "Search label text", Tooltip = "Sets the text displayed before the search textbox.")]
         public string LableName { get; set; }
-        [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 2, Label = "Show search label", Tooltip = "Indicates if the label before the search box should be displayed.")]
+        [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 4, Label = "Show search label", Tooltip = "Indicates if the label before the search box should be displayed.")]
         public bool ShowSearchLabel { get; set; }
 
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Page Size")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 6, Label = "Page Size")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
         [Required(ErrorMessage = ("Please enter page size"))]
         public string PageSize { get; set; } = "12";
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Page")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 5, Label = "Page")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
         [Required(ErrorMessage = ("Please enter page number"))]
