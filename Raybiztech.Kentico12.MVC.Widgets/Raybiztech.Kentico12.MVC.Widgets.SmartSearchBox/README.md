@@ -10,8 +10,8 @@ Install the Raybiztech.Kentico12.MVC.Widget.SmartSearchBox.12.0.29 NuGet Package
 
 This is a widget which allows you to add a SmartSearchBox to your screen with certain attributes that can be configured while adding. The properties that can be configured are:
 
-- Search Result Url*
-- Button Text*
+- Search results page URL*
+- Search button text*
 - Page*
 - Page Size*
 
