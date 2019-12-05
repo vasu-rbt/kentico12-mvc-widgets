@@ -12,6 +12,8 @@ This is a widget which allows you to add a SmartSearchBox to your screen with ce
 
 - Search results page URL*
 - Search button text*
+- Page*
+- Page Size*
 *Required fields
 
 Intialize the Attribute routing  in route.config file in App start folder.

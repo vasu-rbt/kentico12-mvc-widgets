@@ -24,10 +24,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Page Size")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
+        [Required(ErrorMessage = ("Please enter page size"))]
         public string PageSize { get; set; } = "12";
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Page")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
+        [Required(ErrorMessage = ("Please enter page number"))]
         public string Page { get; set; } = "1";
     }
 }
