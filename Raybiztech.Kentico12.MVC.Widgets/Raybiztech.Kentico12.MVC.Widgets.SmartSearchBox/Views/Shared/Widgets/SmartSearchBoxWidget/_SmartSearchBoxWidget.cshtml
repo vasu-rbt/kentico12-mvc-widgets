@@ -15,7 +15,7 @@
     <div class="input-group search-box-cus">
         @if (Model.LableMode == true)
         {<label>@Model.LableName</label>}
-        <input type="text" class="form-control searchtextinputwidget" placeholder="@Model.PlaceHolder" aria-describedby="basic-addon2">
+        <input type="text" class="form-control searchtextinputwidget_@dynamicId" placeholder="@Model.PlaceHolder" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" aria-describedby="basic-addon2">
         <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" value="@(Model.ButtonName!=null?Model.ButtonName:"Search")">
     </div>
 </div>
@@ -34,23 +34,47 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
     $('.btnsearchreuslts_@dynamicId').click(function () {
+        
         var text = $(this).prev().val();
         var resultUrl = $(this).attr('data-url');
       var  Page = $(this).attr('data-page');
        var  PageSize = $(this).attr('data-pageno');
         var Index = $(this).attr('data-index');
+
+        SearchResult(text, resultUrl, Page, PageSize, Index)
+        });
+
+    $('.searchtextinputwidget_@dynamicId').on('keypress', function(event) {
+
+        if (event.keyCode == 13) {
+            var text = $(this).val();
+            var resultUrl = $(this).attr('data-url');
+            var Page = $(this).attr('data-page');
+            var PageSize = $(this).attr('data-pageno');
+            var Index = $(this).attr('data-index');
+            SearchResult(text, resultUrl, Page, PageSize ,Index)
+        }
+
+    });
+
+    function SearchResult(text, resultUrl, Page, PageSize, Index)
+    {
         $.ajax({
-            url: "/Search/AssignValues?page=" + Page + "&PageSize=" + PageSize + "&index=" + Index,
+            url: "/Search/AssignValues?index=" + Index,
             type: "POST",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 if (data) {
                     if (text != "" && resultUrl != "") {
-                        window.location.href = "/" + resultUrl + "?searchtext=" + text;
+                        window.location.href = "/" + resultUrl + "?searchtext=" + text + "&page=" + Page + "&pagesize=" + PageSize;
                     }
+
                 }
             }
         });
-    });
-</script>
+
+    }
+          
+ </script>
+        

@@ -13,7 +13,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
 {
     public class SmartSearchWidgetController : WidgetController<SmartSearchBoxWidgetProperties>
     {
-        public SmartSearchWidgetController()
+    
+    public SmartSearchWidgetController()
         {
 
         }
@@ -53,18 +54,18 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
         }
 
         [Route("Search/{searchresults}")]
-        public ActionResult SearchResults(string searchtext)
+        public ActionResult SearchResults(string searchtext, string page, string pagesize)
         {
             SearchResult searchResults = new SearchResult();
             SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
             try
             {
                 SearchParameters searchParameters;
-                int page = TempData["Page"] != null ? Convert.ToInt32(TempData["Page"].ToString()) : 1;
-                int pageSize = TempData["PageSize"] != null ? Convert.ToInt32(TempData["PageSize"].ToString()) : 12;
+                int pageNo = page != null ? Convert.ToInt32(page) : 1;
+                int pageSize = pagesize != null ? Convert.ToInt32(pagesize) : 12;
                 string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
                 TempData.Keep();
-                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, page, pageSize, MembershipContext.AuthenticatedUser);
+                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
             }
             catch (Exception ex)
@@ -75,14 +76,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
         }
         [Route("Search/AssignValues")]
-        public ActionResult AssignValues(string page,string pageSize,string index)
+        public ActionResult AssignValues(string index)
         {
             bool status = false;
             try
             {
                 TempData["Index"] = index;
-                TempData["Page"] = page;
-                TempData["PageSize"] = pageSize;
                 TempData.Keep();
                 status = true;
             }
