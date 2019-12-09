@@ -3,17 +3,100 @@
 
 @if (Model.Items.Count > 0)
 {
-    foreach (var item in Model.Items)
-    {
-        TreeNode node = (TreeNode)item.Data;
-        <h3>@item.Title</h3>
-        <span style="color: #008000">
-            @node.NodeAliasPath
-        </span>
+    @Html.HiddenFor(x => x.SearchText)
+    <div class="search-results">
+        @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
+        {
+            TreeNode node = (TreeNode)item.Data;
+            <h3>@item.Title</h3>
+            <span style="color: #008000">
+                @node.NodeAliasPath
+            </span>
 
-    }
+
+        }
+    </div>
 }
 else
 {
     <span style="color:red">Results are not found </span>
 }
+@if (Model.Items.Count > 0)
+{
+    <ul class="pagination">
+        @{
+            int totalItemsCount = Model.Items.Count;
+            int pageSize = Convert.ToInt32(Model.PageSize);
+            int pagesCount = totalItemsCount / pageSize;
+        }
+        <li>
+            <a class="Previousresult" href="javascript:void(0);" data-pageSize="@pageSize" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        @for (int i = 1; i <= pagesCount; i++)
+        {
+            <li class="page-item">
+                <a class="page-link" href="javascript:void(0);" data-page="@i" data-pageSize="@pageSize">@i</a>
+            </li>
+        }
+        <li>
+            <a class="nextpageresult" href="javascript:void(0);" data-pageSize="@pageSize" data-pagescount="@pagesCount" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    var pagenumber = 1;
+    $('.page-link').click(function () {
+        var searchtext = $('#SearchText').val();
+        var pageno = $(this).attr('data-page');
+        var pageSize = $(this).attr('data-pageSize');
+        pagenumber = $(this).attr('data-page');
+        PartailalResult(searchtext, pageno, pageSize)
+
+    });
+
+    $('.nextpageresult').click(function () {
+        var pagescount = $(this).attr('data-pagescount');
+        if (parseInt(pagenumber) <= parseInt(pagescount)) {
+            var searchtext = $('#SearchText').val();
+            var pageno = parseInt(pagenumber) + 1;
+            pagenumber = parseInt(pagenumber) + 1;
+            var pageSize = $(this).attr('data-pageSize');
+            PartailalResult(searchtext, pageno, pageSize)
+        }
+    });
+
+    $('.Previousresult').click(function () {
+        if (parseInt(pagenumber) > 1)
+            {
+            var searchtext = $('#SearchText').val();
+            var pageno = parseInt(pagenumber) - 1;
+            pagenumber = parseInt(pagenumber) -1;
+            var pageSize = $(this).attr('data-pageSize');
+            PartailalResult(searchtext, pageno, pageSize)
+        }
+    });
+    function PartailalResult(searchtext, pageno, pageSize) {
+         $.ajax({
+            type: "GET",
+            url: '@Url.Action("PaginationSearchResults", "SmartSearchWidget")',
+            data: { searchtext: searchtext, page: pageno, pagesize: pageSize },
+            dataType: "html",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('.search-results').html("");
+                $('.search-results').html(data);
+                var href = new URL(window.location.href.toString());
+                href.searchParams.set('page', pagenumber);
+                history.pushState(null, null, href);
+            }
+        });
+
+    }
+
+</script>

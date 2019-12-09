@@ -15,6 +15,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         public string PageNo { get; set; }
         public string PageSize { get; set; }
         public string Index { get; set; }
+        public string SearchText { get; set; }
+        public string TotalResultCount { get; set; }
         public List<SelectListItem> Indexes { get; set; }
         public List<SearchResultItem> Items { get; set; }
     }

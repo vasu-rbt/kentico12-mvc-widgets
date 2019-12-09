@@ -37,6 +37,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 model.LableMode = properties.ShowSearchLabel;
                 model.PageNo = properties.Page;
                 model.PageSize = properties.PageSize;
+                model.TotalResultCount = properties.TotalResults;
                 var indexes = SearchIndexInfoProvider.GetSearchIndexes();
                 List<SelectListItem> addList = new List<SelectListItem>();
                 foreach (SearchIndexInfo index in indexes)
@@ -63,8 +64,41 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 SearchParameters searchParameters;
                 int pageNo = page != null ? Convert.ToInt32(page) : 1;
                 int pageSize = pagesize != null ? Convert.ToInt32(pagesize) : 12;
+                int totalCount = TempData["count"] != null ? Convert.ToInt32(TempData["count"].ToString()) : 40;
                 string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
+                dataList.PageSize = Convert.ToString(pageSize);
+                dataList.SearchText = searchtext;
                 TempData.Keep();
+                dataList.PageNo =Convert.ToString(pageNo);
+                dataList.PageSize = Convert.ToString(pageSize);
+
+                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, totalCount, MembershipContext.AuthenticatedUser);
+                searchResults = SearchHelper.Search(searchParameters);
+            }
+            catch (Exception ex)
+            {
+                EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
+            }
+            dataList.Items = searchResults.Items;
+
+            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
+        }
+
+        public ActionResult PaginationSearchResults(string searchtext, string page, string pagesize)
+        {
+            SearchResult searchResults = new SearchResult();
+            SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
+            try
+            {
+                SearchParameters searchParameters;
+                int pageNo = page != null ? Convert.ToInt32(page) : 1;
+                int pageSize = pagesize != null ? Convert.ToInt32(pagesize) : 12;
+                string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
+                dataList.PageSize = Convert.ToString(pageSize);
+                TempData.Keep();
+                dataList.PageNo = Convert.ToString(pageNo);
+                dataList.PageNo = Convert.ToString(pageSize);
+                dataList.SearchText = searchtext;
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
             }
@@ -73,15 +107,16 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
             }
             dataList.Items = searchResults.Items;
-            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
+
+            return PartialView("Widgets/SmartSearchBoxWidget/_PaginationView", dataList);
         }
-        [Route("Search/AssignValues")]
-        public ActionResult AssignValues(string index)
+        public ActionResult AssignValues(string index,string count)
         {
             bool status = false;
             try
             {
                 TempData["Index"] = index;
+                TempData["count"] = count;
                 TempData.Keep();
                 status = true;
             }
