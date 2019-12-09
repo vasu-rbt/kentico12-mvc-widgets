@@ -1,0 +1,7 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+            using (Html.BeginForm("SignOut", "SignOutWidget"))
+            { 
+                <input type="submit" value="Sign Out"/>
+            }
+}

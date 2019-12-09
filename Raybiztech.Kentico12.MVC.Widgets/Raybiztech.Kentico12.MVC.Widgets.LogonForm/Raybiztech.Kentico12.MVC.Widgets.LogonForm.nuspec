@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widget.LogonForm</id>
+    <version>1.0.0</version>
+    <title>LogonForm Widget</title>
+    <authors>Srikanth.Nasa@raybiztech.com</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays a form that allows users to log into the website. Authentication requires a valid user name and password.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget LogonForm</tags>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll" />
+    <file src="Views\Shared\Widgets\LogonFormWidget\_LogonFormWidget.cshtml" target="content\Views\Shared\Widgets\LogonFormWidget\_LogonFormWidget.cshtml" />
+  </files>
+</package>

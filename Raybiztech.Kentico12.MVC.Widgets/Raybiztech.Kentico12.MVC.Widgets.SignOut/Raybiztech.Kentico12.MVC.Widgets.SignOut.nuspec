@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widget.SignOut</id>
+    <version>1.0.0</version>
+    <title>SignOut Widget</title>
+    <authors>Srikanth.Nasa@raybiztech.com</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sign Out user from the website and Displays the user name of the current user.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget SignOut</tags>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.SignOut.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.SignOut.dll" />
+    <file src="Views\Shared\Widgets\SignOutWidget\_SignOutWidget.cshtml" target="content\Views\Shared\Widgets\SignOutWidget\_SignOutWidget.cshtml" />
+  </files>
+</package>
