@@ -1,0 +1,38 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.MessageBoard.Models.MessageBoardViewModel
+<div class="section">
+    @using (Ajax.BeginForm("Comments", "MessageBoard", new AjaxOptions { HttpMethod = "POST", OnSuccess = "CommentOnSuccess", OnFailure = "CommentOnFailure", UpdateTargetId = "divComments" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="event_form">
+            @Html.TextAreaFor(model => model.UserComments, new { @class = "form-control  txt-comment", @placeholder = "Comment", @required = "required" })
+            @*@Html.ValidationMessageFor(model => model.UserComments, "", new { @class = "text-danger comment-error-msg" })*@
+            @Html.HiddenFor(model => model.PageUrl, new { @class = "page-url" })
+            @Html.HiddenFor(model => model.CustomtableName)
+
+            <button class="btn btn-primary pull-right btn-lg " id="CommentsId" type="submit" data-toggle="modal" data-target="#postComment">Submit</button>
+        </div>
+    }
+</div>
+<style type="text/css">
+    .txt-comment {
+        width: 1080px;
+        height: 117px;
+    }
+</style>
+<script src="~/Kentico/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(".page-url").val(window.location.pathname);
+    function CommentOnSuccess() {
+        alert("Successfully Submitted");
+        $(".txt-comment").val("");
+    }
+    function CommentOnFailure() {
+        var checklogin =@User.Identity.IsAuthenticated.ToString().ToLower();
+        if (!checklogin == true) {
+            alert("Please Sign in/Register");
+        }
+        else {
+            alert("Please Check Custom table name");
+        }
+    }
+</script>
