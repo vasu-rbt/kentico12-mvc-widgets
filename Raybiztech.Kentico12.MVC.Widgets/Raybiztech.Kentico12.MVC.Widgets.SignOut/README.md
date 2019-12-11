@@ -8,7 +8,7 @@ Install the Raybiztech.Kentico12.MVC.Widgets.SignOut NuGet Package to your Kenti
 
 # Widget
 
-This is a widget which allows you to add a SignoutButton to your screen with certain fields.When click on this Button User will logout form site.
+This is a widget which allows you to add a SignoutButton to your screen.When click on this Button User will logout from site.
 
 # Author
 
