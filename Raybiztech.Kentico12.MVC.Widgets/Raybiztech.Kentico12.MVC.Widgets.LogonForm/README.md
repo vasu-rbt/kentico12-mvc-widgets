@@ -8,7 +8,7 @@ Install the Raybiztech.Kentico12.MVC.Widgets.LogonForm NuGet Package to your Ken
 
 If you have Startup.Auth.cs in your solution add Below Code.
 
-<pre>
+&lt; pre&gt;
 using CMS.Helpers;
 using CMS.SiteProvider;
 using Kentico.Membership;
@@ -23,25 +23,25 @@ using System.Web.Mvc;
 [assembly: OwinStartup(typeof(Startup))]
 namespace &lt;YourSolution Namae&gt;
 {
-    /// <summary>
+    /// &lt; summary&gt;
     /// Wraps application authentication configuration.
-    /// </summary>
+    /// &lt; /summary&gt;
     public class Startup
     {
-        /// <summary>
+        /// &lt; summary&gt;
         /// The application authentication cookie name
-        /// </summary>
+        /// &lt; /summary&gt;
         private const string AUTHENTICATION_COOKIE_NAME = "owin.authentication";
 
 
-        /// <summary>
+        /// &lt; summary&gt;
         /// Configures the application authentication.
-        /// </summary>
+        /// &lt; /summary&gt;
         public void Configuration(IAppBuilder app)
         {
             // Register Kentico Membership identity implementation
-            app.CreatePerOwinContext(() => UserManager.Initialize(app, new UserManager(new UserStore(SiteContext.CurrentSiteName))));
-            app.CreatePerOwinContext<SignInManager>(SignInManager.Create);
+            app.CreatePerOwinContext(() =&gt; UserManager.Initialize(app, new UserManager(new UserStore(SiteContext.CurrentSiteName))));
+            app.CreatePerOwinContext&lt; SignInManager&gt;(SignInManager.Create);
             // Configure the sign in cookie
             UrlHelper urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
             app.UseCookieAuthentication(new CookieAuthenticationOptions
@@ -59,7 +59,7 @@ namespace &lt;YourSolution Namae&gt;
         }
     }
 }
-</pre>
+&lt; /pre&gt;
 
 
 # Widget
