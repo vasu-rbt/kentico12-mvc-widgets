@@ -550,6 +550,7 @@
     <None Include="Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="README.md" />
     <None Include="Views\Shared\Widgets\RegistrationFormWidget\_RegistrationFormWidget.cshtml" />
   </ItemGroup>
   <ItemGroup>
