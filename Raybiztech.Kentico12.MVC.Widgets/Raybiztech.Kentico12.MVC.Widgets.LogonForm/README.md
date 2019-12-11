@@ -21,7 +21,7 @@ using System.Web;
 using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace <YourSolution Namae>
+namespace &lt;YourSolution Namae&gt;
 {
     /// <summary>
     /// Wraps application authentication configuration.
