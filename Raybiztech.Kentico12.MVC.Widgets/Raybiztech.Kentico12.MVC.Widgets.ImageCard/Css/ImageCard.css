@@ -1,0 +1,97 @@
+﻿.category-widget .content-section h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+div[class*=" col-"], div[class^=col-] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.category-widget {
+    background: #edede5;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+    .category-widget .content-section {
+        padding: 20px;
+    }
+
+a {
+    font-family: DINPro-Regular;
+    color: #000;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+.image-section img, .img-box img {
+    width: 100%;
+}
+
+.image-section img {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.image-section img, .img-box img {
+    width: 100%;
+}
+
+.image-section img {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.category-widget .view-more i {
+    font-size: 32px;
+}
+
+.white i {
+    color: #fff;
+    font-size: 22px;
+}
+.imagecard-widget .article-content {
+    background-color: #526876;
+    color: #fff;
+    margin-bottom: 15px;
+    padding: 40px 20px 20px
+}
+
+.imagecard-widget h5 {
+    margin: 0
+}
+
+    .imagecard-widget h5 a {
+        color: #fff;
+        font-weight: 100;
+        text-decoration: none
+    }
+
+.imagecard-widget .img-place-holder .img-box {
+    margin-bottom: 20px
+}
+
+    .imagecard-widget .img-place-holder .img-box img {
+        margin: auto;
+        width: 80px
+    }
