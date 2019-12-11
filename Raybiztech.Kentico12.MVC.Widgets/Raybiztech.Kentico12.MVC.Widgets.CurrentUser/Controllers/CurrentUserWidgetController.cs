@@ -3,7 +3,7 @@ using Raybiztech.Kentico12.MVC.Widgets.CurrentUser.Controllers;
 using Raybiztech.Kentico12.MVC.Widgets.CurrentUser.Models;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.CurrentUser", typeof(CurrentUserWidgetController), "Current User Widget", Description = "Displays the user name and full name of the current user.", IconClass = "icon-user")]
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.CurrentUser", typeof(CurrentUserWidgetController), "Current user", Description = "Displays the user name and full name of the current user.", IconClass = "icon-user")]
 
 namespace Raybiztech.Kentico12.MVC.Widgets.CurrentUser.Controllers
 {

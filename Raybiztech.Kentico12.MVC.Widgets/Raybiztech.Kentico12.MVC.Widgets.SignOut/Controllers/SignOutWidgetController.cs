@@ -6,7 +6,7 @@ using Microsoft.Owin.Security;
 using System.Web;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.SignOut", typeof(SignOutWidgetController), "Sign out button Widget", Description = "Sign Out user from the website and Displays the user name of the current user.", IconClass = "icon-user")]
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.SignOut", typeof(SignOutWidgetController), "Sign out button", Description = "Displays a button that allows users to log out.", IconClass = "icon-user")]
 namespace Raybiztech.Kentico12.MVC.Widgets.SignOut.Controllers
 {
     public class SignOutWidgetController : WidgetController<SignOutWidgetProperties>
