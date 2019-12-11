@@ -6,7 +6,9 @@ Displays a Logonform that allows users to log into the website. Authentication r
 
 Install the Raybiztech.Kentico12.MVC.Widgets.LogonForm NuGet Package to your Kentico 12 MVC Site.
 
-If you have Startup.Auth.cs in your solution add Below Code.
+Install   Microsoft.Owin.Host.SystemWeb.3.1.0.
+
+If you have Startup.Auth.cs in your solution add Below Code. If you don't have Create Startup.Auth.cs and add below code.
 
 <pre>
 using CMS.Helpers;
@@ -21,7 +23,7 @@ using System.Web;
 using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace <YourSolution Namae>
+namespace &lt;YourSolution Namae&gt;
 {
     /// &lt;summary&gt;
     /// Wraps application authentication configuration.
@@ -60,8 +62,6 @@ namespace <YourSolution Namae>
     }
 }
 </pre>
-
-
 # Widget
 
 This is a widget which allows you to add a LognForm to your screen with certain fields.
