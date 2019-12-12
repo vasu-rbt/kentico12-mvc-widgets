@@ -9,55 +9,55 @@
         <!-- items being paged -->
         @if (Model.Items.Count > 0)
         {
-        <ul>
+            <ul>
 
-            @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
-            {
-            TreeNode node = (TreeNode)item.Data;
-            <h3>@item.Title</h3>
-            <span style="color: #008000">
-                @node.NodeAliasPath
-            </span>
+                @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
+                {
+                    TreeNode node = (TreeNode)item.Data;
+                    <h3>@item.Title</h3>
+                    <span style="color: #008000">
+                        @node.NodeAliasPath
+                    </span>
 
-            }
-        </ul>
+                }
+            </ul>
         }
         else
         {
-        <span style="color:red">Results are not found </span>
+            <span style="color:red">Results are not found </span>
         }
 
         <!-- pager -->
         @if (Model.Pager.EndPage > 1)
         {
-        <ul class="pagination">
-            @if (Model.Pager.CurrentPage > 1)
-            {
-            <li>
-                <a href="javascript:void(0);" data-page="1" class="page-link">First</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage - 1)" class="page-link"> <span aria-hidden="true">&laquo;</span> </a>
-            </li>
-            }
+            <ul class="pagination">
+                @if (Model.Pager.CurrentPage > 1)
+                {
+                    <li>
+                        <a href="javascript:void(0);" data-page="1" class="page-link"><span aria-hidden="true">&#60;</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage - 1)" class="page-link"> <span aria-hidden="true">&laquo;</span> </a>
+                    </li>
+                }
 
-            @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
-            {
-            <li class="@(page == Model.Pager.CurrentPage ? " active" : "" )">
-                <a href="javascript:void(0);" data-page="@(page)" class="page-link">@page</a>
-            </li>
-            }
+                @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                {
+                    <li class="@(page == Model.Pager.CurrentPage ? " active" : "" )">
+                        <a href="javascript:void(0);" data-page="@(page)" class="page-link">@page</a>
+                    </li>
+                }
 
-            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
-            {
-            <li>
-                <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage + 1)" aria-label="Next" class="page-link">  <span aria-hidden="true">&raquo;</span> </a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" data-page="@(Model.Pager.TotalPages)" class="page-link">Last</a>
-            </li>
-            }
-        </ul>
+                @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                {
+                    <li>
+                        <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage + 1)" aria-label="Next" class="page-link">  <span aria-hidden="true">&raquo;</span> </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-page="@(Model.Pager.TotalPages)" class="page-link"><span aria-hidden="true">&#62;</span></a>
+                    </li>
+                }
+            </ul>
         }
     </div>
 

@@ -20,12 +20,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         public string LableName { get; set; }
         [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 4, Label = "Show search label", Tooltip = "Indicates if the label before the search box should be displayed.")]
         public bool ShowSearchLabel { get; set; }
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 5, Label = "Page Size")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 5, Label = "Page Size", Tooltip = "Determine the maximum number of records displayed per page.")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
         [Required(ErrorMessage = ("Please enter page size"))]
         public string PageSize { get; set; } = "10";
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 7, Label = " Group Size")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 7, Label = " Group Size", Tooltip = "Sets the maximum amount of page number links that will be displayed together.Any additional links that do not fit can be accessed in the next or previous group.")]
         [EditingComponentProperty("Size", 100)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
         [Required(ErrorMessage = ("Please enter Group Size"))]
