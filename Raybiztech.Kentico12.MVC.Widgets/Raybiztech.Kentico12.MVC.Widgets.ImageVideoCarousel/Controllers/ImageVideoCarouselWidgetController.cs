@@ -14,7 +14,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Controllers
         public ActionResult Index()
         {
             var properties = GetProperties();
-            var selectedPagePath = properties.Path == null ? null : properties.Path.FirstOrDefault().NodeAliasPath;
+            var selectedPagePath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
             var page = DocumentHelper.GetDocuments()
                        .Columns("NodeAliasPath", "ClassName","DocumentId","NodeOrder","NodeId")
                        .WhereEquals("NodeAliasPath", (!String.IsNullOrEmpty(selectedPagePath)) ? selectedPagePath : null).ToList();
@@ -32,7 +32,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Controllers
             return PartialView("Widgets/CarouselWidget/_ImageVideoCarouselWidget", new ImageVideoCarouselWidgetViewModel
             {
                 Path = treeNodeData.ToList(),
-                Visible = properties.Visible
+                Visible = properties.Visible,
+                Item= selectedPagePath
             });
         }
     }
