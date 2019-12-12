@@ -56,9 +56,8 @@ Enter the search results page URL field based on below attribute routing format
         }
 </pre>
 
-Intialize the Attribute routing  in RouteConfig.cs file in App_Start folder.
-
-<pre>
+Intialize the ' routes.MapMvcAttributeRoutes()'  in RouteConfig.cs file in App_Start folder.
+ <pre>
         public static void RegisterRoutes(RouteCollection routes)
         {
             var defaultCulture = CultureInfo.GetCultureInfo("en-US");
@@ -70,18 +69,11 @@ Intialize the Attribute routing  in RouteConfig.cs file in App_Start folder.
             routes.Kentico().MapRoutes();
             //Intialize the Atribute routing hear.
             routes.MapMvcAttributeRoutes();
-
             // Redirect to administration site if the path is "admin"
             routes.MapRoute(
                 name: "Admin",
                 url: "admin",
                 defaults: new { controller = "AdminRedirect", action = "Index" }
-            );
-			
-            route = routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}",
-                defaults: new { culture = defaultCulture.Name, controller = "Home", action = "Index" },
             );
 
 		}
