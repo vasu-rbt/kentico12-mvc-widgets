@@ -38,7 +38,6 @@ Enter the search results page URL field based on below attribute routing format
                 TempData.Keep();
                 dataList.PageNo = Convert.ToString(pageNo);
                 dataList.PageSize = Convert.ToString(pageSize);
-               
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
                 dataList.TotalResultCount = searchResults.TotalNumberOfResults;
@@ -50,8 +49,6 @@ Enter the search results page URL field based on below attribute routing format
                 EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
             }
             dataList.Items = searchResults.Items;
-
-
             return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
         }
 </pre>

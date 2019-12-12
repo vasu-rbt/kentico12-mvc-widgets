@@ -73,7 +73,6 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 TempData.Keep();
                 dataList.PageNo = Convert.ToString(pageNo);
                 dataList.PageSize = Convert.ToString(pageSize);
-               
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
                 dataList.TotalResultCount = searchResults.TotalNumberOfResults;
