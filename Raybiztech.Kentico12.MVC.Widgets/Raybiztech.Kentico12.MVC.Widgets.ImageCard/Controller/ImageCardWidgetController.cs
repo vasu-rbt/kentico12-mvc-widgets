@@ -7,7 +7,7 @@ using Raybiztech.Kentico12.MVC.Widgets.ImageCard.Controller;
 using System;
 using System.Collections.Generic;
 
-[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.ImageCard", typeof(ImageCardWidgetController), "Image Card", Description = "It displays Card from the Image Card", IconClass = "icon-l-cols-3")]
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.ImageCard", typeof(ImageCardWidgetController), "Image Card", Description = "Displays image, caption with a target link using pages", IconClass = "icon-l-cols-3")]
 namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Controller
 {
     public class ImageCardWidgetController : WidgetController<ImageCardWidgetProperties>
@@ -16,7 +16,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Controller
         {
             var properties = GetProperties();
 
-            var selectedPagePath = properties.Path == null ? "/" : properties.Path.FirstOrDefault().NodeAliasPath;
+            var selectedPagePath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
             var page = DocumentHelper.GetDocuments()
                        .Columns("NodeAliasPath", "ClassName", "NodeOrder", "NodeId","DocumentId")
                        .WhereEquals("NodeAliasPath", (!String.IsNullOrEmpty(selectedPagePath)) ? selectedPagePath : null).OrderBy(properties.OrderBy).ToList();
@@ -34,8 +34,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Controller
             return PartialView("Widgets/ImageCardWidget/_ImageCardWidget", new ImageCardWidgetViewModel
             {
                 Path = treeNodeData,
-                Visible = properties.Visible
-
+                Visible = properties.Visible,
+                SelectedValue= selectedPagePath
             });
         }
     }

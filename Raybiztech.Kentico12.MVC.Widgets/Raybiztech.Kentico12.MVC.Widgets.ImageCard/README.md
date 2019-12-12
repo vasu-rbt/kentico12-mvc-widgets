@@ -17,6 +17,7 @@ This is a widget which allows you to add a ImageCard to your screen with certain
 - Visible
 
 *Required fields
+
 In this ImageCard widget Properties it is mandatory to give 'ImageCard' as ClassName.
 
 # Page Type
@@ -43,4 +44,4 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 # Compatibility
 
-This widget has been tested on Kentico 12 MVC version (12.0.29). 
+This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12.0.29 MVC instance and higher

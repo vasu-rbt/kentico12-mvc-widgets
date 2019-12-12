@@ -8,5 +8,6 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model
     {
         public List<TreeNode> Path { get; set; }
         public bool Visible { get; set; }
+        public string SelectedValue { get; set; }
     }
 }

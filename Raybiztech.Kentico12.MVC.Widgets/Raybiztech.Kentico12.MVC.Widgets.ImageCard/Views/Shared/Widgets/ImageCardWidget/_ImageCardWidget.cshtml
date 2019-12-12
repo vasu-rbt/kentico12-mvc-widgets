@@ -5,39 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <div class="container">
     <div class="row">
-        @if (Model.Path.Count > 0 && Model.Visible)
+        @if (Model.Visible && Model.SelectedValue != "")
         {
-            foreach (var cards in Model.Path)
+            if (Model.Path.Count > 0)
             {
-                string text = cards.GetValue("Content", "");
-                string targetUrl = cards.GetValue("TargetUrl", "");
-                string imageUrl = cards.GetValue("Image", "");
-                if (text != "" && imageUrl != "")
+                foreach (var cards in Model.Path)
                 {
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <a href="@targetUrl" target="_blank">
-                            <div class="category-widget">
-                                <div class="content-section" data-mh="content-section">
-                                    <h5 class="more">@text </h5>
+                    string text = cards.GetValue("Content", "");
+                    string targetUrl = cards.GetValue("TargetUrl", "");
+                    string imageUrl = cards.GetValue("Image", "");
+                    if (text != "" && imageUrl != "")
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <a href="@targetUrl" target="_blank">
+                                <div class="category-widget">
+                                    <div class="content-section" data-mh="content-section">
+                                        <h5 class="more">@text </h5>
+                                    </div>
+                                    <div class="image-section">
+                                        <img src="@imageUrl" />
+                                    </div>
                                 </div>
-                                <div class="image-section">
-                                    <img src="@imageUrl" />
-                                </div>
-                                <div class="view-more white">
-                                    <i class="fa fa-angle-double-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    }
                 }
             }
-         }
-        else
-        {
-        }
-        @if (Model.Path.Count == 0)
-        {
-            <h4>No Data Found.....!</h4>
+            else
+            {
+                <h4>No Data Found...!</h4>
+            }
         }
     </div>
     <div class="clearfix"></div>
@@ -57,34 +54,6 @@
                 });
                 $('.category-widget .content-section').height(highestBox);
             }
-        });
-        var showChar = 150;
-        var moretext = "...";
-        var lesstext = "...";
-        $('.more').each(function () {
-            var content = $(this).html();
-            if (content.length > showChar) {
-                var show_content = content.substr(0, showChar);
-                var hide_content = content.substr(showChar, content.length - showChar);
-                var html = show_content + '<span class="moreelipses">' +
-                    '</span><span class="remaining-content"><span>' + hide_content +
-                    '</span><a href="" class="morelink">' + moretext +
-                    '</a></span>';
-                $(this).html(html);
-            }
-        });
-
-        $(".morelink").click(function () {
-            if ($(this).hasClass("less")) {
-                $(this).removeClass("less");
-                $(this).html(moretext);
-            } else {
-                $(this).addClass("less");
-                $(this).html(lesstext);
-            }
-            $(this).parent().prev().toggle();
-            $(this).prev().toggle();
-            return false;
         });
     });
 </script>

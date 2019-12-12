@@ -8,7 +8,7 @@
     <owners>Ray Business Technologies Pvt Ltd.</owners>
     <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
 	 <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	   <description>It allows editors to add ImageCard.</description>
+	   <description>Displays image, caption with a target link using pages</description>
 	    <releaseNotes>Initial Release</releaseNotes>
 		 <copyright>Copyright 2019</copyright>
     <tags>Raybiztech Kentico12 Kentico MVC Widget ImageCard</tags>
