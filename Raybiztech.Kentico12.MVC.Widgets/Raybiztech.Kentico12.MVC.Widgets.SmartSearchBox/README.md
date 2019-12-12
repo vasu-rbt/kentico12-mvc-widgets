@@ -1,4 +1,4 @@
-# SmartSearchBox
+# Smart SearchBox
 
 Provides a text box where users can enter search expressions. Searching redirects users to a page that displays the search results. The indexes used by the search are specified by the widget displaying the results. You can configure the Smart search box to display results instantly while users type the search text.
 
