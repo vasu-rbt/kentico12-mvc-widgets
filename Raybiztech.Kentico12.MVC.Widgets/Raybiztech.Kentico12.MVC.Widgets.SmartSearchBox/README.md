@@ -53,7 +53,7 @@ Enter the search results page URL field based on below attribute routing format
         }
 </pre>
 
-Intialize the ' routes.MapMvcAttributeRoutes()'  in RouteConfig.cs file in App_Start folder.
+Intialize the ' routes.MapMvcAttributeRoutes()' at the top  in RouteConfig.cs->RegisterRoutes() file in App_Start folder.
  <pre>
         public static void RegisterRoutes(RouteCollection routes)
         {
