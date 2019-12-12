@@ -15,8 +15,8 @@
     <div class="input-group search-box-cus">
         @if (Model.LableMode == true)
         {<label>@Model.LableName</label>}
-        <input type="text" class="form-control searchtextinputwidget_@dynamicId" placeholder="@Model.PlaceHolder" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" data-result="@Model.TotalResultCount" aria-describedby="basic-addon2">
-        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" data-result="@Model.TotalResultCount" value="@(Model.ButtonName!=null?Model.ButtonName:" Search")">
+        <input type="text" class="form-control searchtextinputwidget_@dynamicId" placeholder="@Model.PlaceHolder" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" data-GroupSize="@Model.GroupSize" aria-describedby="basic-addon2">
+        <input type="button" id="basic-addon2" class="btnsearchreuslts_@dynamicId" data-url="@Model.ResultsUrl" data-page="@Model.PageNo" data-pageno="@Model.PageSize" data-index="@Model.IndexName" data-GroupSize="@Model.GroupSize" value="@(Model.ButtonName!=null?Model.ButtonName:" Search")">
     </div>
 </div>
 @if (Context.Kentico().PageBuilder().EditMode)
@@ -40,9 +40,8 @@
         var Page = $(this).attr('data-page');
         var PageSize = $(this).attr('data-pageno');
         var Index = $(this).attr('data-index');
-        var TotalCount = $(this).attr('data-result');
-
-        SearchResult(text, resultUrl, Page, PageSize, Index, TotalCount)
+        var Size = $(this).attr('data-GroupSize')
+        SearchResult(text, resultUrl, Page, PageSize, Index, Size)
     });
 
     $('.searchtextinputwidget_@dynamicId').on('keypress', function (event) {
@@ -53,31 +52,28 @@
             var Page = $(this).attr('data-page');
             var PageSize = $(this).attr('data-pageno');
             var Index = $(this).attr('data-index');
-            var TotalCount = $(this).attr('data-result');
-            SearchResult(text, resultUrl, Page, PageSize, Index, TotalCount)
+            var Size = $(this).attr('data-GroupSize')
+            SearchResult(text, resultUrl, Page, PageSize, Index, Size)
         }
 
     });
 
-    function SearchResult(text, resultUrl, Page, PageSize, Index, TotalCount) {
+    function SearchResult(text, resultUrl, Page, PageSize, Index, Size) {
         $.ajax({
             type: "GET",
             url: '@Url.Action("AssignValues", "SmartSearchWidget")',
-            data: { index: Index, count: TotalCount },
-
+            data: { index: Index, groupsize: Size, pagesize: PageSize},
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 if (data) {
                     if (text != "" && resultUrl != "") {
-                        window.location.href = "/" + resultUrl + "?searchtext=" + text + "&page=" + Page + "&pagesize=" + PageSize;
+                        window.location.href = "/" + resultUrl + "?searchtext=" + text + "&page=" + Page;
                     }
-
                 }
             }
 
         });
-
     }
 
 </script>

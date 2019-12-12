@@ -12,13 +12,77 @@ This is a widget which allows you to add a SmartSearchBox to your screen with ce
 
 - Search results page URL*
 - Search button text*
-- Page*
 - Page Size*
+-Group Size*
+
 *Required fields
 
-Intialize the Attribute routing  in route.config file in App start folder.
-  routes.MapMvcAttributeRoutes();
- In this widget Search Result Url  propertie controller name as mandetery to put 'search' as controller name.
+Enter the search results page URL field based on below attribute routing format
+<pre>		
+        [Route("Search/{searchresults}")]
+        public ActionResult SearchResults(string searchtext, string page)
+        {
+            SearchResult searchResults = new SearchResult();
+            SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
+            try
+            {
+                SearchParameters searchParameters;
+                int pageNo = page != null ? Convert.ToInt32(page) : 1;
+                int pageSize = TempData["PageSize"] != null ? Convert.ToInt32(TempData["PageSize"].ToString()) : 6;
+                string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
+                dataList.GroupSize= TempData["groupsize"] != null ?TempData["groupsize"].ToString(): "10";
+                dataList.SearchText = searchtext;
+                TempData.Keep();
+                dataList.PageNo = Convert.ToString(pageNo);
+                dataList.PageSize = Convert.ToString(pageSize);
+               
+                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
+                searchResults = SearchHelper.Search(searchParameters);
+                dataList.TotalResultCount = searchResults.TotalNumberOfResults;
+                Pager pager = new Pager(dataList.TotalResultCount, pageNo, Convert.ToInt32(dataList.PageSize) , Convert.ToInt32(dataList.GroupSize));
+                dataList.Pager = pager;
+            }
+            catch (Exception ex)
+            {
+                EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
+            }
+            dataList.Items = searchResults.Items;
+
+
+            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
+        }
+</pre>
+
+Intialize the Attribute routing  in RouteConfig.cs file in App_Start folder.
+
+<pre>
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            var defaultCulture = CultureInfo.GetCultureInfo("en-US");
+
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            // Map routes to Kentico HTTP handlers and features enabled in ApplicationConfig.cs
+            // Always map the Kentico routes before adding other routes. Issues may occur if Kentico URLs are matched by a general route, for example images might not be displayed on pages
+            routes.Kentico().MapRoutes();
+            //Intialize the Atribute routing hear.
+            routes.MapMvcAttributeRoutes();
+
+            // Redirect to administration site if the path is "admin"
+            routes.MapRoute(
+                name: "Admin",
+                url: "admin",
+                defaults: new { controller = "AdminRedirect", action = "Index" }
+            );
+			
+            route = routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}",
+                defaults: new { culture = defaultCulture.Name, controller = "Home", action = "Index" },
+            );
+
+		}
+</pre>	
 
 # Author
 

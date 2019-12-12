@@ -8,7 +8,7 @@
     <owners>Ray Business Technologies Pvt Ltd.</owners>
     <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Displays the search results.</description>
+    <description>Provides a text box where users can enter search expressions. Searching redirects users to a page that displays the search results.</description>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Raybiztech Kentico12 Kentico MVC Widget SmartSearchBox</tags>
@@ -19,9 +19,7 @@
   <files>
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.dll" />
     <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchBoxWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchBoxWidget.cshtml" />
-	 <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" />
-	 <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_PaginationView.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_PaginationView.cshtml" />
-	
+	 <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" />	
 	 <file src="Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" target="content\Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" />
 	  <file src="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js" target="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js"/>
 

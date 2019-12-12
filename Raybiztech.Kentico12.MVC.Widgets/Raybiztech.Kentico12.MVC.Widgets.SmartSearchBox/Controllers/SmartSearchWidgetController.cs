@@ -13,8 +13,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
 {
     public class SmartSearchWidgetController : WidgetController<SmartSearchBoxWidgetProperties>
     {
-    
-    public SmartSearchWidgetController()
+
+        public SmartSearchWidgetController()
         {
 
         }
@@ -35,9 +35,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 model.ButtonName = properties.ButtonName;
                 model.LableName = properties.LableName;
                 model.LableMode = properties.ShowSearchLabel;
-                model.PageNo = properties.Page;
                 model.PageSize = properties.PageSize;
-                model.TotalResultCount = properties.TotalResults;
+                model.PageNo = "1";
+                model.GroupSize = properties.GroupSize;
+                TempData["GroupSize"] = model.GroupSize;
+                TempData["Index"] = properties.Index;
+                TempData["PageSize"] = properties.PageSize;
                 var indexes = SearchIndexInfoProvider.GetSearchIndexes();
                 List<SelectListItem> addList = new List<SelectListItem>();
                 foreach (SearchIndexInfo index in indexes)
@@ -55,7 +58,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
         }
 
         [Route("Search/{searchresults}")]
-        public ActionResult SearchResults(string searchtext, string page, string pagesize)
+        public ActionResult SearchResults(string searchtext, string page)
         {
             SearchResult searchResults = new SearchResult();
             SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
@@ -63,71 +66,45 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             {
                 SearchParameters searchParameters;
                 int pageNo = page != null ? Convert.ToInt32(page) : 1;
-                int pageSize = pagesize != null ? Convert.ToInt32(pagesize) : 12;
-                int totalCount = TempData["count"] != null ? Convert.ToInt32(TempData["count"].ToString()) : 40;
+                int pageSize = TempData["PageSize"] != null ? Convert.ToInt32(TempData["PageSize"].ToString()) : 10;
                 string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
-                dataList.PageSize = Convert.ToString(pageSize);
+                dataList.GroupSize= TempData["GroupSize"] != null ?TempData["GroupSize"].ToString(): "4";
                 dataList.SearchText = searchtext;
-                TempData.Keep();
-                dataList.PageNo =Convert.ToString(pageNo);
-                dataList.PageSize = Convert.ToString(pageSize);
-
-                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, totalCount, MembershipContext.AuthenticatedUser);
-                searchResults = SearchHelper.Search(searchParameters);
-            }
-            catch (Exception ex)
-            {
-                EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
-            }
-            dataList.Items = searchResults.Items;
-
-            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
-        }
-
-        public ActionResult PaginationSearchResults(string searchtext, string page, string pagesize)
-        {
-            SearchResult searchResults = new SearchResult();
-            SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
-            try
-            {
-                SearchParameters searchParameters;
-                int pageNo = page != null ? Convert.ToInt32(page) : 1;
-                int pageSize = pagesize != null ? Convert.ToInt32(pagesize) : 12;
-                string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
-                dataList.PageSize = Convert.ToString(pageSize);
                 TempData.Keep();
                 dataList.PageNo = Convert.ToString(pageNo);
-                dataList.PageNo = Convert.ToString(pageSize);
-                dataList.SearchText = searchtext;
+                dataList.PageSize = Convert.ToString(pageSize);
+               
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
+                dataList.TotalResultCount = searchResults.TotalNumberOfResults;
+                Pager pager = new Pager(dataList.TotalResultCount, pageNo, Convert.ToInt32(dataList.PageSize) , Convert.ToInt32(dataList.GroupSize));
+                dataList.Pager = pager;
             }
             catch (Exception ex)
             {
                 EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
             }
             dataList.Items = searchResults.Items;
-
-            return PartialView("Widgets/SmartSearchBoxWidget/_PaginationView", dataList);
+            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
         }
-        public ActionResult AssignValues(string index,string count)
+        public ActionResult AssignValues(string index,string groupsize,string pagesize)
         {
             bool status = false;
             try
             {
                 TempData["Index"] = index;
-                TempData["count"] = count;
+                TempData["GroupSize"] = groupsize;
+                TempData["PageSize"] = pagesize;
                 TempData.Keep();
                 status = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 EventLogProvider.LogException("SmartSearchWidgetController", "AssignValues", ex);
             }
-       
-            return Json(status, JsonRequestBehavior.AllowGet);
 
+            return Json(status, JsonRequestBehavior.AllowGet);
         }
 
     }

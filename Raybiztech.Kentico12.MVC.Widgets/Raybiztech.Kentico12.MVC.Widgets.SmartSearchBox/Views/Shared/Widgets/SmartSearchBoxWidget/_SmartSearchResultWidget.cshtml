@@ -1,102 +1,78 @@
 ﻿@using CMS.DocumentEngine;
 @model Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.SmartSearchWidgetViewModel
-
-@if (Model.Items.Count > 0)
-{
+@{
+    int gropsize = TempData["groupsize"] != null ? Convert.ToInt32(TempData["groupsize"].ToString()) : 10;
+}
+<div class="container">
     @Html.HiddenFor(x => x.SearchText)
-    <div class="search-results">
-        @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
+    <div class="col-md-6 col-md-offset-3">
+        <!-- items being paged -->
+        @if (Model.Items.Count > 0)
         {
+        <ul>
+
+            @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
+            {
             TreeNode node = (TreeNode)item.Data;
             <h3>@item.Title</h3>
             <span style="color: #008000">
                 @node.NodeAliasPath
             </span>
 
+            }
+        </ul>
+        }
+        else
+        {
+        <span style="color:red">Results are not found </span>
+        }
 
+        <!-- pager -->
+        @if (Model.Pager.EndPage > 1)
+        {
+        <ul class="pagination">
+            @if (Model.Pager.CurrentPage > 1)
+            {
+            <li>
+                <a href="javascript:void(0);" data-page="1" class="page-link">First</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage - 1)" class="page-link"> <span aria-hidden="true">&laquo;</span> </a>
+            </li>
+            }
+
+            @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+            {
+            <li class="@(page == Model.Pager.CurrentPage ? " active" : "" )">
+                <a href="javascript:void(0);" data-page="@(page)" class="page-link">@page</a>
+            </li>
+            }
+
+            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+            {
+            <li>
+                <a href="javascript:void(0);" data-page="@(Model.Pager.CurrentPage + 1)" aria-label="Next" class="page-link">  <span aria-hidden="true">&raquo;</span> </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-page="@(Model.Pager.TotalPages)" class="page-link">Last</a>
+            </li>
+            }
+        </ul>
         }
     </div>
-}
-else
-{
-    <span style="color:red">Results are not found </span>
-}
-@if (Model.Items.Count > 0)
-{
-    <ul class="pagination">
-        @{
-            int totalItemsCount = Model.Items.Count;
-            int pageSize = Convert.ToInt32(Model.PageSize);
-            int pagesCount = totalItemsCount / pageSize;
-        }
-        <li>
-            <a class="Previousresult" href="javascript:void(0);" data-pageSize="@pageSize" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
 
-        @for (int i = 1; i <= pagesCount; i++)
-        {
-            <li class="page-item">
-                <a class="page-link" href="javascript:void(0);" data-page="@i" data-pageSize="@pageSize">@i</a>
-            </li>
-        }
-        <li>
-            <a class="nextpageresult" href="javascript:void(0);" data-pageSize="@pageSize" data-pagescount="@pagesCount" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-}
+</div>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
-    var pagenumber = 1;
+
+    var countvalue = 0;
     $('.page-link').click(function () {
         var searchtext = $('#SearchText').val();
         var pageno = $(this).attr('data-page');
-        var pageSize = $(this).attr('data-pageSize');
-        pagenumber = $(this).attr('data-page');
-        PartailalResult(searchtext, pageno, pageSize)
-
+        var href = new URL(window.location.href.toString());
+        href.searchParams.set('page', pageno);
+        href.searchParams.set('searchtext', searchtext);
+        window.location.href = href;
     });
-
-    $('.nextpageresult').click(function () {
-        var pagescount = $(this).attr('data-pagescount');
-        if (parseInt(pagenumber) <= parseInt(pagescount)) {
-            var searchtext = $('#SearchText').val();
-            var pageno = parseInt(pagenumber) + 1;
-            pagenumber = parseInt(pagenumber) + 1;
-            var pageSize = $(this).attr('data-pageSize');
-            PartailalResult(searchtext, pageno, pageSize)
-        }
-    });
-
-    $('.Previousresult').click(function () {
-        if (parseInt(pagenumber) > 1)
-            {
-            var searchtext = $('#SearchText').val();
-            var pageno = parseInt(pagenumber) - 1;
-            pagenumber = parseInt(pagenumber) -1;
-            var pageSize = $(this).attr('data-pageSize');
-            PartailalResult(searchtext, pageno, pageSize)
-        }
-    });
-    function PartailalResult(searchtext, pageno, pageSize) {
-         $.ajax({
-            type: "GET",
-            url: '@Url.Action("PaginationSearchResults", "SmartSearchWidget")',
-            data: { searchtext: searchtext, page: pageno, pagesize: pageSize },
-            dataType: "html",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $('.search-results').html("");
-                $('.search-results').html(data);
-                var href = new URL(window.location.href.toString());
-                href.searchParams.set('page', pagenumber);
-                history.pushState(null, null, href);
-            }
-        });
-
-    }
 
 </script>
