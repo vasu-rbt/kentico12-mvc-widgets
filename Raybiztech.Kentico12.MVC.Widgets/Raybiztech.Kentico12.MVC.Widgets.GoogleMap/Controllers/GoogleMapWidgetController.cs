@@ -4,7 +4,7 @@ using System;
 using System.Configuration;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.GoogleMap", typeof(GoogleMapWidgetController), "Google Map widget", Description = "Displays maps obtained from the Google maps service.", IconClass = "icon-map")]
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.GoogleMap", typeof(GoogleMapWidgetController), "Google Map", Description = "Displays maps obtained from the Google maps service.", IconClass = "icon-map")]
 namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
 {
     public class GoogleMapWidgetController: WidgetController<GoogleMapWidgetProperties>
