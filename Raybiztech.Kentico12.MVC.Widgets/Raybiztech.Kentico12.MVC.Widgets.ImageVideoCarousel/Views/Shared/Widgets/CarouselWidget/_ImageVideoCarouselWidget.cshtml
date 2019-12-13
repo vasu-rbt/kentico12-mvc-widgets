@@ -164,10 +164,6 @@
                 color: black;
             }
 
-        .row .video-row {
-            background: #e7e7e7;
-        }
-
         h4, .h4 {
             font-family: inherit !important;
             font-weight: 200 !important;
@@ -244,6 +240,9 @@
                             }
                             YoutubeUrl = "https://www.youtube.com/embed/" + youtubevideoid;
                             <div class="homepage-carousel-teaser-wrapper video-block">
+                                <picture>
+                                    <img class="image-responsive" alt="" src="@imageUrl">
+                                </picture>
                                 <div class="tts-text-container container-iframevideo">
                                     <div class="row video-row">
                                         <div class="col-sm-12 video-cell">
@@ -261,7 +260,7 @@
                 {
                     <h3>No Data Found....!</h3>
                 }
-             }
+            }
         </div>
     </section>
     <script src="~/Scripts/slick.min.js"></script>
