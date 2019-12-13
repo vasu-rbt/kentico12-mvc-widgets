@@ -1,15 +1,33 @@
 ﻿@model Raybiztech.Kentico12.MVC.Widgets.MessageBoard.Models.MessageBoardViewModel
+
+@{
+    string formId = String.Concat("form_", DateTime.Now.Ticks.ToString());
+    string divId = String.Concat("div_", DateTime.Now.Ticks.ToString());
+}
+@if (Model.CustomTableData != null)
+{
+    <p> @Model.CustomTableData.Count Comment(s) </p>
+    foreach (var item in Model.CustomTableData)
+    {
+        if (item.IsApproved != false)
+        {
+            <h3> @item.UserFirstName </h3>
+            <p> @item.ItemCreatedWhen </p>
+            <p> @item.UserComments </p>
+        }
+    }
+}
 <div class="section">
     @using (Ajax.BeginForm("Comments", "MessageBoard", new AjaxOptions { HttpMethod = "POST", OnSuccess = "CommentOnSuccess", OnFailure = "CommentOnFailure", UpdateTargetId = "divComments" }))
     {
         @Html.AntiForgeryToken()
         <div class="event_form">
             @Html.TextAreaFor(model => model.UserComments, new { @class = "form-control  txt-comment", @placeholder = "Comment", @required = "required" })
-            @*@Html.ValidationMessageFor(model => model.UserComments, "", new { @class = "text-danger comment-error-msg" })*@
             @Html.HiddenFor(model => model.PageUrl, new { @class = "page-url" })
             @Html.HiddenFor(model => model.CustomtableName)
-
-            <button class="btn btn-primary pull-right btn-lg " id="CommentsId" type="submit" data-toggle="modal" data-target="#postComment">Submit</button>
+            @Html.HiddenFor(model => model.SubmitButtonText, new { @class = "btnText" })
+            <span class="validation-text_@formId"></span>
+            <button class="btn btn-primary pull-right btn-lg CommentsId" type="submit" data-toggle="modal" data-target="#postComment"></button>
         </div>
     }
 </div>
@@ -21,18 +39,29 @@
 </style>
 <script src="~/Kentico/Scripts/jquery-3.3.1.js"></script>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $(".CommentsId").html($(".btnText").val());
+    });
     $(".page-url").val(window.location.pathname);
     function CommentOnSuccess() {
-        alert("Successfully Submitted");
+        $('.validation-text_@formId').text("");
+        $('.validation-text_@formId').text("Successfully Submitted");
         $(".txt-comment").val("");
     }
     function CommentOnFailure() {
+        $('.validation-text_@formId').text("");
         var checklogin =@User.Identity.IsAuthenticated.ToString().ToLower();
         if (!checklogin == true) {
-            alert("Please Sign in/Register");
+
+            $('.validation-text_@formId').text("Please Sign in/Register");
         }
         else {
-            alert("Please Check Custom table name");
+            $('.validation-text_@formId').text("Please Check Custom table name");
         }
     }
+    $('.CommentsId').click(function () {
+        if ($(".txt-comment").val() == "") {
+            $('.validation-text_@formId').text("");
+        }
+    });
 </script>

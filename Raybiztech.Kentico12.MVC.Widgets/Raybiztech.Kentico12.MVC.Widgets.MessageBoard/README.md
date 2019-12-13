@@ -1,6 +1,6 @@
 # MessageBoard
 
-Allows authenticated users to post comments.
+Allows authenticated users to post comments and view other users comments 
 
 # Installation
 
@@ -17,14 +17,15 @@ User must create a custom table to store data with the following mandatory field
 
 This is a widget which allows you to add a MessageBoard to your screen with an attribute that can be configured while adding. The property that can be configured is:
 
-- Customtable ClassName*
+- Custom table Codename*
+- Submit button text*
 
 *Required fields
 
 # Author
 
-This widget was created by Ray Business Technologies Pvt Ltd.
-Last updated 09-12-2019.
+This widget was created by Raju Swamy @ Ray Business Technologies Pvt Ltd.
+Last updated 12-12-2019.
 
 # License
 
