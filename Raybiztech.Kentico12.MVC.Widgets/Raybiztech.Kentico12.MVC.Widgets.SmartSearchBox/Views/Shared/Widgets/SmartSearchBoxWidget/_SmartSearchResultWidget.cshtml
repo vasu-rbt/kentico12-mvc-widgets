@@ -63,16 +63,4 @@
 
 </div>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script>
-
-    var countvalue = 0;
-    $('.page-link').click(function () {
-        var searchtext = $('#SearchText').val();
-        var pageno = $(this).attr('data-page');
-        var href = new URL(window.location.href.toString());
-        href.searchParams.set('page', pageno);
-        href.searchParams.set('searchtext', searchtext);
-        window.location.href = href;
-    });
-
-</script>
+<script src="~/Scripts/SmartSearchBoxWidget/SearchResults.js"></script>

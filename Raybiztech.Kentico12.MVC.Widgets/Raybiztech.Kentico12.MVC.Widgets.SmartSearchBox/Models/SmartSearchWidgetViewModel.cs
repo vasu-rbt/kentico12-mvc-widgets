@@ -15,7 +15,6 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         public bool LableMode { get; set; }
         public string PageNo { get; set; }
         public string PageSize { get; set; }
-        public string Index { get; set; }
         public string SearchText { get; set; }
         public string GroupSize { get; set; }
         public int TotalResultCount { get; set; }

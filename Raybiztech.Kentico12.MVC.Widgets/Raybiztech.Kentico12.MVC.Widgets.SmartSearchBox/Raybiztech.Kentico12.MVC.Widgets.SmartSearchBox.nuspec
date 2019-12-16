@@ -22,6 +22,7 @@
 	 <file src="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" target="content\Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" />	
 	 <file src="Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" target="content\Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" />
 	  <file src="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js" target="Content\InlineEditors\SmartSearchBoxWidget\SmartSearchBoxWidget.js"/>
+	    <file src="Scripts\SmartSearchBoxWidget\SearchResults.js" target="Scripts\SmartSearchBoxWidget\SearchResults.js"/>
 
   </files>
 </package>

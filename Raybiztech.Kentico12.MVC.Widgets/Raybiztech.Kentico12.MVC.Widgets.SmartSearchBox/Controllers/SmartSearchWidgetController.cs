@@ -13,7 +13,6 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
 {
     public class SmartSearchWidgetController : WidgetController<SmartSearchBoxWidgetProperties>
     {
-
         public SmartSearchWidgetController()
         {
 
@@ -23,6 +22,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
         {
 
         }
+        /// <summary>
+        /// this method is return index properties to the View.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             SmartSearchWidgetViewModel model = new SmartSearchWidgetViewModel();
@@ -38,25 +41,24 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 model.PageSize = properties.PageSize;
                 model.PageNo = "1";
                 model.GroupSize = properties.GroupSize;
-                TempData["GroupSize"] = model.GroupSize;
+                TempData["GroupSize"] = properties.GroupSize;
                 TempData["Index"] = properties.Index;
                 TempData["PageSize"] = properties.PageSize;
-                var indexes = SearchIndexInfoProvider.GetSearchIndexes();
-                List<SelectListItem> addList = new List<SelectListItem>();
-                foreach (SearchIndexInfo index in indexes)
-                {
-                    addList.Add(new SelectListItem() { Text = index.IndexCodeName, Value = index.IndexCodeName, Selected = (index.IndexCodeName == model.IndexName) });
-                }
+                var addList = LoadIndexes(model.IndexName);
                 model.Indexes = addList;
             }
             catch (Exception ex)
             {
                 EventLogProvider.LogException("SmartSearchWidgetController", "Index", ex);
-
             }
             return PartialView("Widgets/SmartSearchBoxWidget/_SmartSearchBoxWidget", model);
         }
-
+        /// <summary>
+        /// this method is return search results data to the view.
+        /// </summary>
+        /// <param name="searchtext"></param>
+        /// <param name="page"></param>
+        /// <returns></returns>
         [Route("Search/{searchresults}")]
         public ActionResult SearchResults(string searchtext, string page)
         {
@@ -86,6 +88,13 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             dataList.Items = searchResults.Items;
             return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
         }
+        /// <summary>
+        /// this method is used assinged widget properties values to tempdata.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="groupsize"></param>
+        /// <param name="pagesize"></param>
+        /// <returns></returns>
         public ActionResult AssignValues(string index,string groupsize,string pagesize)
         {
             bool status = false;
@@ -99,12 +108,31 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             }
             catch (Exception ex)
             {
-
                 EventLogProvider.LogException("SmartSearchWidgetController", "AssignValues", ex);
             }
 
             return Json(status, JsonRequestBehavior.AllowGet);
         }
-
+        /// <summary>
+        /// this method is return indexs in cms.
+        /// </summary>
+        /// <returns></returns>
+        public List<SelectListItem> LoadIndexes(string indexName)
+        {
+            List<SelectListItem> addList = new List<SelectListItem>();
+            try
+            {
+                var indexes = SearchIndexInfoProvider.GetSearchIndexes();
+                foreach (SearchIndexInfo index in indexes)
+                {
+                    addList.Add(new SelectListItem() { Text = index.IndexCodeName, Value = index.IndexCodeName, Selected = (index.IndexCodeName == indexName) });
+                }
+            }
+            catch(Exception ex)
+            {
+                EventLogProvider.LogException("SmartSearchWidgetController", "LoadIndexes", ex);
+            }
+            return addList;
+        }
     }
 }
