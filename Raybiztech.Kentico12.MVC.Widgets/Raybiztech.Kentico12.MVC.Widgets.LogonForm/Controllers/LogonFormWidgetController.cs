@@ -13,6 +13,9 @@ namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Controllers
 {
     public class LogonFormWidgetController : WidgetController<LogonFormWidgetProperties>
     {
+        /// <summary>
+        /// get the user info from kentico membership
+        /// </summary>
         public UserManager UserManager
         {
             get
@@ -20,6 +23,9 @@ namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Controllers
                 return HttpContext.GetOwinContext().Get<UserManager>();
             }
         }
+        /// <summary>
+        /// this method is used sigout when user click on logout
+        /// </summary>
         public SignInManager SignInManager
         {
             get
@@ -27,9 +33,19 @@ namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Controllers
                 return HttpContext.GetOwinContext().Get<SignInManager>();
             }
         }
+        /// <summary>
+        /// this action method used to display Logon Form as widget 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return PartialView("Widgets/LogonFormWidget/_LogonFormWidget");
+            var properties = GetProperties();
+
+            return PartialView("Widgets/LogonFormWidget/_LogonFormWidget",new LogonFormWidgetViewModel {
+                RedirectUrl=properties.RedirectUrl,
+                ButtonText=properties.ButtonText,
+                LoginFailureText=properties.LoginFailureText
+            });
         }
         public async Task<ActionResult> Login(LogonFormWidgetViewModel model)
         {

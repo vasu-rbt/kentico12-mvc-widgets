@@ -657,11 +657,12 @@
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
     <Content Include="nuget.exe" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LogonForm\jquery-3.3.1.js" />
+    <Content Include="Scripts\LogonForm\jquery.validate.js" />
+    <Content Include="Scripts\LogonForm\jquery.validate.min.js" />
+    <Content Include="Scripts\LogonForm\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\LogonForm\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LogonForm\LogonForm.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

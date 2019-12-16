@@ -19,12 +19,22 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SignOut.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+        /// <summary>
+        /// It will display Sign out button 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return PartialView("Widgets/SignOutWidget/_SignOutWidget");
+            var properties = GetProperties();
+            return PartialView("Widgets/SignOutWidget/_SignOutWidget",new SignOutButtonWidgetViewModel {
+                ButtonText=properties.ButtonText
+            });
         }
 
-
+        /// <summary>
+        /// When User Click on logout this method will get called and logout the user.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult SignOut()
         {

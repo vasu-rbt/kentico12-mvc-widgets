@@ -16,5 +16,12 @@
   <files>
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll" />
     <file src="Views\Shared\Widgets\LogonFormWidget\_LogonFormWidget.cshtml" target="content\Views\Shared\Widgets\LogonFormWidget\_LogonFormWidget.cshtml" />
+    <file src="Scripts/LogonForm/LogonForm.js" target="content/Scripts/LogonForm/LogonForm.js"/>
+    <file src="Scripts/LogonForm/jquery-3.3.1.js" target="content/Scripts/LogonForm/jquery-3.3.1.js"/>
+    <file src="Scripts/LogonForm/jquery.validate.js" target="content/Scripts/LogonForm/jquery.validate.js"/>
+    <file src="Scripts/LogonForm/jquery.validate.min.js" target="content/Scripts/LogonForm/jquery.validate.min.js"/>
+    <file src="Scripts/LogonForm/jquery.validate.unobtrusive.js" target="content/Scripts/LogonForm/jquery.validate.unobtrusive.js"/>
+    <file src="Scripts/LogonForm/jquery.validate.unobtrusive.min.js" target="content/Scripts/LogonForm/jquery.validate.unobtrusive.min.js"/>
+    
   </files>
 </package>

@@ -1,10 +1,8 @@
-﻿
-@model Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models.LogonFormWidgetViewModel
+﻿@model Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models.LogonFormWidgetViewModel
 
-@using (Ajax.BeginForm("Login", "LogonFormWidget", new AjaxOptions { HttpMethod = "POST", OnSuccess = "Success", UpdateTargetId = "Login" }))
+@using (Ajax.BeginForm("Login", "LogonFormWidget", new AjaxOptions { HttpMethod = "POST", OnSuccess = "Success", OnFailure = "LoginFailure", UpdateTargetId = "Login" }))
 {
     @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -13,9 +11,10 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                <span class="text-danger field-validation-error InvalidUser"></span>
+                <span class="logon-fail" data-Erromsg="@Model.LoginFailureText" style="color:red;"></span>
+                <span class="logon-url" data-Url="@Model.RedirectUrl"></span>
             </div>
-        </div><br/>
+        </div><br />
         <div class="form-group">
             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -23,29 +22,16 @@
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Sign In" class="btn btn-default" />
+                <input type="submit" value="@Model.ButtonText" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<script src="~/Scripts/jquery.validate.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script type="text/javascript">
-    function Success(data) {
-        $("#Invalid").remove();
-        if (data.success == true) {
-            window.location.href = window.location;
-        }
-        else {
-            $("#Invalid").remove();
-            $(".InvalidUser").append(" <span id='Invalid'>Sorry! The Email address/Password that you have entered is incorrect.</span>");
-        }
-
-    }
-</script>
+<script src="~/Scripts/LogonForm/jquery-3.3.1.js"></script>
+<script src="~/Scripts/LogonForm/jquery.validate.js"></script>
+<script src="~/Scripts/LogonForm/jquery.validate.min.js"></script>
+<script src="~/Scripts/LogonForm/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/LogonForm/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/LogonForm/LogonForm.js"></script>

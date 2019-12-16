@@ -11,5 +11,9 @@ namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models
         [Required(ErrorMessage = "Please Enter Password")]
         [DisplayName("Password")]
         public string Password { get; set; }
+
+        public string RedirectUrl { get; set; }
+        public string ButtonText { get; set; }
+        public string LoginFailureText { get; set; }
     }
 }

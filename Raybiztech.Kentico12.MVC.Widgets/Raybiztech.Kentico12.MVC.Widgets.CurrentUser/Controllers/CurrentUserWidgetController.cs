@@ -9,6 +9,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.CurrentUser.Controllers
 {
     public class CurrentUserWidgetController: WidgetController<CurrentUserWidgetProperties>
     {
+        /// <summary>
+        /// It will display the userName when user is Authenticated.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             var properties = GetProperties();

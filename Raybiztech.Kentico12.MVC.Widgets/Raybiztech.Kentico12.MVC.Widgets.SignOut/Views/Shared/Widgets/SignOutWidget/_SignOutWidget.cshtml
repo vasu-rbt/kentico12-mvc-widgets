@@ -1,7 +1,9 @@
-﻿@if (User.Identity.IsAuthenticated)
+﻿@model Raybiztech.Kentico12.MVC.Widgets.SignOut.Models.SignOutButtonWidgetViewModel
+
+@if (User.Identity.IsAuthenticated)
 {
-            using (Html.BeginForm("SignOut", "SignOutWidget"))
-            { 
-                <input type="submit" value="Sign Out"/>
-            }
+    using (Html.BeginForm("SignOut", "SignOutWidget"))
+    {
+        <input type="submit" value="@Model.ButtonText" />
+    }
 }

@@ -442,6 +442,7 @@
       <HintPath>..\packages\Kentico.Libraries.12.0.29\lib\net461\PreMailer.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
@@ -530,6 +531,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\SignOutWidgetController.cs" />
+    <Compile Include="Models\SignOutButtonWidgetViewModel.cs" />
     <Compile Include="Models\SignOutWidgetProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
