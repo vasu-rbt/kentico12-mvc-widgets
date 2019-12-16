@@ -1,16 +1,15 @@
 ﻿using CMS;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Kentico.MVC.Widgets.GoogleMap")]
+[assembly: AssemblyTitle("Raybiztech.Kentico12.MVC.Widgets.GoogleMap")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Kentico.MVC.Widgets.GoogleMap")]
+[assembly: AssemblyProduct("Raybiztech.Kentico12.MVC.Widgets.GoogleMap")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

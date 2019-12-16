@@ -1,31 +1,45 @@
 ﻿@model Raybiztech.Kentico12.MVC.Widgets.GoogleMap.GoogleMapWidgetViewModel
 @if (Model.ApiKey == null)
 {
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH4n8sljtRlyYthCYP8PwDAimzFk1ZW6w&callback=initialize"
-            async defer></script>
+    <p style="color:red">Please add API Key in web.config file to display Google Map</p>
 }
 else
 {
     <script src="https://maps.googleapis.com/maps/api/js?key=@Model.ApiKey&callback=initialize"
             async defer></script>
 }
-<div class="map-widget" id="map" style="width: 100%; height: 400px;">
+@{
+    string mapId = String.Concat("map_", DateTime.Now.Ticks.ToString());
+}
+<div id="@mapId" style="width: 100%; height: 400px;">
 </div>
 <script type="text/javascript">
-    function initialize() {
-        var mapOptions = {
-            center: new google.maps.LatLng(@Model.Latitude, @Model.Longitude),
-            zoom: 4,
-            mapTypeId: 'roadmap',
-        };
-       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var bounds = new google.maps.LatLngBounds();
-        var latlng = new google.maps.LatLng(@Model.Latitude, @Model.Longitude);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: latlng,
-            title: 'Google Map'
-        });
-        bounds.extend(latlng);
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                oldonload();
+                func();
+            }
+        }
     }
+     function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(@Model.Latitude, @Model.Longitude),
+                zoom: 4,
+                mapTypeId: 'roadmap',
+            };
+            var map = new google.maps.Map(document.getElementById('@mapId'), mapOptions);
+            var bounds = new google.maps.LatLngBounds();
+            var latlng = new google.maps.LatLng(@Model.Latitude, @Model.Longitude);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: latlng,
+                title: 'Google Map'
+            });
+        bounds.extend(latlng);
+        }
+    addLoadEvent(initialize);
 </script>
