@@ -1,7 +1,7 @@
 ﻿
-@model Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models.LoginWidgetViewModel
+@model Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models.LogonFormWidgetViewModel
 
-@using (Ajax.BeginForm("Login", "LoginWidget", new AjaxOptions { HttpMethod = "POST", OnSuccess = "Success", UpdateTargetId = "Login" }))
+@using (Ajax.BeginForm("Login", "LogonFormWidget", new AjaxOptions { HttpMethod = "POST", OnSuccess = "Success", UpdateTargetId = "Login" }))
 {
     @Html.AntiForgeryToken()
 

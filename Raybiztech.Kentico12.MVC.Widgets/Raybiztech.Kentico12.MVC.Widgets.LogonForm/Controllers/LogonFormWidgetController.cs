@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.LogonForm", typeof(LogonFormWidgetController), "LogonForm Widget", Description = "Displays a form that allows users to log into the website. Authentication requires a valid user name and password.", IconClass = "icon-user")]
+[assembly: RegisterWidget("Raybiztech.Kentico12.MVC.Widgets.LogonForm", typeof(LogonFormWidgetController), "Logon form", Description = "Displays a form that allows users to log into the website. Authentication requires a valid user name and password.", IconClass = "icon-user")]
 
 namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Controllers
 {

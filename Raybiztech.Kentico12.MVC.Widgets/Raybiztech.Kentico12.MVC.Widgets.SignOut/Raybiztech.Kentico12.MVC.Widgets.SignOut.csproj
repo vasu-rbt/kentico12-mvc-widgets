@@ -539,6 +539,7 @@
     <None Include="Kentico\Scripts\builders\Core-icons.ttf" />
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
     <None Include="packages.config" />
+    <None Include="README.md" />
     <None Include="Views\Shared\Widgets\SignOutWidget\_SignOutWidget.cshtml" />
   </ItemGroup>
   <ItemGroup>
