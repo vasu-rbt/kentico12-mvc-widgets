@@ -78,8 +78,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
                 searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
                 searchResults = SearchHelper.Search(searchParameters);
                 dataList.TotalResultCount = searchResults.TotalNumberOfResults;
-                Pager pager = new Pager(dataList.TotalResultCount, pageNo, Convert.ToInt32(dataList.PageSize) , Convert.ToInt32(dataList.GroupSize));
-                dataList.Pager = pager;
+                Pager pagerList = new Pager(dataList.TotalResultCount, pageNo, Convert.ToInt32(dataList.PageSize) , Convert.ToInt32(dataList.GroupSize));
+                dataList.Pager = pagerList;
             }
             catch (Exception ex)
             {
