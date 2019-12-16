@@ -1,4 +1,4 @@
-# SmartSearchBox
+# Smart SearchBox
 
 Provides a text box where users can enter search expressions. Searching redirects users to a page that displays the search results. The indexes used by the search are specified by the widget displaying the results. You can configure the Smart search box to display results instantly while users type the search text.
 
@@ -25,31 +25,7 @@ Enter the search results page URL field based on below attribute routing format
         [Route("Search/{searchresults}")]
         public ActionResult SearchResults(string searchtext, string page)
         {
-            SearchResult searchResults = new SearchResult();
-            SmartSearchWidgetViewModel dataList = new SmartSearchWidgetViewModel();
-            try
-            {
-                SearchParameters searchParameters;
-                int pageNo = page != null ? Convert.ToInt32(page) : 1;
-                int pageSize = TempData["PageSize"] != null ? Convert.ToInt32(TempData["PageSize"].ToString()) : 6;
-                string Index = TempData["Index"] != null ? TempData["Index"].ToString() : "";
-                dataList.GroupSize= TempData["groupsize"] != null ?TempData["groupsize"].ToString(): "10";
-                dataList.SearchText = searchtext;
-                TempData.Keep();
-                dataList.PageNo = Convert.ToString(pageNo);
-                dataList.PageSize = Convert.ToString(pageSize);
-                searchParameters = SearchParameters.PrepareForPages(searchtext, new[] { Index }, pageNo, pageSize, MembershipContext.AuthenticatedUser);
-                searchResults = SearchHelper.Search(searchParameters);
-                dataList.TotalResultCount = searchResults.TotalNumberOfResults;
-                Pager pager = new Pager(dataList.TotalResultCount, pageNo, Convert.ToInt32(dataList.PageSize) , Convert.ToInt32(dataList.GroupSize));
-                dataList.Pager = pager;
-            }
-            catch (Exception ex)
-            {
-                EventLogProvider.LogException("SmartSearchWidgetController", "SearchResults", ex);
-            }
-            dataList.Items = searchResults.Items;
-            return View("Widgets/SmartSearchBoxWidget/_SmartSearchResultWidget", dataList);
+            //Code here
         }
 </pre>
 
