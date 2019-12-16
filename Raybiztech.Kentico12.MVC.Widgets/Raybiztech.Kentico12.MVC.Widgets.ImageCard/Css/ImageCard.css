@@ -66,10 +66,7 @@ img {
     font-size: 32px;
 }
 
-.white i {
-    color: #fff;
-    font-size: 22px;
-}
+
 .imagecard-widget .article-content {
     background-color: #526876;
     color: #fff;
@@ -95,3 +92,31 @@ img {
         margin: auto;
         width: 80px
     }
+.category-widget .view-more {
+    bottom: 3%;
+    position: absolute;
+    right: 6%;
+}
+.view-more, .view-less {
+    font-size: 14px;
+}
+.category-widget .view-more i {
+    font-size: 32px;
+}
+.view-more {
+    margin-right: 0px;
+}
+.white i {
+    color: #fff;
+    font-size: 22px;
+}
+a:hover i {
+    color: #46b82e;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}

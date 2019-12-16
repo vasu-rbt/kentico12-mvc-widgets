@@ -1,7 +1,6 @@
 ﻿@model Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model.ImageCardWidgetViewModel
-
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="~/CSS/ImageCard.css" rel="stylesheet" />
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <div class="container">
     <div class="row">
@@ -25,6 +24,9 @@
                                     <div class="image-section">
                                         <img src="@imageUrl" />
                                     </div>
+                                    <div class="view-more white">
+                                        <i class="fa fa-angle-double-right"></i>
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -36,6 +38,7 @@
                 <h4>No Data Found...!</h4>
             }
         }
+
     </div>
     <div class="clearfix"></div>
 </div>
