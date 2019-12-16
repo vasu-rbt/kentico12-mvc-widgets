@@ -547,6 +547,7 @@
     <None Include="packages.config" />
     <None Include="Raybiztech.Kentico12.MVC.Widget.SmartSearchBox.1.0.0.nupkg" />
     <None Include="Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.nuspec" />
+    <None Include="README.md" />
     <None Include="Views\Shared\Widgets\InlineEditors\_IndexInlineEditor.cshtml" />
     <None Include="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchBoxWidget.cshtml" />
     <None Include="Views\Shared\Widgets\SmartSearchBoxWidget\_SmartSearchResultWidget.cshtml" />
