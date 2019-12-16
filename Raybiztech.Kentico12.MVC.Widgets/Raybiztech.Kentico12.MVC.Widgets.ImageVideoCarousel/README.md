@@ -16,14 +16,14 @@ User must create a page type to store data with the following mandatory fields:
 - Text
 - TargetURL
 
--create a dropdown for slidetype field by using image and video fields.
+- Create Image Video Carousel Pagetype field(SlideType) with drop-down list form control using image and video as fields.
 
-This is a widget which allows you to add a Image Video Slider to your screen with an attribute that can be configured while adding. The property that can be configured is:
+This is a widget which allows you to add Image and Video slides to your screen with an attribute that can be configured while adding. The properties that can be configured are:
 
-- Image Video Carousel PageType*(specify the code name)
-- Path
--TopN
--OrderBy
+ - Image Video Carousel PageType*(specify the code name)
+ - Path
+ - TopN
+ - OrderBy
 
 *Required fields
 
@@ -41,5 +41,5 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 # Compatibility
 
-This widget has been tested on Kentico 12 MVC version (12.0.29). 
-Must load jquery(3.3.1) before loading slick.min.js.
+- This widget has been tested on Kentico 12 MVC version (12.0.29). 
+- Must load jquery(3.3.1) before loading slick.min.js.

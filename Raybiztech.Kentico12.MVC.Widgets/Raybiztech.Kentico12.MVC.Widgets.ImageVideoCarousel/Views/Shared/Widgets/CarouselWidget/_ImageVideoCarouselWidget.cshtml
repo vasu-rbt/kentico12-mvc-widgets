@@ -8,178 +8,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Css/slick.css" rel="stylesheet" />
-    <style>
-
-        .video-cell .embed-responsive {
-            margin: 0 auto;
-        }
-
-        .homepage-carousel-teaser-wrapper {
-            position: relative
-        }
-
-            .homepage-carousel-teaser-wrapper > picture, .homepage-carousel-teaser-wrapper > picture > img {
-                width: 100%;
-                height: 400px;
-                object-fit: cover;
-            }
-
-            .homepage-carousel-teaser-wrapper .pos-TopRight {
-                right: 50px;
-                top: 10%
-            }
-
-            .homepage-carousel-teaser-wrapper .tts-text-container {
-                position: absolute
-            }
-
-        .teaser.homepage-carousel-teaser h1 {
-            font-size: 25px;
-            margin-top: 10px;
-            margin-bottom: 10px
-        }
-
-        .teaser.homepage-carousel-teaser h4 {
-            font-size: 22px;
-            word-break: break-all;
-        }
-
-        .homepage-carousel .slick-dotted.slick-slider {
-            margin-bottom: 40px
-        }
-
-        .container-iframevideo {
-            height: 100%;
-            width: 100%;
-            top: 0
-        }
-
-        .homepage-carousel .slick-slider .slick-arrow {
-            opacity: 1;
-            position: absolute;
-            display: block;
-            height: 4.6875rem;
-            width: 2.175rem;
-            line-height: 0;
-            font-size: 0;
-            cursor: pointer;
-            background: rgba(25,30,43,.3);
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-            padding: 0;
-            border: none;
-            outline: 0;
-            z-index: 1;
-            -webkit-transition: background .5s ease,opacity .5s ease;
-            transition: background .5s ease,opacity .5s ease;
-            margin: 0
-        }
-
-        .homepage-carousel .slick-prev {
-            left: 0;
-            border: none;
-            outline: none;
-        }
-
-        .homepage-carousel .slick-next {
-            right: 0;
-        }
-
-            .homepage-carousel .slick-next:before, .homepage-carousel .slick-prev:before {
-                font-family: FontAwesome;
-                speak: none;
-                font-style: normal;
-                font-weight: 400;
-                font-variant: normal;
-                text-transform: none;
-                font-size: 28px;
-                vertical-align: baseline;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale
-            }
-
-        .homepage-carousel .slick-prev:before {
-            content: "\f104"
-        }
-
-        .homepage-carousel .slick-next:before {
-            content: "\f105"
-        }
-
-        .slick-dots li button {
-            background: #ccc !important;
-            line-height: 0 !important;
-            padding: 0 !important;
-        }
-
-            .slick-dots li button:before {
-                content: "" !important;
-                height: 3px;
-            }
-
-        .slick-dots li, .slick-dots li button {
-            width: 40px !important;
-            height: 4px !important;
-        }
-
-        .embed-responsive {
-            position: relative;
-            padding-top: 22px;
-            padding-bottom: 120px;
-            height: 500px;
-            width: 508px;
-            padding-left: 40px;
-        }
-
-        .slick-dots li.slick-active button:before {
-            background: #080808;
-            width: 40px;
-        }
-
-        .homepage-carousel-teaser-wrapper .pos-TopRight {
-            left: 50px;
-            top: 10%
-        }
-
-        .homepage-carousel-teaser-wrapper .tts-text-container {
-            position: absolute;
-            float: right;
-        }
-
-        .teaser.homepage-carousel-teaser {
-            background-color: hsla(53,18%,91%,.7);
-            display: inline-block;
-            padding: 1.875rem;
-        }
-
-            .teaser.homepage-carousel-teaser h4 {
-                font-size: 25px;
-                margin-top: 10px;
-                margin-bottom: 10px
-            }
-
-            .teaser.homepage-carousel-teaser h4 {
-                font-size: 22px;
-                color: black;
-            }
-
-        h4, .h4 {
-            font-family: inherit !important;
-            font-weight: 200 !important;
-            color: inherit !important;
-        }
-
-        .homepage-carousel-teaser a {
-            font-family: dinpro-regular;
-            color: #000;
-            text-decoration: none !important;
-        }
-
-        .video-cell .embed-responsive {
-            margin: 0 auto;
-        }
-    </style>
+    <link href="~/Css/main.css" rel="stylesheet" />
 </head>
 <body>
     <section class="homepage-carousel">
@@ -214,98 +43,63 @@
                         }
                         else
                         {
-                            if (videoUrl.Contains("?t"))
+                            if (!videoUrl.Contains("embed"))
                             {
-                                YoutubeUrl = videoUrl.Split('?')[0].ToString();
-                                if (YoutubeUrl.Contains("/"))
+                                if (videoUrl.Contains("?t"))
                                 {
-                                    youtubevideoid = YoutubeUrl.Split('/')[3].ToString();
+                                    YoutubeUrl = videoUrl.Split('?')[0].ToString();
+                                    if (YoutubeUrl.Contains("/"))
+                                    {
+                                        youtubevideoid = YoutubeUrl.Split('/')[3].ToString();
+                                    }
                                 }
+                                else if (videoUrl.Contains("/"))
+                                {
+                                    youtubevideoid = videoUrl.Split('/')[3].ToString();
+                                }
+                                if (videoUrl.Contains("embed"))
+                                {
+                                    YoutubeUrl = videoUrl;
+                                }
+                                if (videoUrl.Contains("&v="))
+                                {
+                                    youtubevideoid = videoUrl.Split('=')[2].ToString();
+                                }
+                                else if (videoUrl.Contains("v="))
+                                {
+                                    youtubevideoid = videoUrl.Split('=')[1].ToString();
+                                }
+                                YoutubeUrl = "https://www.youtube.com/embed/" + youtubevideoid;
                             }
-                            else if (videoUrl.Contains("/"))
-                            {
-                                youtubevideoid = videoUrl.Split('/')[3].ToString();
-                            }
-                            if (videoUrl.Contains("embed"))
+                            else
                             {
                                 YoutubeUrl = videoUrl;
                             }
-                            if (videoUrl.Contains("&v="))
-                            {
-                                youtubevideoid = videoUrl.Split('=')[2].ToString();
-                            }
-                            else if (videoUrl.Contains("v="))
-                            {
-                                youtubevideoid = videoUrl.Split('=')[1].ToString();
-                            }
-                            YoutubeUrl = "https://www.youtube.com/embed/" + youtubevideoid;
                             <div class="homepage-carousel-teaser-wrapper video-block">
-                                <picture>
-                                    <img class="image-responsive" alt="" src="@imageUrl">
-                                </picture>
-                                <div class="tts-text-container container-iframevideo">
-                                    <div class="row video-row">
-                                        <div class="col-sm-12 video-cell">
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe width="100%" height="100%" id="myVideo" src="@YoutubeUrl?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-                                            </div>
+                            <picture>
+                                <img class="image-responsive" alt="" src="@imageUrl">
+                            </picture>
+                            <div class="tts-text-container container-iframevideo">
+                                <div class="row video-row">
+                                    <div class="col-sm-12 video-cell">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="100%" height="100%" id="myVideo" src="@YoutubeUrl?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        }
+                        </div>
                     }
                 }
-                else
-                {
-                    <h3>No Data Found....!</h3>
-                }
             }
-        </div>
-    </section>
-    <script src="~/Scripts/slick.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: !0,
-                infinite: !0,
-                autoplay: true,
-                nextArrow: '<button class="slick-next slick-arrow"></button>',
-                prevArrow: '<button class="slick-prev slick-arrow"></button>'
-            });
-            var showChar = 150;
-            var moretext = "...";
-            var lesstext = "...";
-            $('.more').each(function () {
-                var content = $(this).html();
-                if (content.length > showChar) {
-                    var show_content = content.substr(0, showChar);
-                    var hide_content = content.substr(showChar, content.length - showChar);
-                    var html = show_content + '<span class="moreelipses">' +
-                        '</span><span class="remaining-content"><span>' + hide_content +
-                        '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext +
-                        '</a></span>';
-                    $(this).html(html);
-                }
-            });
-            $(".morelink").click(function () {
-                if ($(this).hasClass("less")) {
-                    $(this).removeClass("less");
-                    $(this).html(moretext);
-                } else {
-                    $(this).addClass("less");
-                    $(this).html(lesstext);
-                }
-                $(this).parent().prev().toggle();
-                $(this).prev().toggle();
-                return false;
-            });
-            $('.slick-arrow').on('click', function () {
-                $('#myVideo')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-            });
-        });
-    </script>
-</body>
+            else
+            {
+                <h3>No Data Found....!</h3>
+            }
+        }
+            </div>
+        </section>
+        <script src="~/Scripts/slick.min.js"></script>
+        <script src="~/Scripts/main.js"></script>
+    </body>
 </html>

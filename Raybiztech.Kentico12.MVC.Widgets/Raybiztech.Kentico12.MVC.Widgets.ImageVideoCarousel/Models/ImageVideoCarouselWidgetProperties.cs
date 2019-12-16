@@ -16,7 +16,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Models
         [EditingComponent(PathSelector.IDENTIFIER, Order = 2, Label = "Path",Tooltip ="Please Select Image Video Carousel Path")]
         [EditingComponentProperty(nameof(PathSelectorProperties.RootPath), "/")]
         public IList<PathSelectorItem> Path { get; set; }
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 3, Label = "TopN", Tooltip = "Displays The Top N records")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 3, Label = "TopN", Tooltip = "Displays Top N records")]
         [Range(1, 100, ErrorMessage = "Please enter valid number")]
         public string TopN { get; set; } = "4";
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "OrderBy")]

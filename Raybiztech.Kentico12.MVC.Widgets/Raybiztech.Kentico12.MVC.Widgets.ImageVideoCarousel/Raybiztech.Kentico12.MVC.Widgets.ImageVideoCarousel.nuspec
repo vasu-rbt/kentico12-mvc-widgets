@@ -20,6 +20,8 @@
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll" />
     <file src="Views\Shared\Widgets\CarouselWidget\_ImageVideoCarouselWidget.cshtml" target="content\Views\Shared\Widgets\CarouselWidget\_ImageVideoCarouselWidget.cshtml" />
     <file src="Css\slick.css" target="content\Css\slick.css" />
+    <file src="Css\main.css" target="content\Css\main.css" />
     <file src="Scripts\slick.min.js" target="content\Scripts\slick.min.js" />
+    <file src="Scripts\main.js" target="content\Scripts\main.js" />
   </files>
 </package>

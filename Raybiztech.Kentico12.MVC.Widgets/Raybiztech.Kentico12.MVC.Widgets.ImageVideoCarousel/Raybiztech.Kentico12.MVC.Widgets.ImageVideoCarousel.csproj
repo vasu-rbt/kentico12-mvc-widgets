@@ -547,6 +547,7 @@
     <None Include="Views\Shared\Widgets\CarouselWidget\_ImageVideoCarouselWidget.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\main.css" />
     <Content Include="Css\slick.css" />
     <Content Include="Kentico\Content\FormComponents\FileUploader\file-uploader.js" />
     <Content Include="Kentico\Content\FormComponents\USPhone\dependencyLibs\inputmask.dependencyLib.js" />
@@ -653,6 +654,7 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\slick.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
