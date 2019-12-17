@@ -4,6 +4,12 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
 {
     public class RegistrationFormViewModel 
     {
+        #region Widget Properties
+        public bool Visible { get; set; }
+        public string Title { get; set; }
+        public string ButtonText { get; set; }
+        public string RedirectUrl { get; set; } 
+        #endregion
         #region Regitration Form Properties
         //By using this properties to save the register user details
         [Required(ErrorMessage = "Please enter First Name")]

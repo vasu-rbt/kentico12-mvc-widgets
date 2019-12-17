@@ -667,6 +667,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\RegistrationForm\RegistrationForm.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_Data\Global\Resources\Kentico.Builder.resx" />

@@ -63,7 +63,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
         {
             try
             {
-                return View("~/Views/Shared/Widgets/RegistrationFormWidget/_RegistrationFormWidget.cshtml");
+                //Get current page widget properties
+                var properties = GetProperties();
+                RegistrationFormViewModel model = new RegistrationFormViewModel { Visible = properties.Visible, RedirectUrl = properties.RedirectUrl, Title = properties.Title, ButtonText = properties.ButtonText };
+                return View("~/Views/Shared/Widgets/RegistrationFormWidget/_RegistrationFormWidget.cshtml", model);
             }
             catch (Exception ex)
             {
@@ -108,21 +111,21 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
                         model.ValidationMessage = ((string[])registerResult.Errors)[0];
                         if (model.ValidationMessage != "")
                         {
-                            model.ValidationMessage = "User '"+user.Email+"' already exists";
+                            model.ValidationMessage = "User with '"+user.Email+"' already exists";
                         }
                         return Json(new { ErrorMessage = model.ValidationMessage, RegisterSuccess="" });
                     }
                     if (registerResult.Succeeded)
                     {
                         //After user register redirect to registration success page
-                        model.ValidationMessage = "Registration Success..";
+                        model.ValidationMessage = "Registered Successfully!";
                         return Json(new { ErrorMessage = model.ValidationMessage});
                     }
                 }
                 else
                 {
                     //Registration failed
-                    model.ValidationMessage = "Registration Failed.....";
+                    model.ValidationMessage = "Registered fail!";
                     return Json(new { ErrorMessage = model.ValidationMessage });
                 }
             }

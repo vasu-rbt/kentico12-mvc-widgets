@@ -4,74 +4,66 @@
     ViewBag.Title = "RegistrationForm";
     Layout = null;
 }
-
-@{
-    //Generate dynamic id
-    string registerId = DateTime.Now.Ticks.ToString();
-    string FormTargetId = "RegistrationForm_" + registerId;
-    string FormSucces = "RegiterSuccess_" + registerId;
-    string FormFailure = "RegisterFailure_" + registerId;
-}
-@using (Ajax.BeginForm("Register", "RegistrationForm", new AjaxOptions { HttpMethod = "POST", OnSuccess = FormSucces, OnFailure = FormFailure, UpdateTargetId = FormTargetId }))
+@if (Model.Visible)
 {
-    <div class="row">
-        <div class="col-sm-12">
-            <h4>Registration Form</h4>
+    //Generate dynamic id
+    string dynamicId = DateTime.Now.Ticks.ToString();
+    string FormTargetId = "RegistrationForm_" + dynamicId;
+    using (Ajax.BeginForm("Register", "RegistrationForm", new AjaxOptions { HttpMethod = "POST", OnSuccess = "RegiterSuccess", OnFailure = "RegisterFailure", UpdateTargetId = FormTargetId }))
+    {
+        <div class="row">
+            <div class="col-sm-12">
+                @*Registration form title*@
+                @if (!string.IsNullOrEmpty(Model.Title))
+                {
+                    <h4>@Model.Title</h4>
+                }
+            </div>
         </div>
-    </div>
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <span id="RegisterStatus_@registerId" style="color:blue;"></span>
-    <span id="RegistrationFaild_@registerId"></span>
-    <div class="form-group">
-        <label for="FirstName">First Name</label>
-        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control required clearText", @placeholder = "First Name", @id = "FirstName" } })
-        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-    </div>
-    <div class="form-group">
-        <label for="LastName">Last Name</label>
-        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control clearText", @placeholder = "Last Name", @id = "LastName" } })
-        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-    </div>
-    <div class="form-group">
-        <label for="Email">Email(User name)</label>
-        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control clearText", @placeholder = "Email", @id = "Email" } })
-        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-    </div>
-    <div class="form-group">
-        <label for="Password">Password</label>
-        @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "form-control clearText", @placeholder = "Password", @id = "Password" })
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-    </div>
-    <div class="form-group">
-        <label for="ConfirmPassword">ConfirmPassword</label>
-        @Html.PasswordFor(model => model.PasswordConfirmation, htmlAttributes: new { @class = "form-control clearText", @placeholder = "Confirm Password", @id = "ConfirmPassword" })
-        @Html.ValidationMessageFor(model => model.PasswordConfirmation, "", new { @class = "text-danger" })
-    </div>
-    <button type="submit" class="btn btn-primary" id="btnRegisterForm_@registerId">Register</button>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <span class="registration_success" data-Url="@Model.RedirectUrl" style="color:red;"></span>
+        <span class="registration_fail"></span>
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control required clearText", @placeholder = "First Name", @id = "FirstName" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control clearText", @placeholder = "Last Name", @id = "LastName" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control clearText", @placeholder = "Email", @id = "Email" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "form-control clearText", @placeholder = "Password", @id = "Password" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirm Password</label>
+            @Html.PasswordFor(model => model.PasswordConfirmation, htmlAttributes: new { @class = "form-control clearText", @placeholder = "Confirm Password", @id = "ConfirmPassword" })
+            @Html.ValidationMessageFor(model => model.PasswordConfirmation, "", new { @class = "text-danger" })
+        </div>
+        //Registration form button text
+        if (!string.IsNullOrEmpty(Model.ButtonText))
+        {
+            <button type="submit" class="btn btn-primary" id="btnRegisterForm_@dynamicId">@Model.ButtonText</button>
+        }
+    }
+    <style type="text/css">
+        .text-danger {
+            color: red;
+        }
+    </style>
+    @*Supported Scripts for Validation messages and ajax begin form*@
+    <script src="~/Scripts/RegistrationForm/RegistrationForm.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
-<style type="text/css">
-    .text-danger {
-        color: red;
-    }
-</style>
-<script type="text/javascript">
-    function RegiterSuccess_@(registerId)(data) {
-        if (data.ErrorMessage != "") {
-            $("#RegisterStatus_@registerId").text(data.ErrorMessage);
-            if (data.ErrorMessage == "Registration Success..") {
-                $(".clearText").val("");
-            }
-        }
-    }
-    function RegisterFailure_@(registerId)(data) {
-        if (data.ErrorMessage != "") {
-            $("#RegistrationFaild_@registerId").text(data.ErrorMessage);
-        }
-    }
-</script>
-@*Supported Scripts for Validation messages and ajax begin form*@
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<script src="~/Scripts/jquery.validate.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
