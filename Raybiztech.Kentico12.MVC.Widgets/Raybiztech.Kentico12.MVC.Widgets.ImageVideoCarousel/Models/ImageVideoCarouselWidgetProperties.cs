@@ -19,7 +19,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Models
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 3, Label = "TopN", Tooltip = "Displays Top N records")]
         [Range(1, 100, ErrorMessage = "Please enter valid number")]
         public string TopN { get; set; } = "4";
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "OrderBy")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "OrderBy", Tooltip = "Displays records according to given order")]
         public string OrderBy { get; set; }
     }
 }
