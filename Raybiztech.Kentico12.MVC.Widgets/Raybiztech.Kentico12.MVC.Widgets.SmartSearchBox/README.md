@@ -20,8 +20,8 @@ This is a widget which allows you to add a SmartSearchBox to your screen with ce
 
 *Required fields
 
-Suppose we are enter Search results page URL field like 'Search'.
-Add below routing in RouteConfig.cs file in App_Start folder.
+If Search results page URL property have the url like 'Search' then the routing should  map with the routing specified in the RouteConfig.cs file as below.
+Add Search routing in RouteConfig.cs file in App_Start folder.
 <pre>		
     routes.MapRoute(
      name: "Search",
