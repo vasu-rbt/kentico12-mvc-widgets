@@ -23,6 +23,8 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         public Pager Pager { get; set; }
 
     }
+
+
     public class Pager
     {
         public Pager(int totalItems, int? page, int pageSize , int maxsize)

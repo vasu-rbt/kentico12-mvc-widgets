@@ -21,15 +21,13 @@
 </div>
 @if (Context.Kentico().PageBuilder().EditMode)
 {
-    Html.RenderPartial("~/Views/Shared/Widgets/InlineEditors/_IndexInlineEditor.cshtml", new IndexWidgetPropertes
+    Html.RenderPartial("~/Views/Shared/Widgets/InlineEditors/_SearchIndexInlineEditor.cshtml", new IndexWidgetPropertes
     {
         PropertyName = nameof(SmartSearchBoxWidgetProperties.Index),
         Types = Model.Indexes,
         Value = Model.IndexName
 
     });
-
 }
-
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/SmartSearchBoxWidget/SearchResults.js"></script>

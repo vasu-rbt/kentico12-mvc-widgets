@@ -23,7 +23,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
 
         }
         /// <summary>
-        /// This method is return index properties to the View.
+        /// This method is return widget properties to the View.
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
@@ -55,6 +55,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
         }
         /// <summary>
         /// This method is return search results data to the view.
+        /// Routing should have search and action name 
         /// </summary>
         /// <param name="searchtext"></param>
         /// <param name="page"></param>
@@ -113,11 +114,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
 
             return Json(status, JsonRequestBehavior.AllowGet);
         }
-      /// <summary>
-      /// This method is  return Indexes in CMS.
-      /// </summary>
-      /// <param name="indexName"></param>
-      /// <returns></returns>
+        /// <summary>
+        ///This method is return indexes in CMS.
+        /// </summary>
+        /// <returns></returns>
         public List<SelectListItem> LoadIndexes(string indexName)
         {
             List<SelectListItem> addList = new List<SelectListItem>();

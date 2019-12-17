@@ -10,7 +10,6 @@
         @if (Model.Items.Count > 0)
         {
             <ul>
-
                 @foreach (var item in Model.Items.Take(Convert.ToInt32(Model.PageSize)).ToList())
                 {
                     TreeNode node = (TreeNode)item.Data;
@@ -18,7 +17,6 @@
                     <span style="color: #008000">
                         @node.NodeAliasPath
                     </span>
-
                 }
             </ul>
         }
@@ -26,7 +24,6 @@
         {
             <span style="color:red">Results are not found </span>
         }
-
         <!-- pager -->
         @if (Model.Pager.EndPage > 1)
         {
@@ -60,7 +57,6 @@
             </ul>
         }
     </div>
-
 </div>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/SmartSearchBoxWidget/SearchResults.js"></script>

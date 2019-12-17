@@ -7,7 +7,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
     public class SmartSearchBoxWidgetProperties : IWidgetProperties
     {
 
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 0, Label = "Search results page URL", Tooltip = "search/{ActionMethodName}")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 0, Label = "Search results page URL", Tooltip = "URL of the page where the search results are displayed. Search results URL should be search/{ActionMethodName}")]
         [Required(ErrorMessage = ("Please enter search result URL"))]
         public string Text { get; set; }
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Watermark text", Tooltip = "The text entered here will be displayed in the search textbox if it is empty. It automatically disappears when a user starts entering their own input.")]
@@ -22,13 +22,13 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models
         public bool ShowSearchLabel { get; set; }
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 5, Label = "Page Size", Tooltip = "Determine the maximum number of records displayed per page.")]
         [EditingComponentProperty("Size", 100)]
-        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter numbers only")]
         [Required(ErrorMessage = ("Please enter page size"))]
         public string PageSize { get; set; } = "10";
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 7, Label = " Group Size", Tooltip = "Sets the maximum amount of page number links that will be displayed together.Any additional links that do not fit can be accessed in the next or previous group.")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 6, Label = " Group Size", Tooltip = "Sets the maximum amount of page number links that will be displayed together.Any additional links that do not fit can be accessed in the next or previous group.")]
         [EditingComponentProperty("Size", 100)]
-        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter Numbers Only")]
-        [Required(ErrorMessage = ("Please enter Group Size"))]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Enter numbers only")]
+        [Required(ErrorMessage = ("Please enter group size"))]
         public string GroupSize { get; set; } = "4";
 
     }
