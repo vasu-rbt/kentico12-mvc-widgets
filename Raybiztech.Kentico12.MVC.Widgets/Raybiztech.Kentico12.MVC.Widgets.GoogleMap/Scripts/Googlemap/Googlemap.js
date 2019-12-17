@@ -1,5 +1,5 @@
 ﻿function initialize() {
-    $('.googlemap_class').each(function () {
+    $('.googlemap_js').each(function () {
         var mapOptions = {
             center: new google.maps.LatLng(this.attributes['data-latitude'].value, this.attributes['data-longitude'].value),
             zoom: 4,

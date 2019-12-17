@@ -6,10 +6,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
    public class GoogleMapWidgetProperties: IWidgetProperties
     {
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Latitude")]
-        [Required(ErrorMessage = "Please enter Latitude.")]
+        [Required(ErrorMessage = "Please enter latitude.")]
         public string Latitude { get; set; }
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Longitude")]
-        [Required(ErrorMessage = "Please enter Logitude.")]
+        [Required(ErrorMessage = "Please enter logitude.")]
         public string Longitude { get; set; }
     }
 }
