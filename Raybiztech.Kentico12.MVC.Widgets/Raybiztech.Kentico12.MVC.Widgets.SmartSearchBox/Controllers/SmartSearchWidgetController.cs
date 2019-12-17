@@ -115,7 +115,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             return Json(status, JsonRequestBehavior.AllowGet);
         }
         /// <summary>
-        ///This method is return indexes in CMS.
+        ///This method is return search indexes which created in CMS.
         /// </summary>
         /// <returns></returns>
         public List<SelectListItem> LoadIndexes(string indexName)
