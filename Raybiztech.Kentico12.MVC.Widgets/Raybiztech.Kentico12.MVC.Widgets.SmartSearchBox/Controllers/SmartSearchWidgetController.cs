@@ -55,12 +55,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
         }
         /// <summary>
         /// This method is return search results data to the view.
-        /// Routing should have search and action name 
         /// </summary>
         /// <param name="searchtext"></param>
         /// <param name="page"></param>
         /// <returns></returns>
-        [Route("Search/{searchresults}")]
         public ActionResult SearchResults(string searchtext, string page)
         {
             SearchResult searchResults = new SearchResult();
@@ -115,7 +113,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Controllers
             return Json(status, JsonRequestBehavior.AllowGet);
         }
         /// <summary>
-        ///This method is return search indexes which created in CMS.
+        ///This method is return indexes in CMS.
         /// </summary>
         /// <returns></returns>
         public List<SelectListItem> LoadIndexes(string indexName)
