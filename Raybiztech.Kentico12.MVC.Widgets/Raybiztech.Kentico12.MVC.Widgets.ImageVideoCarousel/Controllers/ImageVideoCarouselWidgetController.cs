@@ -14,23 +14,26 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Controllers
     {
         #region method
         /// <summary>
-        ///Get carousel data using this method and return to partial view.
+        ///Get carousel data using this method and display carousel widget
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Based on the model data it should display view</returns>
         public ActionResult Index()
         {
+            //Get the current widget properties
             var properties = GetProperties();
             List<TreeNode> treeNodeData = new List<TreeNode>();
-            string selectedPagePath=string.Empty;
-            try {                
+            string selectedPagePath = string.Empty;
+            try
+            {
+                //Get selected path from widget properties
                 selectedPagePath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
                 var page = DocumentHelper.GetDocuments()
                            .Columns("NodeAliasPath", "ClassName", "DocumentId", "NodeOrder", "NodeId")
                            .WhereEquals("NodeAliasPath", (!String.IsNullOrEmpty(selectedPagePath)) ? selectedPagePath : null).ToList();
                 var className = page.Select(c => c.ClassName).FirstOrDefault();
-                
                 if (!string.IsNullOrEmpty(properties.ClassName))
                 {
+                    //Get TreeNode data based on the partcular class name
                     treeNodeData = DocumentHelper.GetDocuments(properties.ClassName)
                                      .Path(selectedPagePath, PathTypeEnum.Children)
                                      .NestingLevel(1)

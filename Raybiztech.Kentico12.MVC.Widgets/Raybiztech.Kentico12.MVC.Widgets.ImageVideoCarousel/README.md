@@ -43,3 +43,10 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
 - This widget has been tested on Kentico 12 MVC version (12.0.29). 
 - Must load jquery(3.3.1) before loading slick.min.js.
+
+# Uninstall instructions
+
+ After uninstall this package from the solution still able to see the widget on page tab in Kentico CMS please follow the below steps.
+
+ Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll) and delete
+ -> Rebuild the solution
