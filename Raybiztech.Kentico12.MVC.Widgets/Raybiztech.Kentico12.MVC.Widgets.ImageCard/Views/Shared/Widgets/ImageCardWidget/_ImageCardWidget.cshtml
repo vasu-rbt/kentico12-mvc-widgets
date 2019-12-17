@@ -1,7 +1,9 @@
 ﻿@model Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model.ImageCardWidgetViewModel
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="~/CSS/ImageCard.css" rel="stylesheet" />
+<script src="~/Scripts/ImageCard.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <div class="container">
     <div class="row">
         @if (Model.Visible && Model.SelectedValue != "")
@@ -42,23 +44,6 @@
     </div>
     <div class="clearfix"></div>
 </div>
-<script>
-    $(document).ready(function () {
-        //automatic height
-        $(window).on('load resize', function () {
-            if ($(window).width() > 991) {
-                var highestBox = 0;
-                $('.category-widget .content-section').each(function () {
-                    if ($(this).height() > highestBox) {
-                        highestBox = $(this).height();
-                    } else {
-                        highestBox = highestBox;
-                    }
-                });
-                $('.category-widget .content-section').height(highestBox);
-            }
-        });
-    });
-</script>
+
 
 

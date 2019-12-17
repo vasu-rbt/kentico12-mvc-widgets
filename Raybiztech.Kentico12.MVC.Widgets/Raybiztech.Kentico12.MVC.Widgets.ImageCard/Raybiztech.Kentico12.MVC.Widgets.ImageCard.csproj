@@ -983,6 +983,7 @@
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
     <Content Include="nuget.exe" />
+    <Content Include="Scripts\ImageCard.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

@@ -20,5 +20,6 @@
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageCard.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.ImageCard.dll" />
     <file src="Views\Shared\Widgets\ImageCardWidget\_ImageCardWidget.cshtml" target="content\Views\Shared\Widgets\ImageCardWidget\_ImageCardWidget.cshtml" />
       <file src="Css\ImageCard.css" target="content\Css\ImageCard.css" />
+      <file src="Scripts\ImageCard.js" target="content\Scripts\ImageCard.css" />
   </files>
 </package>
