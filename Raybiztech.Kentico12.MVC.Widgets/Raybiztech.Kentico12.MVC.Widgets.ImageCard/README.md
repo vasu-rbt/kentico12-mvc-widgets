@@ -50,5 +50,5 @@ This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12
 
 After uninstall this package from the solution still able to see the widget on page tab in Kentico CMS please follow the below steps.
 
-Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.dll) and delete
+Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.ImageCard.dll) and delete
 -> Rebuild the solution

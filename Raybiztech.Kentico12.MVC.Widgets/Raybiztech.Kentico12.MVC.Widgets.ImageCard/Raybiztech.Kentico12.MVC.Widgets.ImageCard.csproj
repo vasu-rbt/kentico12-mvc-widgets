@@ -982,7 +982,6 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
-    <Content Include="nuget.exe" />
     <Content Include="Scripts\ImageCard.js" />
   </ItemGroup>
   <ItemGroup>
