@@ -20,6 +20,10 @@ This is a widget which allows you to add a SmartSearchBox to your screen with ce
 
 *Required fields
 
+# Requirments
+
+jquery-3.3.1.min.js
+
 Enter the search results page URL field based on below attribute routing format
 <pre>		
         [Route("Search/{searchresults}")]

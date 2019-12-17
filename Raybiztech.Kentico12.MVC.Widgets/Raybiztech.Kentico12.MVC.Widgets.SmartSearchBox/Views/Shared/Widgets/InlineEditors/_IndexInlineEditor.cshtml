@@ -1,7 +1,0 @@
-﻿@model Raybiztech.Kentico12.MVC.Widgets.SmartSearchBox.Models.IndexWidgetPropertes
-
-@using (Html.Kentico().BeginInlineEditor("page-type-selector-searchbox", Model.PropertyName, new { @class = "IndexSelector" }))
-{
-    @Html.DropDownList("selector-drop-down", Model.Types,"-select index-");
-}
-
