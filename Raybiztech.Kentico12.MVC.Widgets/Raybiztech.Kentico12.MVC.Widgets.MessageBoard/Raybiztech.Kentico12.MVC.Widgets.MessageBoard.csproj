@@ -540,6 +540,7 @@
     <None Include="Kentico\Scripts\builders\Core-icons.eot" />
     <None Include="Kentico\Scripts\builders\Core-icons.ttf" />
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
+    <None Include="libman.json" />
     <None Include="packages.config" />
     <None Include="Views\Shared\Widgets\MessageBoardWidget\_MessageBoardWidget.cshtml" />
   </ItemGroup>
@@ -652,11 +653,8 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MessageBoard\MessageBoard.js" />
+    <Content Include="Styles\MessageBoard\MessageBoard.css" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

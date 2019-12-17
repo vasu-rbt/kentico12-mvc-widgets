@@ -8,7 +8,7 @@
     <owners>Ray Business Technologies Pvt Ltd.</owners>
     <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Allows authenticated users to post comments </description>
+    <description>Allows authenticated users to post comments and view others comments</description>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Raybiztech Kentico12 MVC Widget MessageBoard</tags>
@@ -19,5 +19,7 @@
   <files>
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.MessageBoard.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.MessageBoard.dll" />
     <file src="Views\Shared\Widgets\MessageBoardWidget\_MessageBoardWidget.cshtml" target="content\Views\Shared\Widgets\MessageBoardWidget\_MessageBoardWidget.cshtml" />
+  <file src="Scripts\MessageBoard\MessageBoard.js" target="content\Scripts\MessageBoard\MessageBoard.js" />
+  <file src="Styles\MessageBoard\MessageBoard.css" target="content\Styles\MessageBoard\MessageBoard.css" />
   </files>
 </package>
