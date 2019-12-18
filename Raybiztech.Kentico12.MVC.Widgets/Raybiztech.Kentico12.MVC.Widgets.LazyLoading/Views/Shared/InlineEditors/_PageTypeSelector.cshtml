@@ -1,0 +1,15 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.LazyLoading.Model.LazyLoadingWidget;
+@model LazyLoadingSelectorModel
+
+@using (Html.Kentico().BeginInlineEditor("LazyLoading-page-type-selector", Model.PropertyName, new { @class = "pagetypeSelector" }))
+{
+    if (Model.Types.Count == 0)
+    {
+        <span><b>Error</b> - No page types found which contain the following fields:</span>
+    }
+    else
+    {
+        <b style="color:black">Page type:</b><br />
+        @Html.DropDownList("selector-drop-down", Model.Types, "--Select Page Type--")
+    }
+}

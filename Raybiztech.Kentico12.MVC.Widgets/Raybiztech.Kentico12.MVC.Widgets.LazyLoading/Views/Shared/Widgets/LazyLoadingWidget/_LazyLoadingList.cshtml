@@ -1,0 +1,53 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.LazyLoading.Model.LazyLoadingWidget;
+@model List<LazyLoadingWidgetViewModel>
+    @{
+        ViewBag.Title = "Lazy Loading";
+        Layout = null;
+    }
+    @if (Model != null)
+    {
+        var result = string.Empty;
+        foreach (LazyLoadingWidgetViewModel obj in Model)
+        {
+            var column = obj.Columns.Split (',');
+            int i = 0;
+
+            if (obj.CustomView == null)
+            {
+                <div class="article_@obj.ID">
+                    @foreach (PageTypeData obj1 in obj.PageData)
+                    {
+                        //can write ur own Html with proper column name and fetch data
+                        //<p>@obj1.CafeCity</p>
+                        if ((i <= column.Length - 1) && (obj1.ColumnName == column[i]))
+                        {
+                            <p>@obj1.ColumnValue</p>
+                            i++;
+                        }
+                    }
+                </div>
+            }
+            else
+            {
+                var html = obj.CustomView;
+                foreach (PageTypeData obj1 in obj.PageData)
+                {
+                    html = html.Replace ("{{" + obj1.ColumnName + "}}", @obj1.ColumnValue);
+                    i++;
+                }
+                result += "<div class='article_" + @obj.ID + "'>" + html + "</div>";
+            }
+        }
+        @Html.Raw(result);
+    }
+
+
+
+
+
+
+
+
+
+
+

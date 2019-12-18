@@ -1,0 +1,107 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.LazyLoading.Model.LazyLoadingWidget
+@model  LazyLoadingWidgetViewModel
+@{
+    Layout = null;
+}
+<script src="~/Kentico/Scripts/jquery-3.3.1.js"></script>
+@if (Context.Kentico ().PageBuilder ().EditMode)
+{
+    Html.RenderPartial ("InlineEditors/_PageTypeSelector", new LazyLoadingSelectorModel { PropertyName = nameof (LazyLoadingWidgetProperties.Pagetype), Types = Model.AvailableTypes, Value = Model.PageType });
+}
+@if (Model != null & Model.ID != null)
+{
+    <div class="articles_@Model.ID">
+        <div>
+            <h3>@Model.Heading</h3>
+        </div>
+        <div class="articledata_@Model.ID">
+            @{
+                Html.RenderAction ("LazyLoadingList", "LazyLoadingTestWidget", new { id = Model.ID, pagenumber = Model.PageNumber, pagesize = Model.Pagesize, pagetype = Model.PageType, columns = Model.Columns, orderby = Model.Orderby, sitename = Model.Sitename, Documentculture = Model.Documentculture, Customview = Model.CustomView });
+            }
+        </div>
+        <div>
+            <div class="view-more green pull-right viewmore_@Model.ID"><a href="#">View more <i class="fa fa-angle-double-right"></i></a></div>
+            <div class="view-more green pull-right viewless_@Model.ID" style="display:none"><a href="#"> View less <i class="fa fa-angle-double-left">&nbsp;&nbsp;&nbsp;&nbsp;</i></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <input type="hidden" id='ptcolumns_@Model.ID' value="@Model.Columns">
+    <input type="hidden" id='ptpagetype_@Model.ID' value="@Model.PageType">
+    <input type="hidden" id='ptpath_@Model.ID' value="@Model.Path" />
+    <input type="hidden" id='ptorderby_@Model.ID' value="@Model.Orderby">
+    <input type="hidden" id='ptsitename_@Model.ID' value="@Model.Sitename">
+    <input type="hidden" id='ptdocumentculture_@Model.ID' value="@Model.Documentculture">
+    <input type="hidden" id='ptpagesize_@Model.ID' value="@Model.Pagesize">
+    <input type="hidden" id='articlecount_@Model.ID' value="@Model.DataCount">
+    <input type="hidden" id='id_@Model.ID' value="@Model.ID">
+    <input type="hidden" id='view_@Model.ID' value="@Model.CustomView">
+    <script>
+    var g_@Model.ID = $('#ptpagesize_@Model.ID').val();
+    var s_@Model.ID = $('#ptpagesize_@Model.ID').val();
+    var pagenumber_@Model.ID = 1;
+        function viewMore_@Model.ID () {
+        $('.del').remove();
+        $('.article_@Model.ID:lt(' + g_@Model.ID + ')').show();
+        if (g_@Model.ID >= $('#articlecount_@Model.ID').val())
+            $('.viewmore_@Model.ID').hide();
+        else
+            $('.viewmore_@Model.ID').show();
+    }
+
+    $('.viewmore_@Model.ID').click(function (e) {
+        e.preventDefault();
+        $('.del').remove();
+        g_@Model.ID = parseInt(g_@Model.ID) + parseInt(s_@Model.ID);
+        $('.article_@Model.ID:lt(' + g_@Model.ID + ')').show();
+        if (g_@Model.ID >= $('#articlecount_@Model.ID').val())
+            $(this).hide();
+        $('.viewless_@Model.ID').show();
+        pagenumber_@Model.ID += 1;
+        getMoreNewData_@Model.ID ();
+
+    });
+
+        $('.viewless_@Model.ID').click(function (e) {
+        e.preventDefault();
+        $('.del').remove();
+        g_@Model.ID = parseInt(g_@Model.ID) - parseInt(s_@Model.ID);
+        $('.article_@Model.ID:lt(' + g_@Model.ID + ')').show();
+        var remove_@Model.ID = parseInt(g_@Model.ID) - 1;
+        $('.article_@Model.ID:gt(' + remove_@Model.ID + ')').addClass("del");
+        $('.del').remove();
+        $(this).hide();
+        $('.viewmore_@Model.ID').show();
+
+        if (g_@Model.ID > s_@Model.ID)
+            $('.viewless_@Model.ID').show();
+        pagenumber_@Model.ID -= 1;
+
+    });
+
+        function getMoreNewData_@Model.ID () {
+        $('.del').remove();
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: "/en-US/LazyLoadingWidget/LazyLoadingList",
+            data: '{id:"' + $("#id_@Model.ID").val() + '" ,pagenumber:"' + pagenumber_@Model.ID + '" ,pagesize: "' + $("#ptpagesize_@Model.ID").val() + '",pagetype: "' + $("#ptpagetype_@Model.ID").val() + '",path: "' + $("#ptpath_@Model.ID").val() + '",columns: "' + $("#ptcolumns_@Model.ID").val() + '",orderby: "' + $("#ptorderby_@Model.ID").val() + '",sitename: "' + $("#ptsitename_@Model.ID").val() + '",Documentculture: "' + $("#ptdocumentculture_@Model.ID").val() + '",CustomView: "' + $("#view_@Model.ID").val() + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (data) {
+                if (pagenumber_@Model.ID == 1)
+                    $('.article_@Model.ID').html("");
+                if (data.length > 50) {
+                    $(".articledata_@Model.ID").append(data);
+                    viewMore_@Model.ID ();
+                }
+            }
+            ,
+            error: function (result) {
+                console.log("No data");
+            }
+        });
+    }
+    </script>
+}
+else
+{ }

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widget.LazyLoading</id>
+    <version>1.0.0</version>
+    <title>LazyLoading Widget</title>
+    <authors>Ray Business Technologies Pvt Ltd.</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Load Data with View More and View Less button click options.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget LazyLoading</tags>
+    <dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.LazyLoading.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.LazyLoading.dll" />
+    <file src="Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingWidget.cshtml" target="content\Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingWidget.cshtml" />
+	  <file src="Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingList.cshtml" target="content\Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingList.cshtml" />
+    <file src="Views\Shared\InlineEditors\_PageTypeSelector.cshtml" target="content\Views\Shared\InlineEditors\_PageTypeSelector.cshtml" />
+    <file src="Content\InlineEditors\PageTypeSelector\PageTypeSelector.js" target="content\Content\InlineEditors\PageTypeSelector\PageTypeSelector.js" />
+  
+  </files>
+</package>
