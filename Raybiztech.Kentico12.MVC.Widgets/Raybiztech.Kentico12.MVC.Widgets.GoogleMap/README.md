@@ -26,7 +26,7 @@ Make sure to insert your Google Maps API token into application settings(Web.con
 
 # Author
 
-This widget was created by Raju Swamy @ Ray Business Technologies Pvt Ltd.
+This widget was created by Srikanth Nasa @ Ray Business Technologies Pvt Ltd.
 
 # License
 
@@ -39,3 +39,9 @@ Please report any issues seen, in the issue list. We will address at the earlies
 # Compatibility
 
 This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12.0.29 MVC instance and higher.
+# Uninstall instructions
+
+After uninstall this package from the solution still able to see the widget on page tab in Kentico CMS please follow the below steps.
+
+Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll) and delete
+-> Rebuild the solution

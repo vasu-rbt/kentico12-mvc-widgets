@@ -9,6 +9,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.GoogleMap
 {
     public class GoogleMapWidgetController: WidgetController<GoogleMapWidgetProperties>
     {
+        /// <summary>
+        /// This method is used to get the longitude and latitude from widget properties and pass to view.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             var properties = GetProperties();
