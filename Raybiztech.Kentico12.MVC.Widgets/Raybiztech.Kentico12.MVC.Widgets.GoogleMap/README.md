@@ -26,7 +26,7 @@ Make sure to insert your Google Maps API token into application settings(Web.con
 
 # Author
 
-This widget was created by Raju Swamy @ Ray Business Technologies Pvt Ltd.
+This widget was created by Srikanth Nasa @ Ray Business Technologies Pvt Ltd.
 
 # License
 
