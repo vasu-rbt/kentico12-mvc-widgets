@@ -547,7 +547,6 @@
     <None Include="Kentico\Scripts\builders\Core-icons.ttf" />
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
     <None Include="packages.config" />
-    <None Include="Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.1.0.0.nupkg" />
     <None Include="Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.nuspec" />
     <None Include="README.md" />
     <None Include="Views\Shared\Widgets\RegistrationFormWidget\_RegistrationFormWidget.cshtml" />
