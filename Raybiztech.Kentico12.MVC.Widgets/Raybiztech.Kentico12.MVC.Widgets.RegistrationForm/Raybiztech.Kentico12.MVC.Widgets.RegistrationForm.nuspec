@@ -19,5 +19,6 @@
   <files>
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.RegistrationForm" />
     <file src="Views\Shared\Widgets\RegistrationFormWidget\_RegistrationFormWidget.cshtml" target="content\Views\Shared\Widgets\RegistrationFormWidget\_RegistrationFormWidget.cshtml" />
+    <file src="Scripts\RegistrationForm\RegistrationForm.js" target="content\Scripts\RegistrationForm\RegistrationForm.js" />
   </files>
 </package>
