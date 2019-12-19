@@ -64,7 +64,12 @@ namespace &lt;YourSolution Namae&gt;
 
 # Widget
 
-This is a widget which allows visitors to register on the website as new users to your screen with certain fields.
+This is a widget which allows visitors to register on the website as new users to your screen with certain fields. The properties that can be configured are:
+
+- Visible(Indicates if the widget should displayed)
+- Title(It shows a title of a form. It can change dynamically.)
+- Button text(Registration form button text. It can change dynamically.)
+- Redirect Url(After register it redirect to this specific Url. You can configure here. Url pattern like this Ex:-/{ContollerName}/{ActionName})
 
 # Author
 
