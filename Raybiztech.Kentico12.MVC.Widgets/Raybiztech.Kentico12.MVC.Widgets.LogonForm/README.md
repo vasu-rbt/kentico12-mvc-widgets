@@ -65,6 +65,12 @@ namespace &lt;YourSolution Namae&gt;
 # Widget
 
 This is a widget which allows you to add a LognForm to your screen with certain fields.
+- Redirect to URL*
+- Button Text*
+- Logon failure text*
+
+*Required fields
+
 
 # Author
 
