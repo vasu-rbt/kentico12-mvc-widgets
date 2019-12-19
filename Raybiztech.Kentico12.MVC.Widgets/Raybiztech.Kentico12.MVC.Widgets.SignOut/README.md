@@ -12,6 +12,8 @@ This is a widget which allows you to add a SignoutButton to your screen.When cli
 
 -Button Text*
 
+*Required field
+
 # Author
 
 This widget was created by Srikanth Nasa @ Ray Business Technologies Pvt Ltd.
