@@ -547,6 +547,7 @@
     <None Include="Raybiztech.Kentico12.MVC.Widgets.LazyLoading.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="README.md" />
     <None Include="Views\Shared\InlineEditors\_PageTypeSelector.cshtml" />
     <None Include="Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingWidget.cshtml" />
     <None Include="Views\Shared\Widgets\LazyLoadingWidget\_LazyLoadingList.cshtml" />
