@@ -41,6 +41,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
         {
         }
         #endregion
+        #region Constructors
         public RegistrationFormController(IMembershipActivityLogger membershipActivitiesLogger)
         {
             mMembershipActivitiesLogger = membershipActivitiesLogger;
@@ -54,6 +55,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
         {
             mMembershipActivitiesLogger = membershipActivitiesLogger;
         }
+        #endregion
         #region Methods
         /// <summary>
         /// GET:Display Registration Form in widget
