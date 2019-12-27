@@ -27,7 +27,7 @@ The repeater fields that can be configured are:
 * **Visible:-** Indicates if the widget should be displayed. By default, the visible checkbox was checked.
 * **Select only published:-** Specifies whether the widget only loads published pages.
 * **Pages path:-** Specifies the path of the selected pages. If you leave the path empty, the widget either loads all child pages or selects the current page(depending on the page type and configuration of the widget other properties).
-* **View path*****:-** Configure the view with the corresponding page type-related fields and with the proper design after assigning the view path to this field(**View Path**). View path is being considered from **'~/Views/Shared/'** path, just input the remaining path of a partial view without the extension. **E.g.: Articles/_ArticleViewList**
+* **View path:-*** Configure the view with the corresponding page type-related fields and with the proper design after assigning the view path to this field(**View Path**). View path is being considered from **'~/Views/Shared/'** path, just input the remaining path of a partial view without the extension. **E.g.: Articles/_ArticleViewList**
 * **Select top N pages:-** Specifies the maximum of pages to be loaded. At least as many pages as in the 'visible' value of the 'initialization script' property needs to be specified. If empty, all possible pages will be selected.
 * **Columns:-** If specified, only selected database columns are loaded by the widget, which improves the performance of the system. Specified columns need to be common to all selected page types and entered as all lists separated by commas (,), Any user-defined columns must have an alias - anonymous columns are not supported.
 * **Maximum nesting level:-** Specifies the maximum number of content tree sub-levels from which the content is to be loaded. This number is relative, i.e. it is counted from the beginning of the path specified for the content of the web part. Entering **-1** causes all sub-levels to be included. You did not declare any value. By default, it has taken value **-1**.
@@ -36,8 +36,8 @@ The repeater fields that can be configured are:
 * **Enable paging:-** Indicates if the displayed data should be paged.
 * **Page size:-** Determines the maximum number of records displayed per page. You did not declare any value. By default page size value is 4.
 * **Group size:-** Sets the maximum amount of page number links that will be displayed together. You did not declare any value. Any additional links that do not fit can be accessed in the next or previous group. By default group size value is 3.
-* **Content before:-** HTML content placed before the widget. It can be used to display a header or add some encapsulating code, such as **<div>** or **<table>** elements to achieve the required layout.
-* **Content after:-** HTML content placed after the widget. Can be used to display a footer or close the tags contained in the ContentBefore value, such as **</div>** or **</table>** elements.
+* **Content before:-** HTML content placed before the widget. It can be used to display a header or add some encapsulating code, such as <div> or <table> elements to achieve the required layout.
+* **Content after:-** HTML content placed after the widget. Can be used to display a footer or close the tags contained in the ContentBefore value, such as </div> or </table> elements.
 * **No record found text:-** Text to be displayed if no records are found. This data changes dynamically.
 
  ***Required fields**
