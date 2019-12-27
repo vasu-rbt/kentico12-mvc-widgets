@@ -543,6 +543,7 @@
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
     <None Include="packages.config" />
     <None Include="PageType\Data\export_20191220_1125.zip" />
+    <None Include="Raybiztech.Kentico12.MVC.Widgets.ImageCard.1.0.0.nupkg" />
     <None Include="Raybiztech.Kentico12.MVC.Widgets.ImageCard.nuspec" />
     <None Include="README.md" />
     <None Include="Views\Shared\Widgets\ImageCardWidget\_ImageCardWidget.cshtml" />
