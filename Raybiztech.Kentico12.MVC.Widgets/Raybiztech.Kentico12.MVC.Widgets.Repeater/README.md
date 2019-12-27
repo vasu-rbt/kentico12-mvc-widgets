@@ -36,8 +36,8 @@ The repeater fields that can be configured are:
 * **Enable paging:-** Indicates if the displayed data should be paged.
 * **Page size:-** Determines the maximum number of records displayed per page. You did not declare any value. By default page size value is 4.
 * **Group size:-** Sets the maximum amount of page number links that will be displayed together. You did not declare any value. Any additional links that do not fit can be accessed in the next or previous group. By default group size value is 3.
-* **Content before:-** HTML content placed before the widget. It can be used to display a header or add some encapsulating code, such as <div> or <table> elements to achieve the required layout.
-* **Content after:-** HTML content placed after the widget. Can be used to display a footer or close the tags contained in the ContentBefore value, such as </div> or </table> elements.
+* **Content before:-** HTML content placed before the widget. It can be used to display a header or add some encapsulating code, such as <code>&lt;div&gt;</code> or <code>&lt;table&gt;</code> elements to achieve the required layout.
+* **Content after:-** HTML content placed after the widget. Can be used to display a footer or close the tags contained in the ContentBefore value, such as <code>&lt;/div&gt;</code> or <code>&lt;table&gt;</code> elements.
 * **No record found text:-** Text to be displayed if no records are found. This data changes dynamically.
 
  ***Required fields**
