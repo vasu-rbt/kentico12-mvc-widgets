@@ -9,9 +9,9 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model
     public class ImageCardWidgetProperties : IWidgetProperties
     {
         #region Properties
-        [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 0, Label = "Visible", Tooltip ="By enableing visible propertie we can view the widget data")]
+        [EditingComponent(CheckBoxComponent.IDENTIFIER, Order = 0, Label = "Visible", Tooltip = "By enableing visible propertie we can view the widget data")]
         public bool Visible { get; set; } = true;
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Image Card Page Type*", Tooltip = "Please specifiy the ImageCard Page type. Ex: DancingGoatMvc.ImageCard. And this page type should contain these are fields(Image, Content and TargetUrl) are mandatory.")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Image Card Page Type*", Tooltip = "Please specifiy the ImageCard Page type code name. Ex: DancingGoatMvc.ImageCard. And this page type should contain these are fields(Image, Content and TargetUrl) are mandatory.")]
         [Required(ErrorMessage = "Please enter an image card page type class name")]
         public string ClassName { get; set; }
         [EditingComponent(PathSelector.IDENTIFIER, Order = 2, Label = "Path", Tooltip = "Please Select Image Card Path")]
@@ -21,7 +21,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model
         [EditingComponentProperty("Size", 100)]
         [Range(1, 100, ErrorMessage = "Please enter valid number")]
         public string TopN { get; set; } = "4";
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Order By", Tooltip ="Displays records based on given order.(ex:node id,node order)")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Order By", Tooltip = "Displays records based on given order.(ex:node id,node order)")]
         public string OrderBy { get; set; }
         #endregion
     }
