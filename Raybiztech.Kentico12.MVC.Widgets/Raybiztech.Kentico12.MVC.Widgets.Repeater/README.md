@@ -7,11 +7,10 @@ Displays the content of specified pages based on assigned views.
 Install the Raybiztech.Kentico12.MVC.Widget.Repeater. 12.0.29 NuGet Package to your Kentico 12 MVC Site.
 
 To support **page builder** in **web.config** file(path **~/Views/web.config**). Add namespace(**Kentico.PageBuilder.Web.Mvc**) in format like below in web.config file:
-	<pre>
-	<namespaces>
-	<add namespace="Kentico.PageBuilder.Web.Mvc"/>
-	</namespaces>
-	</pre>
+
+	<code>&lt;namespaces&gt;</code><br>
+	<code>&lt;add namespace="Kentico.PageBuilder.Web.Mvc"/&gt;</code><br>
+	<code>&lt;/namespaces&gt;</code><br>
 
 # Requirements
 * **Kentico 12.0.29** or later
