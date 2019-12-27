@@ -7,11 +7,11 @@ Displays the content of specified pages based on assigned views.
 Install the Raybiztech.Kentico12.MVC.Widget.Repeater. 12.0.29 NuGet Package to your Kentico 12 MVC Site.
 
 To support **page builder** in **web.config** file(path **~/Views/web.config**). Add namespace(**Kentico.PageBuilder.Web.Mvc**) in format like below in web.config file:
-<pre>
-<namespaces>
-<add namespace="Kentico.PageBuilder.Web.Mvc"/>
-</namespaces>
-</pre>
+	<pre>
+	<namespaces>
+	<add namespace="Kentico.PageBuilder.Web.Mvc"/>
+	</namespaces>
+	</pre>
 
 # Requirements
 * **Kentico 12.0.29** or later
@@ -41,7 +41,7 @@ The repeater fields that can be configured are:
 * **Content after:-** HTML content placed after the widget. Can be used to display a footer or close the tags contained in the ContentBefore value, such as **</div>** or **</table>** elements.
 * **No record found text:-** Text to be displayed if no records are found. This data changes dynamically.
 
-  ***Required fields**
+ ***Required fields**
 
   In this repeater widget properties, it is mandatory to give View path.
 
@@ -57,12 +57,12 @@ The repeater fields that can be configured are:
 
 # Article Pagetype Import
 
-1) This is example page type for repeater. 
-2) Download the latest export file from (PageType -> Data -> export_pagetype_article_20191227_1747.zip )
-3) In Kentico, go to the Sites application
-4) Select "Import sites or objects"
-5) Upload the package and import it (don't forget to check the "Import code files" checkbox)
-6) Now you are ready to use it in the Pages application
+	1) This is example page type for repeater. 
+	2) Download the latest export file from (PageType -> Data -> export_pagetype_article_20191227_1747.zip )
+	3) In Kentico, go to the Sites application
+	4) Select "Import sites or objects"
+	5) Upload the package and import it (don't forget to check the "Import code files" checkbox)
+	6) Now you are ready to use it in the Pages application
 
 # Author
 
