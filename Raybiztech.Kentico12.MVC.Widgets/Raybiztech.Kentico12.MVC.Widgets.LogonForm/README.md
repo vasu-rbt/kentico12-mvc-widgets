@@ -92,5 +92,5 @@ This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12
 
 After uninstalling this package from the solution, if you are still seeing the widget on the page tab in Kentico CMS then please follow the below steps.
 
-Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll) and delete
+Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll) and delete
 -> Rebuild the solution
