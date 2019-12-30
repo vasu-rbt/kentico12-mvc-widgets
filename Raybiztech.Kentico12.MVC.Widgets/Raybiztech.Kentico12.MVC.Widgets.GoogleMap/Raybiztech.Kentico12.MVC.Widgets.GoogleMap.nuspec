@@ -19,5 +19,6 @@
   <files>
     <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.GoogleMap.dll" />
     <file src="Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" target="content\Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml" />
+    <file src="Scripts/Googlemap/Googlemap.js" target="content/Scripts/Googlemap/Googlemap.js"/>
   </files>
 </package>
