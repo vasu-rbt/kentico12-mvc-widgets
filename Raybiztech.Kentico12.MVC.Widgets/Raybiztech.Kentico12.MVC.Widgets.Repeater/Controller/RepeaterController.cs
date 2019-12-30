@@ -52,7 +52,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
                 TempData["CurrentData_" + dataId] = properties;
                 TempData.Keep();
                 noDataText = properties.NoDataText;
-                string selectedPath = properties.Path == null ? "/" : properties.Path.FirstOrDefault().NodeAliasPath;
+                string selectedPath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
                 pageTypeName = properties.PageType == null ? "" : properties.PageType;
                 //Get all page types classes
                 pagetypes = GetTreeData(properties.PageType);
@@ -119,7 +119,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
                 }
                 bool fileExists;
                 noDataText = properties.NoDataText;
-                string selectedPath = properties.Path == null ? "/" : properties.Path.FirstOrDefault().NodeAliasPath;
+                string selectedPath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
                 pageTypeName = properties.PageType == null ? "" : properties.PageType;
                 //Get All page types classes
                 pagetypes = GetTreeData(properties.PageType);
@@ -224,7 +224,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
                 orderBy = orderBy == null ? "" : orderBy;
                 string cultureCode = LocalizationContext.CurrentCulture.CultureCode == null ? "en-Us" : LocalizationContext.CurrentCulture.CultureCode;
                 string siteName = SiteContext.CurrentSiteName == null ? "" : SiteContext.CurrentSiteName;
-                selectedPath = selectedPath + "%";
+                selectedPath = selectedPath + "/%";
                 totalItemsCount = DocumentHelper.GetDocuments(siteName, selectedPath, cultureCode, false, className, whereCondition, orderBy, maximumNestingLevel, selectOnlyPublish, int.Parse(count), columns, tree).Count();
             }
             return totalItemsCount;
@@ -260,7 +260,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
                 string cultureCode = LocalizationContext.CurrentCulture.CultureCode == null ? "en-Us" : LocalizationContext.CurrentCulture.CultureCode;
                 //Get current sitename
                 string siteName = SiteContext.CurrentSiteName == null ? "" : SiteContext.CurrentSiteName;
-                selectedPath = selectedPath + "%";
+                selectedPath = selectedPath + "/%";
                 if (paginationEnable)
                 {
                     //Fetch the data based on the current page size
