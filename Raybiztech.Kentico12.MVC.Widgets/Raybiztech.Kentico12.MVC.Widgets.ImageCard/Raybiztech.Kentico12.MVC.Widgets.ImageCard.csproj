@@ -1,22 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props')" />
-  <Import Project="..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{27276F26-E79D-41D2-9F85-7D15E5D1C493}</ProjectGuid>
+    <ProjectGuid>{C0A32A9B-C732-4AD0-A8C8-E1B14054B9D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Raybiztech.Kentico12.MVC.Widgets.GoogleMap</RootNamespace>
-    <AssemblyName>Raybiztech.Kentico12.MVC.Widgets.GoogleMap</AssemblyName>
+    <RootNamespace>Raybiztech.Kentico12.MVC.Widgets.ImageCard</RootNamespace>
+    <AssemblyName>Raybiztech.Kentico12.MVC.Widgets.ImageCard</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -318,32 +315,14 @@
     <Reference Include="Microsoft.Azure.Search.Service, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.Search.Service.5.0.3\lib\net452\Microsoft.Azure.Search.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.Common.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.CSharp.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.VisualBasic.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\Microsoft.CodeAnalysis.Workspaces.Common.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.6621.1200\lib\net45\Microsoft.Office.Client.Policy.dll</HintPath>
@@ -460,31 +439,10 @@
       <HintPath>..\packages\Kentico.Libraries.12.0.29\lib\net461\PreMailer.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.4.6.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Composition.AttributedModel, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Composition.AttributedModel.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Convention, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Composition.Convention.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Hosting, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Composition.Hosting.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Runtime, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Composition.Runtime.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.TypedParts, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Composition.TypedParts.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
@@ -502,18 +460,12 @@
     <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
     <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
     </Reference>
@@ -526,23 +478,11 @@
     <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Reflection.Metadata.1.6.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Text.Encoding.CodePages.4.5.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\vasusite\Kentico12\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
@@ -590,17 +530,357 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\GoogleMapWidgetController.cs" />
-    <Compile Include="Models\GoogleMapWidgetProperties.cs" />
-    <Compile Include="Models\GoogleMapWidgetViewModel.cs" />
+    <Compile Include="Controller\ImageCardWidgetController.cs" />
+    <Compile Include="Model\ImageCardWidgetProperties.cs" />
+    <Compile Include="Model\ImageCardWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageCard.dll.config" />
     <None Include="Kentico\Scripts\builders\Core-icons.eot" />
     <None Include="Kentico\Scripts\builders\Core-icons.ttf" />
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
     <None Include="packages.config" />
+    <None Include="PageType\Data\export_20191220_1125.zip" />
+    <None Include="Raybiztech.Kentico12.MVC.Widgets.ImageCard.1.0.0.nupkg" />
+    <None Include="Raybiztech.Kentico12.MVC.Widgets.ImageCard.nuspec" />
+    <None Include="README.md" />
+    <None Include="Views\Shared\Widgets\ImageCardWidget\_ImageCardWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AngleSharp.dll" />
+    <Content Include="bin\Debug\AngleSharp.xml" />
+    <Content Include="bin\Debug\Antlr3.Runtime.dll" />
+    <Content Include="bin\Debug\Antlr3.Runtime.pdb" />
+    <Content Include="bin\Debug\AWSSDK.Core.dll" />
+    <Content Include="bin\Debug\AWSSDK.Core.pdb" />
+    <Content Include="bin\Debug\AWSSDK.Core.xml" />
+    <Content Include="bin\Debug\AWSSDK.S3.dll" />
+    <Content Include="bin\Debug\AWSSDK.S3.pdb" />
+    <Content Include="bin\Debug\AWSSDK.S3.xml" />
+    <Content Include="bin\Debug\Castle.Core.dll" />
+    <Content Include="bin\Debug\Castle.Windsor.dll" />
+    <Content Include="bin\Debug\Castle.Windsor.xml" />
+    <Content Include="bin\Debug\CMS.Activities.dll" />
+    <Content Include="bin\Debug\CMS.Activities.Loggers.dll" />
+    <Content Include="bin\Debug\CMS.Activities.Loggers.xml" />
+    <Content Include="bin\Debug\CMS.Activities.xml" />
+    <Content Include="bin\Debug\CMS.AmazonStorage.dll" />
+    <Content Include="bin\Debug\CMS.AmazonStorage.xml" />
+    <Content Include="bin\Debug\CMS.AspNet.Platform.dll" />
+    <Content Include="bin\Debug\CMS.AspNet.Platform.xml" />
+    <Content Include="bin\Debug\CMS.Automation.dll" />
+    <Content Include="bin\Debug\CMS.Automation.xml" />
+    <Content Include="bin\Debug\CMS.AzureStorage.dll" />
+    <Content Include="bin\Debug\CMS.AzureStorage.xml" />
+    <Content Include="bin\Debug\CMS.BannerManagement.dll" />
+    <Content Include="bin\Debug\CMS.BannerManagement.xml" />
+    <Content Include="bin\Debug\CMS.Base.dll" />
+    <Content Include="bin\Debug\CMS.Base.xml" />
+    <Content Include="bin\Debug\CMS.Blogs.dll" />
+    <Content Include="bin\Debug\CMS.Blogs.xml" />
+    <Content Include="bin\Debug\CMS.Chat.dll" />
+    <Content Include="bin\Debug\CMS.Chat.xml" />
+    <Content Include="bin\Debug\CMS.Community.dll" />
+    <Content Include="bin\Debug\CMS.Community.xml" />
+    <Content Include="bin\Debug\CMS.ContactManagement.dll" />
+    <Content Include="bin\Debug\CMS.ContactManagement.xml" />
+    <Content Include="bin\Debug\CMS.ContinuousIntegration.dll" />
+    <Content Include="bin\Debug\CMS.ContinuousIntegration.xml" />
+    <Content Include="bin\Debug\CMS.Core.dll" />
+    <Content Include="bin\Debug\CMS.Core.xml" />
+    <Content Include="bin\Debug\CMS.CustomTables.dll" />
+    <Content Include="bin\Debug\CMS.CustomTables.xml" />
+    <Content Include="bin\Debug\CMS.DataEngine.dll" />
+    <Content Include="bin\Debug\CMS.DataEngine.xml" />
+    <Content Include="bin\Debug\CMS.DataProtection.dll" />
+    <Content Include="bin\Debug\CMS.DataProtection.xml" />
+    <Content Include="bin\Debug\CMS.DeviceProfiles.dll" />
+    <Content Include="bin\Debug\CMS.DeviceProfiles.xml" />
+    <Content Include="bin\Debug\CMS.DocumentEngine.dll" />
+    <Content Include="bin\Debug\CMS.DocumentEngine.xml" />
+    <Content Include="bin\Debug\CMS.Ecommerce.dll" />
+    <Content Include="bin\Debug\CMS.Ecommerce.xml" />
+    <Content Include="bin\Debug\CMS.EmailEngine.dll" />
+    <Content Include="bin\Debug\CMS.EmailEngine.xml" />
+    <Content Include="bin\Debug\CMS.EventLog.dll" />
+    <Content Include="bin\Debug\CMS.EventLog.xml" />
+    <Content Include="bin\Debug\CMS.EventManager.dll" />
+    <Content Include="bin\Debug\CMS.EventManager.xml" />
+    <Content Include="bin\Debug\CMS.FormEngine.dll" />
+    <Content Include="bin\Debug\CMS.FormEngine.xml" />
+    <Content Include="bin\Debug\CMS.Forums.dll" />
+    <Content Include="bin\Debug\CMS.Forums.xml" />
+    <Content Include="bin\Debug\CMS.Globalization.dll" />
+    <Content Include="bin\Debug\CMS.Globalization.xml" />
+    <Content Include="bin\Debug\CMS.HealthMonitoring.dll" />
+    <Content Include="bin\Debug\CMS.HealthMonitoring.xml" />
+    <Content Include="bin\Debug\CMS.Helpers.dll" />
+    <Content Include="bin\Debug\CMS.Helpers.xml" />
+    <Content Include="bin\Debug\CMS.ImportExport.dll" />
+    <Content Include="bin\Debug\CMS.ImportExport.xml" />
+    <Content Include="bin\Debug\CMS.IO.dll" />
+    <Content Include="bin\Debug\CMS.IO.xml" />
+    <Content Include="bin\Debug\CMS.LicenseProvider.dll" />
+    <Content Include="bin\Debug\CMS.LicenseProvider.xml" />
+    <Content Include="bin\Debug\CMS.LicenseProvider.XmlSerializers.dll" />
+    <Content Include="bin\Debug\CMS.MacroEngine.dll" />
+    <Content Include="bin\Debug\CMS.MacroEngine.xml" />
+    <Content Include="bin\Debug\CMS.MediaLibrary.dll" />
+    <Content Include="bin\Debug\CMS.MediaLibrary.xml" />
+    <Content Include="bin\Debug\CMS.Membership.dll" />
+    <Content Include="bin\Debug\CMS.Membership.xml" />
+    <Content Include="bin\Debug\CMS.MembershipProvider.dll" />
+    <Content Include="bin\Debug\CMS.MembershipProvider.xml" />
+    <Content Include="bin\Debug\CMS.MessageBoards.dll" />
+    <Content Include="bin\Debug\CMS.MessageBoards.xml" />
+    <Content Include="bin\Debug\CMS.Modules.dll" />
+    <Content Include="bin\Debug\CMS.Modules.xml" />
+    <Content Include="bin\Debug\CMS.Newsletters.dll" />
+    <Content Include="bin\Debug\CMS.Newsletters.xml" />
+    <Content Include="bin\Debug\CMS.OnlineForms.dll" />
+    <Content Include="bin\Debug\CMS.OnlineForms.xml" />
+    <Content Include="bin\Debug\CMS.OnlineMarketing.dll" />
+    <Content Include="bin\Debug\CMS.OnlineMarketing.xml" />
+    <Content Include="bin\Debug\CMS.Personas.dll" />
+    <Content Include="bin\Debug\CMS.Personas.xml" />
+    <Content Include="bin\Debug\CMS.Polls.dll" />
+    <Content Include="bin\Debug\CMS.Polls.xml" />
+    <Content Include="bin\Debug\CMS.PortalEngine.dll" />
+    <Content Include="bin\Debug\CMS.PortalEngine.xml" />
+    <Content Include="bin\Debug\CMS.Protection.dll" />
+    <Content Include="bin\Debug\CMS.Protection.xml" />
+    <Content Include="bin\Debug\CMS.Relationships.dll" />
+    <Content Include="bin\Debug\CMS.Relationships.xml" />
+    <Content Include="bin\Debug\CMS.Reporting.dll" />
+    <Content Include="bin\Debug\CMS.Reporting.xml" />
+    <Content Include="bin\Debug\CMS.ResponsiveImages.dll" />
+    <Content Include="bin\Debug\CMS.ResponsiveImages.xml" />
+    <Content Include="bin\Debug\CMS.Routing.Web.dll" />
+    <Content Include="bin\Debug\CMS.Routing.Web.xml" />
+    <Content Include="bin\Debug\CMS.SalesForce.dll" />
+    <Content Include="bin\Debug\CMS.SalesForce.xml" />
+    <Content Include="bin\Debug\CMS.Scheduler.dll" />
+    <Content Include="bin\Debug\CMS.Scheduler.xml" />
+    <Content Include="bin\Debug\CMS.Search.Azure.dll" />
+    <Content Include="bin\Debug\CMS.Search.Azure.xml" />
+    <Content Include="bin\Debug\CMS.Search.dll" />
+    <Content Include="bin\Debug\CMS.Search.Lucene3.dll" />
+    <Content Include="bin\Debug\CMS.Search.Lucene3.xml" />
+    <Content Include="bin\Debug\CMS.Search.TextExtractors.dll" />
+    <Content Include="bin\Debug\CMS.Search.TextExtractors.xml" />
+    <Content Include="bin\Debug\CMS.Search.xml" />
+    <Content Include="bin\Debug\CMS.SharePoint.dll" />
+    <Content Include="bin\Debug\CMS.SharePoint.xml" />
+    <Content Include="bin\Debug\CMS.SiteProvider.dll" />
+    <Content Include="bin\Debug\CMS.SiteProvider.xml" />
+    <Content Include="bin\Debug\CMS.SocialMarketing.dll" />
+    <Content Include="bin\Debug\CMS.SocialMarketing.xml" />
+    <Content Include="bin\Debug\CMS.StrandsRecommender.dll" />
+    <Content Include="bin\Debug\CMS.StrandsRecommender.xml" />
+    <Content Include="bin\Debug\CMS.Synchronization.dll" />
+    <Content Include="bin\Debug\CMS.Synchronization.WSE3.dll" />
+    <Content Include="bin\Debug\CMS.Synchronization.WSE3.xml" />
+    <Content Include="bin\Debug\CMS.Synchronization.xml" />
+    <Content Include="bin\Debug\CMS.SynchronizationEngine.dll" />
+    <Content Include="bin\Debug\CMS.SynchronizationEngine.xml" />
+    <Content Include="bin\Debug\CMS.Taxonomy.dll" />
+    <Content Include="bin\Debug\CMS.Taxonomy.xml" />
+    <Content Include="bin\Debug\CMS.TranslationServices.dll" />
+    <Content Include="bin\Debug\CMS.TranslationServices.xml" />
+    <Content Include="bin\Debug\CMS.WebAnalytics.dll" />
+    <Content Include="bin\Debug\CMS.WebAnalytics.xml" />
+    <Content Include="bin\Debug\CMS.WebFarmSync.dll" />
+    <Content Include="bin\Debug\CMS.WebFarmSync.xml" />
+    <Content Include="bin\Debug\CMS.WorkflowEngine.dll" />
+    <Content Include="bin\Debug\CMS.WorkflowEngine.xml" />
+    <Content Include="bin\Debug\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\de\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.xml" />
+    <Content Include="bin\Debug\DotNetOpenAuth.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\es\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\Facebook.dll" />
+    <Content Include="bin\Debug\Facebook.xml" />
+    <Content Include="bin\Debug\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\fr\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\GlobalLink.Connect.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\it\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ja\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\Kentico.Content.Web.Mvc.dll" />
+    <Content Include="bin\Debug\Kentico.Content.Web.Mvc.Views.dll" />
+    <Content Include="bin\Debug\Kentico.Content.Web.Mvc.xml" />
+    <Content Include="bin\Debug\Kentico.Membership.dll" />
+    <Content Include="bin\Debug\Kentico.Membership.xml" />
+    <Content Include="bin\Debug\Kentico.OnlineMarketing.Web.Mvc.dll" />
+    <Content Include="bin\Debug\Kentico.OnlineMarketing.Web.Mvc.xml" />
+    <Content Include="bin\Debug\Kentico.Web.Mvc.dll" />
+    <Content Include="bin\Debug\Kentico.Web.Mvc.xml" />
+    <Content Include="bin\Debug\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ko\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\LinqToTwitter.net.dll" />
+    <Content Include="bin\Debug\Lucene.Net.v3.dll" />
+    <Content Include="bin\Debug\Lucene.Net.WordNet.SynExpand.dll" />
+    <Content Include="bin\Debug\MaxMind.Db.dll" />
+    <Content Include="bin\Debug\MaxMind.Db.xml" />
+    <Content Include="bin\Debug\MaxMind.GeoIP2.dll" />
+    <Content Include="bin\Debug\MaxMind.GeoIP2.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Debug\Microsoft.Azure.KeyVault.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.Azure.KeyVault.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Common.xml" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Data.dll" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Data.xml" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.dll" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Service.dll" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.Service.xml" />
+    <Content Include="bin\Debug\Microsoft.Azure.Search.xml" />
+    <Content Include="bin\Debug\Microsoft.Data.Edm.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.Edm.xml" />
+    <Content Include="bin\Debug\Microsoft.Data.OData.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.OData.xml" />
+    <Content Include="bin\Debug\Microsoft.Data.Services.Client.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.Services.Client.xml" />
+    <Content Include="bin\Debug\Microsoft.Office.Client.Policy.dll" />
+    <Content Include="bin\Debug\Microsoft.Office.Client.TranslationServices.dll" />
+    <Content Include="bin\Debug\Microsoft.Office.SharePoint.Tools.dll" />
+    <Content Include="bin\Debug\Microsoft.Online.SharePoint.Client.Tenant.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.xml" />
+    <Content Include="bin\Debug\Microsoft.ProjectServer.Client.dll" />
+    <Content Include="bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll" />
+    <Content Include="bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml" />
+    <Content Include="bin\Debug\Microsoft.Rest.ClientRuntime.dll" />
+    <Content Include="bin\Debug\Microsoft.Rest.ClientRuntime.xml" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.DocumentManagement.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Publishing.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Runtime.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Runtime.Windows.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Search.Applications.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Search.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.Taxonomy.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.UserProfiles.dll" />
+    <Content Include="bin\Debug\Microsoft.SharePoint.Client.WorkflowServices.dll" />
+    <Content Include="bin\Debug\Microsoft.Spatial.dll" />
+    <Content Include="bin\Debug\Microsoft.Spatial.xml" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.TransactSql.ScriptDom.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.Services3.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.XmlTransform.dll" />
+    <Content Include="bin\Debug\Microsoft.WindowsAzure.Storage.dll" />
+    <Content Include="bin\Debug\Microsoft.WindowsAzure.Storage.pdb" />
+    <Content Include="bin\Debug\Microsoft.WindowsAzure.Storage.xml" />
+    <Content Include="bin\Debug\Mono.Cecil.dll" />
+    <Content Include="bin\Debug\Mono.Cecil.Mdb.dll" />
+    <Content Include="bin\Debug\Mono.Cecil.Pdb.dll" />
+    <Content Include="bin\Debug\Mono.Cecil.Rocks.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\NuGet.Core.dll" />
+    <Content Include="bin\Debug\OpenPop.dll" />
+    <Content Include="bin\Debug\OpenPop.xml" />
+    <Content Include="bin\Debug\Owin.dll" />
+    <Content Include="bin\Debug\PayPal.dll" />
+    <Content Include="bin\Debug\PayPal.xml" />
+    <Content Include="bin\Debug\PDFClown.dll" />
+    <Content Include="bin\Debug\PreMailer.Net.dll" />
+    <Content Include="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageCard.dll" />
+    <Content Include="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageCard.pdb" />
+    <Content Include="bin\Debug\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ru\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\Debug\System.Data.HashFunction.Core.dll" />
+    <Content Include="bin\Debug\System.Data.HashFunction.Core.xml" />
+    <Content Include="bin\Debug\System.Data.HashFunction.CRC.dll" />
+    <Content Include="bin\Debug\System.Data.HashFunction.CRC.xml" />
+    <Content Include="bin\Debug\System.Data.HashFunction.Interfaces.dll" />
+    <Content Include="bin\Debug\System.Data.HashFunction.Interfaces.xml" />
+    <Content Include="bin\Debug\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\Debug\System.IO.Packaging.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Debug\System.Reactive.Core.dll" />
+    <Content Include="bin\Debug\System.Reactive.Core.xml" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.dll" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.xml" />
+    <Content Include="bin\Debug\System.Reactive.Linq.dll" />
+    <Content Include="bin\Debug\System.Reactive.Linq.xml" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.dll" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.xml" />
+    <Content Include="bin\Debug\System.Spatial.dll" />
+    <Content Include="bin\Debug\System.Spatial.xml" />
+    <Content Include="bin\Debug\System.ValueTuple.dll" />
+    <Content Include="bin\Debug\System.ValueTuple.xml" />
+    <Content Include="bin\Debug\System.Web.Helpers.dll" />
+    <Content Include="bin\Debug\System.Web.Helpers.xml" />
+    <Content Include="bin\Debug\System.Web.Http.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\Debug\System.Web.Http.xml" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Optimization.dll" />
+    <Content Include="bin\Debug\System.Web.Optimization.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\Ude.dll" />
+    <Content Include="bin\Debug\WebGrease.dll" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Data.Services.Client.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Spatial.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\System.Spatial.resources.dll" />
+    <Content Include="Css\ImageCard.css" />
     <Content Include="Kentico\Content\FormComponents\FileUploader\file-uploader.js" />
     <Content Include="Kentico\Content\FormComponents\USPhone\dependencyLibs\inputmask.dependencyLib.js" />
     <Content Include="Kentico\Content\FormComponents\USPhone\inputmask.js" />
@@ -706,31 +986,19 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
-    <Content Include="Scripts\Googlemap\Googlemap.js" />
-    <Content Include="Views\Shared\Widgets\GoogleMapWidget\_GoogleMapWidget.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Scripts\ImageCard.js" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!--<Import Project="..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />-->
+  <Import Project="..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
     <Error Condition="!Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets'))" />
     <Error Condition="!Exists('..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets'))" />
   </Target>
-  <Import Project="..\..\..\vasusite\Kentico12\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\..\..\vasusite\Kentico12\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />
-  <Import Project="..\..\..\vasusite\Kentico12\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets" Condition="Exists('..\..\..\vasusite\Kentico12\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" />
-  <Import Project="..\..\Kentico12\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\..\Kentico12\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />
-  <Import Project="..\..\Kentico12\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets" Condition="Exists('..\..\Kentico12\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" />
-  <Import Project="..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />
   <Import Project="..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets" Condition="Exists('..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" />
 </Project>

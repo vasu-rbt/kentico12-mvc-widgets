@@ -1,15 +1,16 @@
 ﻿using CMS;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Raybiztech.Kentico12.MVC.Widgets.GoogleMap")]
+[assembly: AssemblyTitle("Raybiztech.Kentico12.MVC.Widgets.ImageCard")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Raybiztech.Kentico12.MVC.Widgets.GoogleMap")]
+[assembly: AssemblyProduct("Raybiztech.Kentico12.MVC.Widgets.ImageCard")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +22,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("27276f26-e79d-41d2-9f85-7d15e5d1c493")]
+[assembly: Guid("c0a32a9b-c732-4ad0-a8c8-e1b14054b9d3")]
 
 // Version information for an assembly consists of the following four values:
 //
