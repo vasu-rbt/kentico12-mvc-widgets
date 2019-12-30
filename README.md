@@ -9,5 +9,5 @@ This repository contains Widgets, which can be used and modified in your project
 - Editable Image
 - Google Map
 - Image Card
-- Image Video Slider
+- Image Video Carousel
 - Repeater
