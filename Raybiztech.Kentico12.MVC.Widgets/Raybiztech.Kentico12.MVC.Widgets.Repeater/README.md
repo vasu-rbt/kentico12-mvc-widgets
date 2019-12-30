@@ -42,7 +42,7 @@ The repeater fields that can be configured are:
 
  ***Required fields**
 
-  In this repeater widget properties, it is mandatory to give View path.
+  In this repeater widget properties, it is mandatory to giveÂ View path.
 
 -**InlineEditor**:
 
@@ -81,7 +81,7 @@ This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12
 
 # Uninstall instructions
 
-After uninstall this package from the solution still able to see the widget on page tab in Kentico CMS please follow the below steps.
+After uninstalling this package from the solution, if you are still seeing the widget on the page tab in Kentico CMS then please follow the below steps.
 
 Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.Repeater.dll) and delete
 -> Rebuild the solution
