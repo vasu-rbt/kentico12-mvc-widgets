@@ -7,6 +7,7 @@
     <authors>raviteja.gonuguntla@raybiztech.com</authors>
     <owners>Ray Business Technologies Pvt Ltd.</owners>
     <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Displays a form that allows visitors to register on the website as new users.</description>
     <releaseNotes>Initial relase.</releaseNotes>
