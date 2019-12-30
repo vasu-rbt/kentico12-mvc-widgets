@@ -60,5 +60,5 @@ Please report any issues seen, in the issue list. We will address at the earlies
 
  After uninstalling this package from the solution, if you are still seeing the widget on page tab in Kentico CMS please follow the below steps.
 
- Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.RegistrationForm.dll) and delete
+ Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll) and delete
  -> Rebuild the solution
