@@ -543,6 +543,7 @@
     <None Include="Kentico\Scripts\builders\Core-icons.woff" />
     <None Include="packages.config" />
     <None Include="PageType\Data\export_pagetype_article_20191227_1747.zip" />
+    <None Include="Raybiztech.Kentico12.MVC.Widgets.Repeater.1.0.0.nupkg" />
     <None Include="Raybiztech.Kentico12.MVC.Widgets.Repeater.nuspec" />
     <Content Include="Content\InlineEditors\PageTypeSelector\PageTypeSelector.js" />
     <Content Include="Scripts\Repeater\Repeater.js" />
