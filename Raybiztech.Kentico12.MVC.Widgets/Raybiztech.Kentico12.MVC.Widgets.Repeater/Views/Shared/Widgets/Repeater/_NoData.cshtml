@@ -1,0 +1,25 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.Repeater
+@model RepeaterPropertiesViewModel
+
+@*This is needed. Display all page types list as a dropdownlist*@
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_PageTypeSelector", new RepeaterSelectorModel
+    { PropertyName = nameof(RepeaterProperties.PageType), Types = Model.AvailableTypes, Value = Model.PageType });
+}
+@if (Model.Visible)
+{
+    <div class="container">
+        <div class="row">
+            @if (!string.IsNullOrEmpty(Model.NoDataText))
+            {
+                @Html.Raw(Model.NoDataText)
+            }
+            else
+            {
+                <h4>No Data....</h4>
+                <p>Please check the settings of a widget.</p>
+            }
+        </div>
+    </div>
+}

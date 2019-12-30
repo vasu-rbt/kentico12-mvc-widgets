@@ -1,0 +1,105 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.Models.ImageVideoCarouselWidgetViewModel
+@{
+    string YoutubeUrl = "";
+    string youtubevideoid = "";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Css/slick.css" rel="stylesheet" />
+    <link href="~/Css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="homepage-carousel">
+        <div class="slider homepage-carousel-slider" data-slick='{"autoplaySpeed":3000}'>
+            @if (Model.Visible && Model.Item != "")
+            {
+                if (Model.Path.Count > 0)
+                {
+                    foreach (var slide in Model.Path)
+                    {
+                        string text = slide.GetValue("Text", "");
+                        string targetUrl = slide.GetValue("TargetURL", "");
+                        var imageUrl = slide.GetValue("Image", "");
+                        var videoUrl = slide.GetValue("Video", "");
+                        var slideType = slide.GetValue("SlideType", true);
+                        if (slideType == false)
+                        {
+                            <div class="homepage-carousel-teaser-wrapper">
+                                <picture>
+                                    <img class="image-responsive" alt="" src="@imageUrl">
+                                </picture>
+                                <div class="tts-text-container pos-TopRight">
+                                    <div class="">
+                                        <div class="teaser homepage-carousel-teaser">
+                                            <a href="@targetUrl" class="teaser-link" target="_blank" tabindex="-1">
+                                                <h4 class="more">@text</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            if (!videoUrl.Contains("embed"))
+                            {
+                                if (videoUrl.Contains("?t"))
+                                {
+                                    YoutubeUrl = videoUrl.Split('?')[0].ToString();
+                                    if (YoutubeUrl.Contains("/"))
+                                    {
+                                        youtubevideoid = YoutubeUrl.Split('/')[3].ToString();
+                                    }
+                                }
+                                else if (videoUrl.Contains("/"))
+                                {
+                                    youtubevideoid = videoUrl.Split('/')[3].ToString();
+                                }
+                                if (videoUrl.Contains("embed"))
+                                {
+                                    YoutubeUrl = videoUrl;
+                                }
+                                if (videoUrl.Contains("&v="))
+                                {
+                                    youtubevideoid = videoUrl.Split('=')[2].ToString();
+                                }
+                                else if (videoUrl.Contains("v="))
+                                {
+                                    youtubevideoid = videoUrl.Split('=')[1].ToString();
+                                }
+                                YoutubeUrl = "https://www.youtube.com/embed/" + youtubevideoid;
+                            }
+                            else
+                            {
+                                YoutubeUrl = videoUrl;
+                            }
+                            <div class="homepage-carousel-teaser-wrapper video-block">
+                            <picture>
+                                <img class="image-responsive" alt="" src="@imageUrl">
+                            </picture>
+                            <div class="tts-text-container container-iframevideo">
+                                <div class="row video-row">
+                                    <div class="col-sm-12 video-cell">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="100%" height="100%" id="myVideo" src="@YoutubeUrl?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                <h3>No Data Found....!</h3>
+            }
+        }
+            </div>
+        </section>
+        <script src="~/Scripts/slick.min.js"></script>
+        <script src="~/Scripts/main.js"></script>
+    </body>
+</html>
