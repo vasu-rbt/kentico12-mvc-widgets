@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widgets.RSSFeed</id>
+    <version>1.0.0</version>
+    <title>RSS Feed Widget</title>
+    <authors>raviteja.gonuguntla@raybiztech.com</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays the content of specified RSS Feed Url based on assigned views.</description>
+    <releaseNotes>Initial relase.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 MVC Widget RSS Feed</tags>
+    <dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.RSSFeed.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.RSSFeed.dll" />
+    <file src="Views\Shared\Widgets\RSSFeed\_RSSFeedList.cshtml" target="content\Views\Shared\Widgets\RSSFeed\_RSSFeedList.cshtml" />
+    <file src="Views\Shared\Widgets\RSSFeed\_NoData.cshtml" target="content\Views\Shared\Widgets\RSSFeed\_NoData.cshtml" />
+    <file src="Views\Shared\Widgets\RSSFeed\_ViewNotFound.cshtml" target="content\Views\Shared\Widgets\RSSFeed\_ViewNotFound.cshtml" />
+  </files>
+</package>

@@ -1,0 +1,32 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.RSSFeed
+@model RSSFeedPropertiesViewModel
+@{
+    Layout = null;
+}
+@*Displaying content before widget property data*@
+@if (!string.IsNullOrEmpty(Model.ContentBefore))
+{
+    @Html.Raw(Model.ContentBefore)
+}
+@*Display RSS Feed data*@
+<div class="container">
+    @foreach (var item in Model.RssData)
+    {
+        //By using this format gets the particular items data like title, description from RSS Feed url.
+        string title = item.Element("title").Value;
+        string description = item.Element("description").Value;
+        if (!string.IsNullOrEmpty(title))
+        {
+            <p>Title:@title</p>
+        }
+        if (!string.IsNullOrEmpty(description))
+        {
+            <p>Description:@Html.Raw(description)</p>
+        }
+    }
+</div>
+@*Displaying content after widget property data*@
+@if (!string.IsNullOrEmpty(Model.ContentAfter))
+{
+    @Html.Raw(Model.ContentAfter)
+}

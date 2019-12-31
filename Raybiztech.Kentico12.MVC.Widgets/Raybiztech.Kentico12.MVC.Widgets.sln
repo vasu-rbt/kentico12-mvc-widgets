@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.Repeater", "Raybiztech.Kentico12.MVC.Widgets.Repeater\Raybiztech.Kentico12.MVC.Widgets.Repeater.csproj", "{A3B8BCED-0A6D-4A83-808E-ACEC2AE06E91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raybiztech.Kentico12.MVC.Widgets.RSSFeed", "Raybiztech.Kentico12.MVC.Widgets.RSSFeed\Raybiztech.Kentico12.MVC.Widgets.RSSFeed.csproj", "{DEEEAC7F-999F-4FE5-8BBE-1A970F69390C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A3B8BCED-0A6D-4A83-808E-ACEC2AE06E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3B8BCED-0A6D-4A83-808E-ACEC2AE06E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3B8BCED-0A6D-4A83-808E-ACEC2AE06E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEEEAC7F-999F-4FE5-8BBE-1A970F69390C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEEAC7F-999F-4FE5-8BBE-1A970F69390C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEEAC7F-999F-4FE5-8BBE-1A970F69390C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEEAC7F-999F-4FE5-8BBE-1A970F69390C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,21 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.RSSFeed
+@model RSSFeedPropertiesViewModel
+@{
+    Layout = null;
+}
+@if (Model.Visible)
+{
+    <div class="container">
+        <div class="row">
+            @if (!string.IsNullOrEmpty(Model.NoDataText))
+            {
+                @Html.Raw(Model.NoDataText)
+            }
+            else
+            {
+                <h4>No Data Found.</h4>
+                <p>Please check the settings of a widget.</p>
+            }
+        </div>
+    </div>
+}
