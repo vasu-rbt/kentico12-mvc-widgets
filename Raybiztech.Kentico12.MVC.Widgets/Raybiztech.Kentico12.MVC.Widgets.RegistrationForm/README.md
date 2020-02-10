@@ -22,7 +22,7 @@ using System.Web;
 using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace &lt;YourSolution Namae&gt;
+namespace &lt;YourSolution Name&gt;
 {
     /// &lt;summary&gt;
     /// Wraps application authentication configuration.
