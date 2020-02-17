@@ -10,7 +10,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.LogonForm.Models
         [Required(ErrorMessage = "Please Enter RedirectUrl")]
         public string RedirectUrl { get; set; } = "/";
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Button Text")]
-        [Required(ErrorMessage = "Please Enter Butto Text")]
+        [Required(ErrorMessage = "Please Enter Button Text")]
         public string ButtonText { get; set; } = "Sign In";
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 3, Label = "Logon failure text")]
         [Required(ErrorMessage = "Please Enter Logon failure text")]
