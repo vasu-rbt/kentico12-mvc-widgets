@@ -1,0 +1,21 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.CurrentUser.Models.CurrentUserViewModel
+@using CMS.Membership;
+@{
+    string fullName = "";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    if (Model.ShowUserFullName)
+    {
+        UserInfo objUserInfo = UserInfoProvider.GetUserInfo(User.Identity.Name);
+        if (objUserInfo != null)
+        {
+            fullName = objUserInfo.GetValue("FullName", "").ToString();
+        }
+        <span>Current user: @fullName</span>
+    }
+    else
+    {
+        <span>Current user: @User.Identity.Name</span>
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widget.CurrentUser</id>
+    <version>1.0.0</version>
+    <title>CurrentUser Widget</title>
+    <authors>Srikanth.Nasa@raybiztech.com</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays the user name and full name of the current user</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget CurrentUser</tags>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.CurrentUser.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.CurrentUser.dll" />
+    <file src="Views\Shared\Widgets\CurrentUserWidget\_CurrentUser.cshtml" target="content\Views\Shared\Widgets\CurrentUserWidget\_CurrentUser.cshtml" />
+  </files>
+</package>
