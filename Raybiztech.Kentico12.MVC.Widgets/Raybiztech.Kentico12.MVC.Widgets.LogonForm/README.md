@@ -1,6 +1,6 @@
 # Logon Form
 
-Displays a Logonform that allows users to log into the website. Authentication requires a valid user name and password.
+Displays a Logon form that allows users to log into the website. Authentication requires a valid user name and password.
 
 # Installation
 
