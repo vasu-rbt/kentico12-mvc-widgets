@@ -65,6 +65,12 @@ namespace &lt;YourSolution Namae&gt;
 # Widget
 
 This is a widget which allows you to add a LognForm to your screen with certain fields.
+- Redirect to URL*
+- Button Text*
+- Logon failure text*
+
+*Required fields
+
 
 # Author
 
@@ -81,3 +87,10 @@ Please report any issues seen, in the issue list. We will address at the earlies
 # Compatibility
 
 This widget has been tested on Kentico 12.0.29 MVC and can be used on Kentico 12.0.29 MVC instance and higher.
+
+# Uninstall instructions
+
+After uninstalling this package from the solution, if you are still seeing the widget on the page tab in Kentico CMS then please follow the below steps.
+
+Go to Solution -> Select Bin folder -> Select the specific widget dll(Ex:Raybiztech.Kentico12.MVC.Widgets.LogonForm.dll) and delete
+-> Rebuild the solution
