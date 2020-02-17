@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widgets.Repeater</id>
+    <version>1.0.0</version>
+    <title>Repeater Widget</title>
+    <authors>raviteja.gonuguntla@raybiztech.com</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays the content of specified pages based on assigned views.</description>
+    <releaseNotes>Initial relase.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 MVC Widget Repeater</tags>
+    <dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.Repeater.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.Repeater" />
+    <file src="Views\Shared\Widgets\Repeater\_ArticleList.cshtml" target="content\Views\Shared\Widgets\Repeater\_ArticleList.cshtml" />
+    <file src="Views\Shared\Widgets\Repeater\_NoData.cshtml" target="content\Views\Shared\Widgets\Repeater\_NoData.cshtml" />
+    <file src="Views\Shared\Widgets\Repeater\_ViewNotFound.cshtml" target="content\Views\Shared\Widgets\Repeater\_ViewNotFound.cshtml" />
+    <file src="Views\Shared\InlineEditors\_PageTypeSelector.cshtml" target="content\Views\Shared\InlineEditors\_PageTypeSelector.cshtml" />
+    <file src="Content\InlineEditors\PageTypeSelector\PageTypeSelector.js" target="content\Content\InlineEditors\PageTypeSelector\PageTypeSelector.js" />
+    <file src="Scripts\Repeater\Repeater.js" target="content\Scripts\Repeater\Repeater.js" />
+  </files>
+</package>

@@ -1,0 +1,83 @@
+﻿@using Raybiztech.Kentico12.MVC.Widgets.Repeater
+@model RepeaterPropertiesViewModel
+@{
+    Layout = "";
+}
+@*This is needed. Display all page types list as a dropdownlist*@
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_PageTypeSelector", new RepeaterSelectorModel
+    { PropertyName = nameof(RepeaterProperties.PageType), Types = Model.AvailableTypes, Value = Model.PageType });
+}
+@* The 'pagination_@Model.DataId' class and data-request-Url data attribute are mandatory for pagination. The class name and data attribute don't change. These are constants for all the page type views*@
+<div class="pagination_@Model.DataId" data-request-Url="@Url.Action("RepeaterWithPagination", "Repeater")">
+    @*Displaying content before widget property data*@
+    @if (!String.IsNullOrEmpty(Model.ContentBefore))
+    {
+        @Html.Raw(Model.ContentBefore)
+    }
+    @*Display page type data*@
+    <div class="container">
+        @foreach (var item in Model.PageTypeData)
+        {
+            //Get particular columns data of page type like this example
+            string title = item.GetStringValue("ArticleTitle", "");
+            string ShortDescription = item.GetStringValue("ArticleSummary", "");
+            if (!String.IsNullOrWhiteSpace(title))
+            {
+                <h4>@title</h4>
+            }
+            if (!String.IsNullOrWhiteSpace(ShortDescription))
+            {
+                <p>@ShortDescription</p>
+            }
+        }
+    </div>
+    @*Pagination Section*@
+    @*This Pagination Section is mandatory for the repeater pagination*@
+    @if (Model.PaginationEnable)
+    {
+        if (Model.Pager.EndPage > 1)
+        {
+            <ul class="pagination">
+                @if (Model.Pager.CurrentPage > 1)
+                {
+                    <li>
+                        <a class="page-link" data-page="1" data-dataID="@Model.DataId"><<</a>
+                    </li>
+                    <li>
+                        <a class="page-link" data-page="@(Model.Pager.CurrentPage-1)" data-dataID="@Model.DataId"><</a>
+                    </li>
+                }
+                @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                {
+                    <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                        <a class="page-link" data-page="@page" data-dataID="@Model.DataId">@page</a>
+                    </li>
+                }
+                @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                {
+                    <li>
+                        <a class="page-link" data-page="@(Model.Pager.CurrentPage+1)" data-dataID="@Model.DataId">></a>
+                    </li>
+                    <li>
+                        <a class="page-link" data-page="@Model.Pager.TotalPages" data-dataID="@Model.DataId">>></a>
+                    </li>
+                }
+            </ul>
+        }
+    }
+    @*Displaying content after widget property data*@
+    @if (!String.IsNullOrEmpty(Model.ContentAfter))
+    {
+        @Html.Raw(Model.ContentAfter)
+    }
+</div>
+<style>
+    .pagination > li > a {
+        cursor: pointer;
+    }
+</style>
+@*These Scripts are mandatory for pagination. Working all minified versions of js(min.js) files.*@
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/Repeater/Repeater.js"></script>

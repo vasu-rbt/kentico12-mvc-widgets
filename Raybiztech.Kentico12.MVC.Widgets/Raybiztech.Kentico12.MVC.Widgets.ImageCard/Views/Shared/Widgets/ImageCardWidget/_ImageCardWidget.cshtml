@@ -1,0 +1,49 @@
+﻿@model Raybiztech.Kentico12.MVC.Widgets.ImageCard.Model.ImageCardWidgetViewModel
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/CSS/ImageCard.css" rel="stylesheet" />
+<script src="~/Scripts/ImageCard.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<div class="container">
+    <div class="row">
+        @if (Model.Visible && Model.SelectedValue != "")
+        {
+            if (Model.Path.Count > 0)
+            {
+                foreach (var cards in Model.Path)
+                {
+                    string text = cards.GetValue("Content", "");
+                    string targetUrl = cards.GetValue("TargetUrl", "");
+                    string imageUrl = cards.GetValue("Image", "");
+                    if (text != "" && imageUrl != "")
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <a href="@targetUrl" target="_blank">
+                                <div class="category-widget">
+                                    <div class="content-section" data-mh="content-section">
+                                        <h5 class="more">@text </h5>
+                                    </div>
+                                    <div class="image-section">
+                                        <img src="@imageUrl" />
+                                    </div>
+                                    <div class="view-more white">
+                                        <i class="fa fa-angle-double-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                <h4>No Data Found...!</h4>
+            }
+        }
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+

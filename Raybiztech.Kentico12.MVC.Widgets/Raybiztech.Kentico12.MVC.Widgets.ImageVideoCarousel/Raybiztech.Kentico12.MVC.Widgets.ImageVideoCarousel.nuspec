@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel</id>
+    <version>1.0.0</version>
+    <title>Image Video Carousel Widget</title>
+    <authors>Ray Business Technologies Pvt Ltd.</authors>
+    <owners>Ray Business Technologies Pvt Ltd.</owners>
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Displays image and video slides using pages</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Raybiztech Kentico12 Kentico MVC Widget Image Video Carousel</tags>
+    <dependencies>
+      <dependency id="Kentico.Libraries" version="12.0.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll" target="lib\net461\Raybiztech.Kentico12.MVC.Widgets.ImageVideoCarousel.dll" />
+    <file src="Views\Shared\Widgets\CarouselWidget\_ImageVideoCarouselWidget.cshtml" target="content\Views\Shared\Widgets\CarouselWidget\_ImageVideoCarouselWidget.cshtml" />
+    <file src="Css\slick.css" target="content\Css\slick.css" />
+    <file src="Css\main.css" target="content\Css\main.css" />
+    <file src="Scripts\slick.min.js" target="content\Scripts\slick.min.js" />
+    <file src="Scripts\main.js" target="content\Scripts\main.js" />
+  </files>
+</package>
