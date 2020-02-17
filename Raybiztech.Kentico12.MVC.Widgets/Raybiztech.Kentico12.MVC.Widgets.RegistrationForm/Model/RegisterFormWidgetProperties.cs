@@ -6,10 +6,10 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
     public class RegistrationFormWidgetProperties : IWidgetProperties
     {
         #region ToolTips
-        public const string visibleToolTip = "Indicates if the widget should displayed.";
-        public const string titleToolTip = "It shows a title of a form.";
+        public const string visibleToolTip = "Indicates if the widget should be displayed.";
+        public const string titleToolTip = "Displays title of a form.";
         public const string buttonTextToolTip = "Registration form button text.";
-        public const string redirectUrlToolTip = "After register it redirect to this specific Url. Url pattern like this Ex:-/{ContollerName}/{ActionName}";
+        public const string redirectUrlToolTip = "After registration, it redirect to this specific Url. Url pattern should be Ex:-/{ContollerName}/{ActionName}";
         #endregion
         #region Widget Properties
         [EditingComponent(CheckBoxComponent.IDENTIFIER, Label = "Visible", Order = 0, Tooltip = visibleToolTip)]

@@ -30,7 +30,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.RegistrationForm
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Please enter Confirm Password")]
-        [Compare("Password", ErrorMessage = "Your password didn't match. Please confirm your password")]
+        [Compare("Password", ErrorMessage = "Your password and confirm password didn't match. Please confirm your password")]
         public string PasswordConfirmation { get; set; }
         public string ValidationMessage { get; set; }
         #endregion
