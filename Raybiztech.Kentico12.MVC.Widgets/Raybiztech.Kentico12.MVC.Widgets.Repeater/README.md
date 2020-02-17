@@ -18,7 +18,7 @@ To support **page builder** in **web.config** file(path **~/Views/web.config**).
 
 # Widget
 
-Displays the content of specified pages based on assigned views. Repeater
+Displays the content of specified pages based on assigned views.
 
 The repeater fields that can be configured are:
 
