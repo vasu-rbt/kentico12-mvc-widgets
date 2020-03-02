@@ -6,7 +6,8 @@
     <title>MessageBoard Widget</title>
     <authors>Ray Business Technologies Pvt Ltd.</authors>
     <owners>Ray Business Technologies Pvt Ltd.</owners>
-    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>    
+    <projectUrl>https://github.com/vasu-rbt/kentico12-mvc-widgets</projectUrl>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allows authenticated users to post comments and view others comments</description>
     <releaseNotes>Initial Release</releaseNotes>

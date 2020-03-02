@@ -10,10 +10,11 @@ Install the Raybiztech.Kentico12.MVC.Widget.MessageBoard NuGet Package to your K
 
 User must create a custom table to store data with the following mandatory fields:
 
-- UserFirstName*
-- UserComments*
-- UserEmail*
-- PageUrl* 
+- UserFirstName(string)*
+- UserComments(string)*
+- UserEmail(string)*
+- PageUrl(string)* 
+- IsApproved(bool)*
 
 This is a widget which allows you to add a MessageBoard to your screen with an attribute that can be configured while adding. The property that can be configured is:
 
