@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Raybiztech.Kentico12.MVC.Widgets.Repeater</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>Repeater Widget</title>
     <authors>raviteja.gonuguntla@raybiztech.com</authors>
     <owners>Ray Business Technologies Pvt Ltd.</owners>
@@ -10,7 +10,7 @@
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Displays the content of specified pages based on assigned views.</description>
-    <releaseNotes>Initial relase.</releaseNotes>
+    <releaseNotes>Bug fixed in pagination.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Raybiztech Kentico12 MVC Widget Repeater</tags>
     <dependencies>

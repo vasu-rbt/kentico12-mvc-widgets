@@ -49,8 +49,7 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
                 List<TreeNode> pages;
                 var properties = GetProperties();
                 //Set the widget properties data based on dynamic id
-                TempData["CurrentData_" + dataId] = properties;
-                TempData.Keep();
+                Session["CurrentData_" + dataId] = properties;
                 noDataText = properties.NoDataText;
                 string selectedPath = properties.Path == null ? "" : properties.Path.FirstOrDefault().NodeAliasPath;
                 pageTypeName = properties.PageType == null ? "" : properties.PageType;
@@ -112,10 +111,9 @@ namespace Raybiztech.Kentico12.MVC.Widgets.Repeater
             {
                 RepeaterProperties properties = new RepeaterProperties();
                 //Get the widget properties data based on dynamic id
-                if (TempData["CurrentData_" + dataID] != null)
+                if (Session["CurrentData_" + dataID] != null)
                 {
-                    properties = (RepeaterProperties)TempData["CurrentData_" + dataID];
-                    TempData.Keep();
+                    properties = (RepeaterProperties)Session["CurrentData_" + dataID];
                 }
                 bool fileExists;
                 noDataText = properties.NoDataText;
